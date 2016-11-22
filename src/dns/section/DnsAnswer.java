@@ -1,8 +1,9 @@
-package dns;
+package dns.section;
 
+import dns.*;
 import dns.resource_records_data.ResourceRecordData;
 
-public class DnsAnswer extends DnsHeader {
+public class DnsAnswer {
 
     /**
      * The name being returned e.g. www or ns1.example.net If the name is in the same domain as the question then
@@ -29,4 +30,5 @@ public class DnsAnswer extends DnsHeader {
      *
      */
     private ResourceRecordData resourceRecordData;
+
 }

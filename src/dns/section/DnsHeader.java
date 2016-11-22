@@ -1,4 +1,6 @@
-package dns;
+package dns.section;
+
+import dns.DnsResponseCode;
 
 public class DnsHeader {
 
