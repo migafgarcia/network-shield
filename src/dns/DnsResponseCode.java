@@ -1,8 +1,5 @@
 package dns;
 
-/**
- * Created by mgarcia on 21-11-2016.
- */
 public enum DnsResponseCode {
 
     /**
@@ -36,7 +33,8 @@ public enum DnsResponseCode {
     },
 
     /**
-     * Meaningful only for responses from an authoritative name server, this code signifies that the domain name referenced in the query does not exist.
+     * Meaningful only for responses from an authoritative name server, this code signifies that the domain name
+     * referenced in the query does not exist.
      */
     NAME_ERROR {
         @Override
@@ -56,7 +54,9 @@ public enum DnsResponseCode {
     },
 
     /**
-     * The name server refuses to perform the specified operation for policy reasons. For example, a name server may not wish to provide the information to the particular requester, or a name server may not wish to perform a particular operation (e.g., zone transfer) for particular data.
+     * The name server refuses to perform the specified operation for policy reasons. For example, a name server may not
+     * wish to provide the information to the particular requester, or a name server may not wish to perform a
+     * particular operation (e.g., zone transfer) for particular data.
      */
     REFUSED {
         @Override

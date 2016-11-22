@@ -26,8 +26,6 @@ public class HostsTree {
 
         HostsNode current = this.root;
 
-        
-
 
     }
 

@@ -1,9 +1,6 @@
 import java.net.MalformedURLException;
 import java.net.URL;
 
-/**
- * Created by mgarcia on 17-11-2016.
- */
 public class NetworkShield {
 
     public static void main(String[] args) {

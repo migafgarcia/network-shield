@@ -22,12 +22,12 @@ public class DnsServer {
             channel.configureBlocking(false);
             channel.register(selector, SelectionKey.OP_READ);
 
-            while(true) {
+            while (true) {
                 selector.select();
 
                 Iterator selectedKeys = selector.selectedKeys().iterator();
 
-                while(selectedKeys.hasNext()) {
+                while (selectedKeys.hasNext()) {
                     SelectionKey key = (SelectionKey) selectedKeys.next();
                     selectedKeys.remove();
 
@@ -35,6 +35,9 @@ public class DnsServer {
 
                         ByteBuffer buffer = ByteBuffer.allocate(MAX_PACKET_SIZE);
                         key.interestOps(SelectionKey.OP_WRITE);
+
+
+
                     } else if (key.isWritable()) { //TODO(migafgarcia): check if we can write and if the answer has been computed and send it
                         //write(key);
                         key.interestOps(SelectionKey.OP_READ);

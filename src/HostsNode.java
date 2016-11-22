@@ -20,7 +20,7 @@ public class HostsNode {
 
         HostsNode node = children.get(authority);
 
-        if(node == null) {
+        if (node == null) {
             node = new HostsNode(authority);
             children.put(authority, node);
         }
