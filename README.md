@@ -6,7 +6,9 @@ When a request is received, the program consults a data structure (to define) to
 
 ## TODO list
 
- - Parse requests
+ - Parse Header
+ - Parse Question section
+ - Parse Answer, Authority and Additional sections
  - Create responses or query local name server to get a response and forward it to the client
  - Create data structure (probably a tree) to store and query blacklisted hostnames (harder) OR use SQL database (simpler)
  - Client management
