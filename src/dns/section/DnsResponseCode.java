@@ -1,4 +1,4 @@
-package dns;
+package dns.section;
 
 public enum DnsResponseCode {
 
@@ -63,8 +63,36 @@ public enum DnsResponseCode {
         int toCode() {
             return 5;
         }
+    },
+
+    UNDEFINED {
+        @Override
+        int toCode() {
+            return 6;
+        }
     };
 
     abstract int toCode();
+
+    public static DnsResponseCode fromCode(int code) {
+        switch(code) {
+            case 0:
+                return NO_ERROR;
+            case 1:
+                return FORMAT_ERROR;
+            case 2:
+                return SERVER_FAILURE;
+            case 3:
+                return NAME_ERROR;
+            case 4:
+                return NOT_IMPLEMENTED;
+            case 5:
+                return REFUSED;
+            default:
+                return UNDEFINED;
+        }
+    }
+
+
 
 }

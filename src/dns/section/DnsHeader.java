@@ -1,6 +1,10 @@
 package dns.section;
 
-import dns.DnsResponseCode;
+import utils.BitUtils;
+
+import java.nio.ByteBuffer;
+import java.text.ParseException;
+import java.util.Arrays;
 
 public class DnsHeader {
 
@@ -10,12 +14,12 @@ public class DnsHeader {
      * 16 bit message ID supplied by the requestion (the questioner) and reflected back unchanged by the responder
      * (answerer). Identifies the transaction.
      */
-    private int messageId;
+    private short messageId;
 
     /**
      * Query - Response bit. Set to 0 by the questioner (query) and to 1 in the response (answer).
      */
-    private final boolean query = true;
+    private boolean query;
 
     /**
      * Identifies the request/operation type.
@@ -71,12 +75,27 @@ public class DnsHeader {
 
     /**
      * Unsigned 16 bit integer specifying the number of resource records in the Additional Section. May be 0 in which
-     * case no addtional record(s) is(are) present in the message.
+     * case no additional record(s) is(are) present in the message.
      */
     private int nAdditional;
 
-    public DnsHeader(int messageId, DnsOpcode opcode, boolean authoritativeAnswer, boolean truncation, boolean recursionDesired, boolean recursionAvailable, DnsResponseCode responseCode, int nQuestions, int nAnswers, int nResourceRecords, int nAdditional) {
+    /**
+     * Default constructor
+     * @param messageId
+     * @param opcode
+     * @param authoritativeAnswer
+     * @param truncation
+     * @param recursionDesired
+     * @param recursionAvailable
+     * @param responseCode
+     * @param nQuestions
+     * @param nAnswers
+     * @param nResourceRecords
+     * @param nAdditional
+     */
+    public DnsHeader(short messageId, boolean query, DnsOpcode opcode, boolean authoritativeAnswer, boolean truncation, boolean recursionDesired, boolean recursionAvailable, DnsResponseCode responseCode, int nQuestions, int nAnswers, int nResourceRecords, int nAdditional) {
         this.messageId = messageId;
+        this.query = query;
         this.opcode = opcode;
         this.authoritativeAnswer = authoritativeAnswer;
         this.truncation = truncation;
@@ -87,6 +106,74 @@ public class DnsHeader {
         this.nAnswers = nAnswers;
         this.nResourceRecords = nResourceRecords;
         this.nAdditional = nAdditional;
+    }
+
+    /**
+     *
+     * 0  1  2  3  4  5  6  7  8  9  0  1  2  3  4  5
+     * +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+     * |                      ID                       |
+     * +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+     * |QR|   Opcode  |AA|TC|RD|RA|   Z    |   RCODE   |
+     * +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+     * |                    QDCOUNT                    |
+     * +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+     * |                    ANCOUNT                    |
+     * +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+     * |                    NSCOUNT                    |
+     * +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+     * |                    ARCOUNT                    |
+     * +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+     * @param byteBuffer
+     * @return
+     */
+    public static DnsHeader parseHeader(ByteBuffer byteBuffer) throws ParseException {
+
+        // 16 bits (2 bytes) for message id
+        short messageId = byteBuffer.getShort();
+
+        // get next 8 bits
+        boolean[] boolBuffer = BitUtils.byteToBooleanArray(byteBuffer.get());
+
+        boolean query = boolBuffer[0];
+
+        int opcodeInt = BitUtils.booleanArrayToInt(Arrays.copyOfRange(boolBuffer, 1, 5));
+
+        if(opcodeInt < 0 || opcodeInt > 15)
+            throw new ParseException("Unrecognized opcode", byteBuffer.position());
+
+        DnsOpcode opcode = DnsOpcode.fromCode(opcodeInt);
+
+        boolean authoritativeAnswer = boolBuffer[5];
+
+        boolean truncation = boolBuffer[6];
+
+        boolean recursionDesired = boolBuffer[7];
+
+        // get next 8 bits
+        boolBuffer = BitUtils.byteToBooleanArray(byteBuffer.get());
+
+        boolean recursionAvailable = boolBuffer[0];
+
+        int responseCodeInt = BitUtils.booleanArrayToInt(Arrays.copyOfRange(boolBuffer, 4, 8));
+
+        if(responseCodeInt < 0 || responseCodeInt > 15)
+            throw new ParseException("Unrecognized response code", byteBuffer.position());
+
+
+        DnsResponseCode responseCode = DnsResponseCode.fromCode(responseCodeInt);
+
+        int nQuestions = byteBuffer.getShort();
+
+        int nAnswers = byteBuffer.getShort();
+
+        int nResourceRecords = byteBuffer.getShort();
+
+        int nAdditional = byteBuffer.getShort();
+
+        // TODO(migafgarcia): figure out bit orders
+
+        return new DnsHeader(messageId, query, opcode, authoritativeAnswer, truncation, recursionDesired, recursionAvailable, responseCode, nQuestions, nAnswers, nResourceRecords, nAdditional);
     }
 
     @Override
@@ -106,5 +193,6 @@ public class DnsHeader {
                 ", nAdditional=" + nAdditional +
                 '}';
     }
+
 }
 

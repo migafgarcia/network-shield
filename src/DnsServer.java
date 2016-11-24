@@ -1,8 +1,12 @@
+import dns.section.DnsHeader;
+
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.SocketAddress;
 import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 import java.nio.channels.*;
+import java.text.ParseException;
 import java.util.Iterator;
 
 public class DnsServer {
@@ -33,9 +37,14 @@ public class DnsServer {
 
                     if (key.isReadable()) { //TODO(migafgarcia): read, parse question and store the answer
 
-                        ByteBuffer buffer = ByteBuffer.allocate(MAX_PACKET_SIZE);
-                        key.interestOps(SelectionKey.OP_WRITE);
+                        DatagramChannel chan = (DatagramChannel) key.channel();
+                        ByteBuffer byteBuffer = ByteBuffer.allocate(512);
 
+                        chan.receive(byteBuffer);
+                        byteBuffer.flip();
+                        System.out.println(DnsHeader.parseHeader(byteBuffer).toString());
+
+                        System.out.println();
 
 
                     } else if (key.isWritable()) { //TODO(migafgarcia): check if we can write and if the answer has been computed and send it
@@ -46,7 +55,8 @@ public class DnsServer {
             }
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
         }
-
     }
 }
