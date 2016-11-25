@@ -18,15 +18,14 @@ public class BitUtils {
     public static boolean[] byteToBooleanArray(byte _byte) {
 
         boolean[] booleanArray = new boolean[8];
-        booleanArray[0] = ((_byte & 0x01) != 0);
-        booleanArray[1] = ((_byte & 0x02) != 0);
-        booleanArray[2] = ((_byte & 0x04) != 0);
-        booleanArray[3] = ((_byte & 0x08) != 0);
-
-        booleanArray[4] = ((_byte & 0x16) != 0);
-        booleanArray[5] = ((_byte & 0x32) != 0);
-        booleanArray[6] = ((_byte & 0x64) != 0);
-        booleanArray[7] = ((_byte & 0x128) != 0);
+        booleanArray[7] = ((_byte & 0x01) != 0);
+        booleanArray[6] = ((_byte & 0x02) != 0);
+        booleanArray[5] = ((_byte & 0x04) != 0);
+        booleanArray[4] = ((_byte & 0x08) != 0);
+        booleanArray[3] = ((_byte & 0x16) != 0);
+        booleanArray[2] = ((_byte & 0x32) != 0);
+        booleanArray[1] = ((_byte & 0x64) != 0);
+        booleanArray[0] = ((_byte & 0x128) != 0);
         return booleanArray;
     }
 
