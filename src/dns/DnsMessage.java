@@ -6,9 +6,9 @@ import dns.section.DnsQuestion;
 
 public class DnsMessage {
     private DnsHeader header;
-    private DnsQuestion questionSection;
-    private DnsAnswer answerSection;
-    private DnsAnswer authoritySection;
-    private DnsAnswer additionalSection;
+    private DnsQuestion[] questionSection;
+    private DnsAnswer[] answerSection;
+    private DnsAnswer[] authoritySection;
+    private DnsAnswer[] additionalSection;
 
 }

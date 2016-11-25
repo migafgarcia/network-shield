@@ -1,4 +1,5 @@
 import dns.section.DnsHeader;
+import dns.section.DnsQuestion;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -43,6 +44,10 @@ public class DnsServer {
                         chan.receive(byteBuffer);
                         byteBuffer.flip();
                         System.out.println(DnsHeader.parseHeader(byteBuffer).toString());
+
+                        System.out.println(DnsQuestion.parseQuestion(byteBuffer).toString());
+
+
 
                         System.out.println();
 

@@ -1,6 +1,5 @@
 package dns.section;
 
-import dns.*;
 import dns.resource_records_data.ResourceRecordData;
 
 public class DnsAnswer {
@@ -14,7 +13,7 @@ public class DnsAnswer {
     /**
      *
      */
-    private DnsResourceRecord type;
+    private DnsResourceRecordType type;
 
     /**
      *
