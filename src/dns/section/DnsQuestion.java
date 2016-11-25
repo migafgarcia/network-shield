@@ -1,5 +1,8 @@
 package dns.section;
 
+import dns.codes.DnsQueryClass;
+import dns.resource_records.DnsResourceRecordType;
+
 import java.nio.ByteBuffer;
 
 public class DnsQuestion {

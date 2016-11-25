@@ -1,4 +1,4 @@
-package dns.resource_records_data;
+package dns.resource_records;
 
 public interface ResourceRecordData {
     int dataLength();

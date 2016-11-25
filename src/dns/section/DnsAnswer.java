@@ -1,6 +1,8 @@
 package dns.section;
 
-import dns.resource_records_data.ResourceRecordData;
+import dns.codes.DnsQueryClass;
+import dns.resource_records.DnsResourceRecordType;
+import dns.resource_records.ResourceRecordData;
 
 public class DnsAnswer {
 

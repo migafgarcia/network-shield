@@ -1,5 +1,7 @@
 package dns.section;
 
+import dns.codes.DnsOpcode;
+import dns.codes.DnsResponseCode;
 import utils.BitUtils;
 
 import java.nio.ByteBuffer;

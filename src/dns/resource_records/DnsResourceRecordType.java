@@ -1,4 +1,4 @@
-package dns.section;
+package dns.resource_records;
 
 public enum DnsResourceRecordType {
 

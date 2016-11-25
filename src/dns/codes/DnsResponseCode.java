@@ -1,4 +1,4 @@
-package dns.section;
+package dns.codes;
 
 public enum DnsResponseCode {
 
