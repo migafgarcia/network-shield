@@ -27,6 +27,8 @@ public class DnsServer {
             channel.configureBlocking(false);
             channel.register(selector, SelectionKey.OP_READ);
 
+            System.out.println("Listening on port " + SERVER_PORT);
+
             while (true) {
                 selector.select();
 
@@ -39,7 +41,7 @@ public class DnsServer {
                     if (key.isReadable()) { //TODO(migafgarcia): read, parse question and store the answer
 
                         DatagramChannel chan = (DatagramChannel) key.channel();
-                        ByteBuffer byteBuffer = ByteBuffer.allocate(512);
+                        ByteBuffer byteBuffer = ByteBuffer.allocate(MAX_PACKET_SIZE);
 
                         chan.receive(byteBuffer);
                         byteBuffer.flip();

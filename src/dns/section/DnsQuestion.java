@@ -46,7 +46,7 @@ public class DnsQuestion {
 
     @Override
     public String toString() {
-        return super.toString() + "\nDnsQuestion{" +
+        return "\nDnsQuestion{" +
                 "name='" + name + '\'' +
                 ", resourceRecord=" + resourceRecord +
                 ", queryClass=" + queryClass +
