@@ -83,6 +83,7 @@ public class DnsHeader {
 
     /**
      * Default constructor
+     *
      * @param messageId
      * @param opcode
      * @param authoritativeAnswer
@@ -111,7 +112,6 @@ public class DnsHeader {
     }
 
     /**
-     *
      * 0  1  2  3  4  5  6  7  8  9  0  1  2  3  4  5
      * +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
      * |                      ID                       |
@@ -126,12 +126,13 @@ public class DnsHeader {
      * +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
      * |                    ARCOUNT                    |
      * +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+     *
      * @param byteBuffer
      * @return
      */
     public static DnsHeader parseHeader(ByteBuffer byteBuffer) throws ParseException {
 
-        // 16 bits (2 bytes) for message id
+        // get next 16 bits
         short messageId = byteBuffer.getShort();
 
         // get next 8 bits
@@ -141,7 +142,7 @@ public class DnsHeader {
 
         int opcodeInt = BitUtils.booleanArrayToInt(Arrays.copyOfRange(boolBuffer, 1, 5));
 
-        if(opcodeInt < 0 || opcodeInt > 15)
+        if (opcodeInt < 0 || opcodeInt > 15)
             throw new ParseException("Unrecognized opcode", byteBuffer.position());
 
         DnsOpcode opcode = DnsOpcode.fromCode(opcodeInt);
@@ -159,21 +160,22 @@ public class DnsHeader {
 
         int responseCodeInt = BitUtils.booleanArrayToInt(Arrays.copyOfRange(boolBuffer, 4, 8));
 
-        if(responseCodeInt < 0 || responseCodeInt > 15)
+        if (responseCodeInt < 0 || responseCodeInt > 15)
             throw new ParseException("Unrecognized response code", byteBuffer.position());
-
 
         DnsResponseCode responseCode = DnsResponseCode.fromCode(responseCodeInt);
 
+        // get next 16 bits
         int nQuestions = byteBuffer.getShort();
 
+        // get next 16 bits
         int nAnswers = byteBuffer.getShort();
 
+        // get next 16 bits
         int nResourceRecords = byteBuffer.getShort();
 
+        // get next 16 bits
         int nAdditional = byteBuffer.getShort();
-
-        // TODO(migafgarcia): figure out bit orders
 
         return new DnsHeader(messageId, query, opcode, authoritativeAnswer, truncation, recursionDesired, recursionAvailable, responseCode, nQuestions, nAnswers, nResourceRecords, nAdditional);
     }

@@ -11,12 +11,15 @@ public class BitUtils {
      * @return The correspondent integer value
      */
     public static short byteArrayToInt(byte[] byteArray) {
-        ByteBuffer wrapped = ByteBuffer.wrap(byteArray);
-        return wrapped.getShort();
+        return ByteBuffer.wrap(byteArray).getShort();
     }
 
+    /**
+     *
+     * @param _byte
+     * @return
+     */
     public static boolean[] byteToBooleanArray(byte _byte) {
-
         boolean[] booleanArray = new boolean[8];
         booleanArray[7] = ((_byte & 0x01) != 0);
         booleanArray[6] = ((_byte & 0x02) != 0);
@@ -29,6 +32,11 @@ public class BitUtils {
         return booleanArray;
     }
 
+    /**
+     *
+     * @param arr
+     * @return
+     */
     public static int booleanArrayToInt(boolean[] arr){
         int n = 0;
         for (boolean b : arr)
