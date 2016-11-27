@@ -1,35 +1,41 @@
 package dns.section;
 
-import dns.resource_records.DnsResourceRecordsClass;
+import dns.resource_records.DnsResourceRecordClass;
 import dns.resource_records.DnsResourceRecordType;
 
 import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class DnsQuestion {
 
-    private String name;
+    private String[] labels;
 
-    private DnsResourceRecordType resourceRecord;
+    private DnsResourceRecordType resourceRecordType;
 
-    private DnsResourceRecordsClass queryClass;
+    private DnsResourceRecordClass resourceRecordClass;
 
-    public DnsQuestion(String name, DnsResourceRecordType resourceRecord, DnsResourceRecordsClass queryClass) {
-        this.name = name;
-        this.resourceRecord = resourceRecord;
-        this.queryClass = queryClass;
+    public DnsQuestion(String[] labels, DnsResourceRecordType resourceRecordType, DnsResourceRecordClass resourceRecordClass) {
+        this.labels = labels;
+        this.resourceRecordType = resourceRecordType;
+        this.resourceRecordClass = resourceRecordClass;
     }
 
     public static DnsQuestion parseQuestion(ByteBuffer byteBuffer) {
         byte labelSize;
 
-        StringBuilder hostname = new StringBuilder();
+        StringBuilder current = new StringBuilder();
+
+        ArrayList<String> labelsList = new ArrayList<>();
 
         while((labelSize = byteBuffer.get()) != 0) {
             for (int i = 0; i < labelSize; i++)
-                hostname.append((char) byteBuffer.get());
-            hostname.append('.');
+                current.append((char) byteBuffer.get()); // TODO(migafgarcia): Beware when casting - Gandalf
+            labelsList.add(current.toString());
+            current.setLength(0);
         }
 
+        String[] labels = labelsList.toArray(new String[labelsList.size()]);
 
         short resourceRecordTypeCode = byteBuffer.getShort();
 
@@ -37,19 +43,37 @@ public class DnsQuestion {
 
         short queryClassCode = byteBuffer.getShort();
 
-        DnsResourceRecordsClass queryClass = DnsResourceRecordsClass.fromCode(queryClassCode);
+        DnsResourceRecordClass queryClass = DnsResourceRecordClass.fromCode(queryClassCode);
 
-        return new DnsQuestion(hostname.toString(), resourceRecordType, queryClass);
+        return new DnsQuestion(labels, resourceRecordType, queryClass);
+
+    }
+
+    public void toBytes(ByteBuffer byteBuffer) {
+
+        for(String label : labels) {
+            byteBuffer.put((byte) label.length()); // TODO(migafgarcia): Beware when casting - Gandalf
+            byteBuffer.put(label.getBytes());
+        }
+
+        byteBuffer.put((byte) 0);
+
+        byteBuffer.putShort(resourceRecordType.toCode());
+
+        byteBuffer.putShort(resourceRecordClass.toCode());
 
 
+
+
+        // TODO(migafgarcia): implement this
     }
 
     @Override
     public String toString() {
         return "\nDnsQuestion{" +
-                "name='" + name + '\'' +
-                ", resourceRecord=" + resourceRecord +
-                ", queryClass=" + queryClass +
+                "labels='" + Arrays.toString(labels) + '\'' +
+                ", resourceRecordType=" + resourceRecordType +
+                ", resourceRecordClass=" + resourceRecordClass +
                 '}';
     }
 }

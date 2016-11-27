@@ -1,7 +1,7 @@
 package dns.section;
 
 
-import dns.resource_records.DnsResourceRecordsClass;
+import dns.resource_records.DnsResourceRecordClass;
 import dns.resource_records.DnsResourceRecordType;
 import dns.resource_records.ResourceRecord;
 
@@ -18,13 +18,13 @@ public class DnsAnswer {
 
     private final DnsResourceRecordType resourceRecordType;
 
-    private final DnsResourceRecordsClass resourceRecordsClass;
+    private final DnsResourceRecordClass resourceRecordsClass;
 
     private final long ttl;
 
     private final ResourceRecord[] resourceRecords;
 
-    public DnsAnswer(String name, DnsResourceRecordType resourceRecordType, DnsResourceRecordsClass resourceRecordsClass, long ttl, ResourceRecord[] resourceRecords) {
+    public DnsAnswer(String name, DnsResourceRecordType resourceRecordType, DnsResourceRecordClass resourceRecordsClass, long ttl, ResourceRecord[] resourceRecords) {
         this.name = name;
         this.resourceRecordType = resourceRecordType;
         this.resourceRecordsClass = resourceRecordsClass;

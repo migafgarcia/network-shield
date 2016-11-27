@@ -1,24 +1,24 @@
 package dns.resource_records;
 
-public enum DnsResourceRecordsClass {
+public enum DnsResourceRecordClass {
 
     INTERNET {
         @Override
-        int toCode() {
+        public short toCode() {
             return 1;
         }
     },
 
     UNDEFINED {
         @Override
-        int toCode() {
+        public short toCode() {
             return -1;
         }
     };
 
-    abstract int toCode();
+    public abstract short toCode();
 
-    public static DnsResourceRecordsClass fromCode(int code) {
+    public static DnsResourceRecordClass fromCode(int code) {
         switch(code) {
             case 1:
                 return INTERNET;

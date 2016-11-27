@@ -10,7 +10,7 @@ public enum DnsOpcode {
      */
     QUERY {
         @Override
-        public int toCode() {
+        public byte toCode() {
             return 0;
         }
     },
@@ -20,7 +20,7 @@ public enum DnsOpcode {
      */
     IQUERY {
         @Override
-        public int toCode() {
+        public byte toCode() {
             return 1;
         }
     },
@@ -30,7 +30,7 @@ public enum DnsOpcode {
      */
     STATUS {
         @Override
-        public int toCode() {
+        public byte toCode() {
             return 2;
         }
     },
@@ -40,7 +40,7 @@ public enum DnsOpcode {
      */
     UNDEFINED {
         @Override
-        public int toCode() {
+        public byte toCode() {
             return 3;
         }
     };
@@ -49,15 +49,23 @@ public enum DnsOpcode {
      * Returns the int value of this code
      * @return int value of this code
      */
-    public abstract int toCode();
+    public abstract byte toCode();
+
 
     /**
      *  Return the DnsOpcode correspondent to code
      *
-     * @param code opcode int
+     * @param bits opcode int
      * @return correspondent opcode
      */
-    public static DnsOpcode fromCode(int code) {
+    public static DnsOpcode fromBits(boolean[] bits) {
+        byte code = 0;
+
+        code |= (bits[3] ? 1 : 0);
+        code |= (bits[2] ? 1 : 0) << 1;
+        code |= (bits[1] ? 1 : 0) << 2;
+        code |= (bits[0] ? 1 : 0) << 3;
+
         switch(code) {
             case 0:
                 return QUERY;
@@ -69,4 +77,18 @@ public enum DnsOpcode {
                 return UNDEFINED;
         }
     }
+
+    public static boolean[] toBits(DnsOpcode opcode) {
+        boolean[] booleans = new boolean[4];
+
+        booleans[3] = ((opcode.toCode() >> 4) & 1) != 0;
+        booleans[2] = ((opcode.toCode() >> 5) & 1) != 0;
+        booleans[1] = ((opcode.toCode() >> 6) & 1) != 0;
+        booleans[0] = ((opcode.toCode() >> 7) & 1) != 0;
+
+        return booleans;
+
+    }
+
+
 }

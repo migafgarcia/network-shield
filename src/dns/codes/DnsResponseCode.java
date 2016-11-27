@@ -7,7 +7,7 @@ public enum DnsResponseCode {
      */
     NO_ERROR {
         @Override
-        public int toCode() {
+        public byte toCode() {
             return 0;
         }
     },
@@ -17,7 +17,7 @@ public enum DnsResponseCode {
      */
     FORMAT_ERROR {
         @Override
-        public int toCode() {
+        public byte toCode() {
             return 1;
         }
     },
@@ -27,7 +27,7 @@ public enum DnsResponseCode {
      */
     SERVER_FAILURE {
         @Override
-        public int toCode() {
+        public byte toCode() {
             return 2;
         }
     },
@@ -38,7 +38,7 @@ public enum DnsResponseCode {
      */
     NAME_ERROR {
         @Override
-        public int toCode() {
+        public byte toCode() {
             return 3;
         }
     },
@@ -48,7 +48,7 @@ public enum DnsResponseCode {
      */
     NOT_IMPLEMENTED {
         @Override
-        public int toCode() {
+        public byte toCode() {
             return 4;
         }
     },
@@ -60,7 +60,7 @@ public enum DnsResponseCode {
      */
     REFUSED {
         @Override
-        public int toCode() {
+        public byte toCode() {
             return 5;
         }
     },
@@ -70,7 +70,7 @@ public enum DnsResponseCode {
      */
     UNDEFINED {
         @Override
-        public int toCode() {
+        public byte toCode() {
             return 6;
         }
     };
@@ -79,15 +79,17 @@ public enum DnsResponseCode {
      * Returns the int value of this code
      * @return int value of this code
      */
-    public abstract int toCode();
+    public abstract byte toCode();
 
-    /**
-     *  Return the DnsOpcode correspondent to code
-     *
-     * @param code opcode int
-     * @return correspondent opcode
-     */
-    public static DnsResponseCode fromCode(int code) {
+
+    public static DnsResponseCode fromBits(boolean[] bits) {
+        byte code = 0;
+
+        code |= (bits[3] ? 1 : 0);
+        code |= (bits[2] ? 1 : 0) << 1;
+        code |= (bits[1] ? 1 : 0) << 2;
+        code |= (bits[0] ? 1 : 0) << 3;
+
         switch(code) {
             case 0:
                 return NO_ERROR;
@@ -104,6 +106,19 @@ public enum DnsResponseCode {
             default:
                 return UNDEFINED;
         }
+
+    }
+
+    public static boolean[] toBits(DnsResponseCode responseCode) {
+        boolean[] booleans = new boolean[4];
+
+        booleans[3] = ((responseCode.toCode() >> 4) & 1) != 0;
+        booleans[2] = ((responseCode.toCode() >> 5) & 1) != 0;
+        booleans[1] = ((responseCode.toCode() >> 6) & 1) != 0;
+        booleans[0] = ((responseCode.toCode() >> 7) & 1) != 0;
+
+        return booleans;
+
     }
 
 

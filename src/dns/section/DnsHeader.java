@@ -5,7 +5,6 @@ import dns.codes.DnsResponseCode;
 import utils.BitUtils;
 
 import java.nio.ByteBuffer;
-import java.text.ParseException;
 import java.util.Arrays;
 
 public class DnsHeader {
@@ -130,22 +129,16 @@ public class DnsHeader {
      * @param byteBuffer
      * @return
      */
-    public static DnsHeader parseHeader(ByteBuffer byteBuffer) throws ParseException {
-
+    public static DnsHeader parseHeader(ByteBuffer byteBuffer) {
         // get next 16 bits
         short messageId = byteBuffer.getShort();
 
         // get next 8 bits
-        boolean[] boolBuffer = BitUtils.byteToBooleanArray(byteBuffer.get());
+        boolean[] boolBuffer = BitUtils.byteToBits(byteBuffer.get());
 
         boolean query = boolBuffer[0];
 
-        int opcodeInt = BitUtils.booleanArrayToInt(Arrays.copyOfRange(boolBuffer, 1, 5));
-
-        if (opcodeInt < 0 || opcodeInt > 15)
-            throw new ParseException("Unrecognized opcode", byteBuffer.position());
-
-        DnsOpcode opcode = DnsOpcode.fromCode(opcodeInt);
+        DnsOpcode opcode = DnsOpcode.fromBits(Arrays.copyOfRange(boolBuffer, 1, 5));
 
         boolean authoritativeAnswer = boolBuffer[5];
 
@@ -154,16 +147,11 @@ public class DnsHeader {
         boolean recursionDesired = boolBuffer[7];
 
         // get next 8 bits
-        boolBuffer = BitUtils.byteToBooleanArray(byteBuffer.get());
+        boolBuffer = BitUtils.byteToBits(byteBuffer.get());
 
         boolean recursionAvailable = boolBuffer[0];
 
-        int responseCodeInt = BitUtils.booleanArrayToInt(Arrays.copyOfRange(boolBuffer, 4, 8));
-
-        if (responseCodeInt < 0 || responseCodeInt > 15)
-            throw new ParseException("Unrecognized response code", byteBuffer.position());
-
-        DnsResponseCode responseCode = DnsResponseCode.fromCode(responseCodeInt);
+        DnsResponseCode responseCode = DnsResponseCode.fromBits(Arrays.copyOfRange(boolBuffer, 4, 8));
 
         // get next 16 bits
         int nQuestions = byteBuffer.getShort();
@@ -182,9 +170,44 @@ public class DnsHeader {
 
     public void toBytes(ByteBuffer byteBuffer) {
 
+        // messageID 16 bits
         byteBuffer.putShort(messageId);
 
 
+        //   1     4                1                1              1                  1             3         4
+        // query, opcode, authoritative answer, truncation, recursion desired | recursion available, Z, response code
+
+        boolean[] bitBuffer = new boolean[8];
+
+        boolean[] opcodeBits = BitUtils.byteToBits(opcode.toCode(), 4);
+        boolean[] responseCodeBits = BitUtils.byteToBits(responseCode.toCode(), 4);
+
+        bitBuffer[0] = query;
+        bitBuffer[1] = opcodeBits[0];
+        bitBuffer[2] = opcodeBits[1];
+        bitBuffer[3] = opcodeBits[2];
+        bitBuffer[4] = opcodeBits[3];
+        bitBuffer[5] = authoritativeAnswer;
+        bitBuffer[6] = truncation;
+        bitBuffer[7] = recursionDesired;
+
+        byteBuffer.put(BitUtils.bitsToByte(bitBuffer));
+
+        bitBuffer[0] = recursionAvailable;
+        bitBuffer[1] = false;
+        bitBuffer[2] = false;
+        bitBuffer[3] = false;
+        bitBuffer[4] = responseCodeBits[0];
+        bitBuffer[5] = responseCodeBits[1];
+        bitBuffer[6] = responseCodeBits[2];
+        bitBuffer[7] = responseCodeBits[3];
+
+        byteBuffer.put(BitUtils.bitsToByte(bitBuffer));
+
+        byteBuffer.putShort((short) nQuestions);
+        byteBuffer.putShort((short) nAnswers);
+        byteBuffer.putShort((short) nAuthority);
+        byteBuffer.putShort((short) nAdditional);
 
     }
 

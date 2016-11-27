@@ -1,17 +1,19 @@
 package dns.resource_records;
 
+import java.nio.ByteBuffer;
+
 /**
  * Resource record for forward IPv4 requests
  */
-public class A implements ResourceRecord {
+public class A implements ResourceRecordData {
 
     @Override
-    public DnsResourceRecordType getType() {
-        return DnsResourceRecordType.A;
+    public void toBits(ByteBuffer byteBuffer) {
+
     }
 
     @Override
-    public int dataLength() {
+    public int length() {
         return 0;
     }
 }

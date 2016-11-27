@@ -4,49 +4,49 @@ public enum DnsResourceRecordType {
 
     A {
         @Override
-        int toCode() {
+        public short toCode() {
             return 1;
         }
     },
 
     AAAA {
         @Override
-        int toCode() {
+        public short toCode() {
             return 28;
         }
     },
 
     MX {
         @Override
-        int toCode() {
+        public short toCode() {
             return 15;
         }
     },
 
     SOA {
         @Override
-        int toCode() {
+        public short toCode() {
             return 6;
         }
     },
 
     CNAME {
         @Override
-        int toCode() {
+        public short toCode() {
             return 5;
         }
     },
 
     UNDEFINED{
         @Override
-        int toCode() {
+        public short toCode() {
             return -1;
         }
     };
 
-    abstract int toCode();
+    public abstract short toCode();
 
-    public static DnsResourceRecordType fromCode(int code) {
+    public static DnsResourceRecordType fromCode(short code) {
         switch(code) {
             case 1:
                 return A;
