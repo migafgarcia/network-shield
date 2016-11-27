@@ -20,9 +20,8 @@ public class BitUtils {
      * @return
      */
     public static boolean[] byteToBooleanArray(byte _byte) {
-        //bit = (number >> x) & 1;
         boolean[] booleanArray = new boolean[8];
-        booleanArray[7] = ((_byte >> 0) & 1) != 0;
+        booleanArray[7] = ((_byte) & 1) != 0;
         booleanArray[6] = ((_byte >> 1) & 1) != 0;
         booleanArray[5] = ((_byte >> 2) & 1) != 0;
         booleanArray[4] = ((_byte >> 3) & 1) != 0;
@@ -35,7 +34,7 @@ public class BitUtils {
 
     public static byte booleanArrayToByte(boolean[] booleanArray) {
         byte _byte = 0;
-        _byte |= (booleanArray[7] ? 1 : 0) << 0;
+        _byte |= (booleanArray[7] ? 1 : 0);
         _byte |= (booleanArray[6] ? 1 : 0) << 1;
         _byte |= (booleanArray[5] ? 1 : 0) << 2;
         _byte |= (booleanArray[4] ? 1 : 0) << 3;
