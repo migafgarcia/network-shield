@@ -7,7 +7,7 @@ public enum DnsResponseCode {
      */
     NO_ERROR {
         @Override
-        int toCode() {
+        public int toCode() {
             return 0;
         }
     },
@@ -17,7 +17,7 @@ public enum DnsResponseCode {
      */
     FORMAT_ERROR {
         @Override
-        int toCode() {
+        public int toCode() {
             return 1;
         }
     },
@@ -27,7 +27,7 @@ public enum DnsResponseCode {
      */
     SERVER_FAILURE {
         @Override
-        int toCode() {
+        public int toCode() {
             return 2;
         }
     },
@@ -38,7 +38,7 @@ public enum DnsResponseCode {
      */
     NAME_ERROR {
         @Override
-        int toCode() {
+        public int toCode() {
             return 3;
         }
     },
@@ -48,7 +48,7 @@ public enum DnsResponseCode {
      */
     NOT_IMPLEMENTED {
         @Override
-        int toCode() {
+        public int toCode() {
             return 4;
         }
     },
@@ -60,20 +60,33 @@ public enum DnsResponseCode {
      */
     REFUSED {
         @Override
-        int toCode() {
+        public int toCode() {
             return 5;
         }
     },
 
+    /**
+     * Codes not yet implemented
+     */
     UNDEFINED {
         @Override
-        int toCode() {
+        public int toCode() {
             return 6;
         }
     };
 
-    abstract int toCode();
+    /**
+     * Returns the int value of this code
+     * @return int value of this code
+     */
+    public abstract int toCode();
 
+    /**
+     *  Return the DnsOpcode correspondent to code
+     *
+     * @param code opcode int
+     * @return correspondent opcode
+     */
     public static DnsResponseCode fromCode(int code) {
         switch(code) {
             case 0:

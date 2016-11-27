@@ -1,6 +1,6 @@
-package dns.codes;
+package dns.resource_records;
 
-public enum DnsQueryClass {
+public enum DnsResourceRecordsClass {
 
     INTERNET {
         @Override
@@ -18,7 +18,7 @@ public enum DnsQueryClass {
 
     abstract int toCode();
 
-    public static DnsQueryClass fromCode(int code) {
+    public static DnsResourceRecordsClass fromCode(int code) {
         switch(code) {
             case 1:
                 return INTERNET;

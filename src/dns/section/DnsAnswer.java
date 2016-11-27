@@ -1,35 +1,40 @@
 package dns.section;
 
-import dns.codes.DnsQueryClass;
+
+import dns.resource_records.DnsResourceRecordsClass;
 import dns.resource_records.DnsResourceRecordType;
-import dns.resource_records.ResourceRecordData;
+import dns.resource_records.ResourceRecord;
+
+import java.nio.ByteBuffer;
 
 public class DnsAnswer {
+
 
     /**
      * The name being returned e.g. www or ns1.example.net If the name is in the same domain as the question then
      * typically only the host part (label) is returned, if not then a FQDN is returned.
      */
-    private String name;
+    private final String name;
 
-    /**
-     *
-     */
-    private DnsResourceRecordType type;
+    private final DnsResourceRecordType resourceRecordType;
 
-    /**
-     *
-     */
-    private DnsQueryClass queryClass;
+    private final DnsResourceRecordsClass resourceRecordsClass;
 
-    /**
-     *
-     */
-    private int ttl;
+    private final long ttl;
 
-    /**
-     *
-     */
-    private ResourceRecordData resourceRecordData;
+    private final ResourceRecord[] resourceRecords;
 
+    public DnsAnswer(String name, DnsResourceRecordType resourceRecordType, DnsResourceRecordsClass resourceRecordsClass, long ttl, ResourceRecord[] resourceRecords) {
+        this.name = name;
+        this.resourceRecordType = resourceRecordType;
+        this.resourceRecordsClass = resourceRecordsClass;
+        this.ttl = ttl;
+        this.resourceRecords = resourceRecords;
+    }
+
+    public static DnsAnswer parseAnswer(ByteBuffer byteBuffer) {
+
+
+        return null;
+    }
 }

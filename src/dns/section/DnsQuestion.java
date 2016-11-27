@@ -1,6 +1,6 @@
 package dns.section;
 
-import dns.codes.DnsQueryClass;
+import dns.resource_records.DnsResourceRecordsClass;
 import dns.resource_records.DnsResourceRecordType;
 
 import java.nio.ByteBuffer;
@@ -11,9 +11,9 @@ public class DnsQuestion {
 
     private DnsResourceRecordType resourceRecord;
 
-    private DnsQueryClass queryClass;
+    private DnsResourceRecordsClass queryClass;
 
-    public DnsQuestion(String name, DnsResourceRecordType resourceRecord, DnsQueryClass queryClass) {
+    public DnsQuestion(String name, DnsResourceRecordType resourceRecord, DnsResourceRecordsClass queryClass) {
         this.name = name;
         this.resourceRecord = resourceRecord;
         this.queryClass = queryClass;
@@ -37,7 +37,7 @@ public class DnsQuestion {
 
         short queryClassCode = byteBuffer.getShort();
 
-        DnsQueryClass queryClass = DnsQueryClass.fromCode(queryClassCode);
+        DnsResourceRecordsClass queryClass = DnsResourceRecordsClass.fromCode(queryClassCode);
 
         return new DnsQuestion(hostname.toString(), resourceRecordType, queryClass);
 
