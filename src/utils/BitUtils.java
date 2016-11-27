@@ -2,59 +2,61 @@ package utils;
 
 import java.nio.ByteBuffer;
 
+/**
+ *
+ */
 public class BitUtils {
 
     /**
      * Turns bits in a byte array to int. If size of array is bigger than 4, an overflow will occur.
      *
-     * @param byteArray The array to be converted
+     * @param bytes The array to be converted
      * @return The correspondent integer value
      */
-    public static short byteArrayToInt(byte[] byteArray) {
-        return ByteBuffer.wrap(byteArray).getShort();
+    public static short byteArrayToInt(byte[] bytes) {
+        return ByteBuffer.wrap(bytes).getShort();
     }
 
     /**
+     * Converts a byte to a boolean array in big endian order.
+     * Example:
+     *   byteToBits(13) = [false, false, false, false, true, true, false, true].
      *
-     * @param _byte
-     * @return
+     * This is equivalent of calling byteToBits(_byte, 8).
+     * @param _byte The byte to be converted
+     * @return Boolean array of size 8 representing byte
      */
-    public static boolean[] byteToBooleanArray(byte _byte) {
-        boolean[] booleanArray = new boolean[8];
-        booleanArray[7] = ((_byte) & 1) != 0;
-        booleanArray[6] = ((_byte >> 1) & 1) != 0;
-        booleanArray[5] = ((_byte >> 2) & 1) != 0;
-        booleanArray[4] = ((_byte >> 3) & 1) != 0;
-        booleanArray[3] = ((_byte >> 4) & 1) != 0;
-        booleanArray[2] = ((_byte >> 5) & 1) != 0;
-        booleanArray[1] = ((_byte >> 6) & 1) != 0;
-        booleanArray[0] = ((_byte >> 7) & 1) != 0;
-        return booleanArray;
+    public static boolean[] byteToBits(byte _byte) {
+        return byteToBits(_byte, 8);
     }
 
-    public static byte booleanArrayToByte(boolean[] booleanArray) {
+    /**
+     * Converts a byte to a boolean array in big endian order.
+     * Example:
+     *   byteToBits(13, 4) = [true, true, false, true]
+     * @param _byte The byte to be converted
+     * @param size The size of the resulting boolean array
+     * @return Boolean array of size size representing byte
+     */
+    public static boolean[] byteToBits(byte _byte, int size) {
+        boolean[] bits = new boolean[size];
+
+        for(int i = 0; i < size; i++)
+            bits[i] = ((_byte >> (size - i - 1)) & 1) != 0;
+
+        return bits;
+    }
+
+    /**
+     * Creates a byte with the value in bits. The bits size should not be larger than 8.
+     * @param bits The bits to be converted
+     * @return The byte value of bits
+     */
+    public static byte bitsToByte(boolean[] bits) {
         byte _byte = 0;
-        _byte |= (booleanArray[7] ? 1 : 0);
-        _byte |= (booleanArray[6] ? 1 : 0) << 1;
-        _byte |= (booleanArray[5] ? 1 : 0) << 2;
-        _byte |= (booleanArray[4] ? 1 : 0) << 3;
-        _byte |= (booleanArray[3] ? 1 : 0) << 4;
-        _byte |= (booleanArray[2] ? 1 : 0) << 5;
-        _byte |= (booleanArray[1] ? 1 : 0) << 6;
-        _byte |= (booleanArray[0] ? 1 : 0) << 7;
+        for(int i = 0; i < bits.length; i++)
+            _byte |= (bits[i] ? 1 : 0) << (bits.length - i - 1);
         return _byte;
-
     }
 
-    /**
-     *
-     * @param arr
-     * @return
-     */
-    public static int booleanArrayToInt(boolean[] arr){
-        int n = 0;
-        for (boolean b : arr)
-            n = (n << 1) | (b ? 1 : 0);
-        return n;
-    }
 }
