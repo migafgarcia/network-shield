@@ -1,3 +1,5 @@
+package hosts;
+
 import java.util.HashMap;
 
 public class HostsNode {
