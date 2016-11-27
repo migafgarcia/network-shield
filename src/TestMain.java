@@ -8,10 +8,10 @@ public class TestMain {
 
         byte test2 = 13;
 
-        boolean[] booleans = BitUtils.byteToBooleanArray(test2);
+        boolean[] booleans = BitUtils.byteToBits(test2);
         System.out.println(Arrays.toString(booleans));
-
-        System.out.println(BitUtils.booleanArrayToByte(booleans));
+        boolean[] test = {true, true, false, true};
+        System.out.println(BitUtils.bitsToByte(test));
 
 
 

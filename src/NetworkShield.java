@@ -1,5 +1,6 @@
+import hosts.HostsTree;
+
 import java.net.MalformedURLException;
-import java.net.URL;
 
 public class NetworkShield {
 
