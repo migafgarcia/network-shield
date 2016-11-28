@@ -1,23 +1,23 @@
 package dns;
 
-import dns.resource_records.ResourceRecord;
-import dns.section.DnsHeader;
-import dns.section.DnsQuestion;
+import dns.sections.Header;
+import dns.sections.Query;
+import dns.sections.ResourceRecord;
 
 import java.nio.ByteBuffer;
 import java.text.ParseException;
 import java.util.Arrays;
 
 public class DnsMessage {
-    private DnsHeader header;
-    private DnsQuestion[] questionSection;
+    private Header header;
+    private Query[] query;
     private ResourceRecord[] answerSection;
     private ResourceRecord[] authoritySection;
     private ResourceRecord[] additionalSection;
 
-    public DnsMessage(DnsHeader header, DnsQuestion[] questionSection, ResourceRecord[] answerSection, ResourceRecord[] authoritySection, ResourceRecord[] additionalSection) {
+    public DnsMessage(Header header, Query[] query, ResourceRecord[] answerSection, ResourceRecord[] authoritySection, ResourceRecord[] additionalSection) {
         this.header = header;
-        this.questionSection = questionSection;
+        this.query = query;
         this.answerSection = answerSection;
         this.authoritySection = authoritySection;
         this.additionalSection = additionalSection;
@@ -25,15 +25,15 @@ public class DnsMessage {
 
     public static DnsMessage parseMessage(ByteBuffer byteBuffer) throws ParseException {
 
-        DnsHeader header = DnsHeader.parseHeader(byteBuffer);
+        Header header = Header.parseHeader(byteBuffer);
 
-        DnsQuestion[] questions = new DnsQuestion[header.getnQuestions()];
+        Query[] questions = new Query[header.getnQuestions()];
         ResourceRecord[] answers = new ResourceRecord[header.getnAnswers()];
         ResourceRecord[] authority = new ResourceRecord[header.getnAuthority()];
         ResourceRecord[] additional = new ResourceRecord[header.getnAdditional()];
 
         for(int i = 0; i < header.getnQuestions(); i++)
-            questions[i] = DnsQuestion.parseQuestion(byteBuffer);
+            questions[i] = Query.parseQuestion(byteBuffer);
 
         for(int i = 0; i < header.getnAnswers(); i++)
             answers[i] = ResourceRecord.parseResourceRecord(byteBuffer);
@@ -51,7 +51,7 @@ public class DnsMessage {
     public String toString() {
         return "DnsMessage{" +
                 "header=" + header.toString() +
-                ", questionSection=" + Arrays.toString(questionSection) +
+                ", query=" + Arrays.toString(query) +
                 ", answerSection=" + Arrays.toString(answerSection) +
                 ", authoritySection=" + Arrays.toString(authoritySection) +
                 ", additionalSection=" + Arrays.toString(additionalSection) +

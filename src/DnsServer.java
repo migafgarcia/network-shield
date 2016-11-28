@@ -1,12 +1,8 @@
 import dns.DnsMessage;
-import dns.section.DnsHeader;
-import dns.section.DnsQuestion;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
-import java.net.SocketAddress;
 import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
 import java.nio.channels.*;
 import java.text.ParseException;
 import java.util.Iterator;

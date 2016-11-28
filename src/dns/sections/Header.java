@@ -1,4 +1,4 @@
-package dns.section;
+package dns.sections;
 
 import dns.codes.DnsOpcode;
 import dns.codes.DnsResponseCode;
@@ -7,7 +7,7 @@ import utils.BitUtils;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
 
-public class DnsHeader {
+public class Header {
 
     // Text source: http://www.zytrax.com/books/dns/ch15/
 
@@ -29,7 +29,7 @@ public class DnsHeader {
 
     /**
      * Authoritative Answer. Valid in responses only. Because of aliases multiple owners may exists so the AA bit
-     * corresponds to the name which matches the query name, OR the first owner name in the answer section.
+     * corresponds to the name which matches the query name, OR the first owner name in the answer sections.
      */
     private final boolean authoritativeAnswer;
 
@@ -95,7 +95,7 @@ public class DnsHeader {
      * @param nAuthority
      * @param nAdditional
      */
-    public DnsHeader(short messageId, boolean query, DnsOpcode opcode, boolean authoritativeAnswer, boolean truncation, boolean recursionDesired, boolean recursionAvailable, DnsResponseCode responseCode, int nQuestions, int nAnswers, int nAuthority, int nAdditional) {
+    public Header(short messageId, boolean query, DnsOpcode opcode, boolean authoritativeAnswer, boolean truncation, boolean recursionDesired, boolean recursionAvailable, DnsResponseCode responseCode, int nQuestions, int nAnswers, int nAuthority, int nAdditional) {
         this.messageId = messageId;
         this.query = query;
         this.opcode = opcode;
@@ -129,7 +129,7 @@ public class DnsHeader {
      * @param byteBuffer
      * @return
      */
-    public static DnsHeader parseHeader(ByteBuffer byteBuffer) {
+    public static Header parseHeader(ByteBuffer byteBuffer) {
         // get next 16 bits
         short messageId = byteBuffer.getShort();
 
@@ -165,7 +165,7 @@ public class DnsHeader {
         // get next 16 bits
         int nAdditional = byteBuffer.getShort();
 
-        return new DnsHeader(messageId, query, opcode, authoritativeAnswer, truncation, recursionDesired, recursionAvailable, responseCode, nQuestions, nAnswers, nAuthority, nAdditional);
+        return new Header(messageId, query, opcode, authoritativeAnswer, truncation, recursionDesired, recursionAvailable, responseCode, nQuestions, nAnswers, nAuthority, nAdditional);
     }
 
     public void toBytes(ByteBuffer byteBuffer) {
@@ -261,7 +261,7 @@ public class DnsHeader {
 
     @Override
     public String toString() {
-        return "DnsHeader{" +
+        return "Header{" +
                 "messageId=" + messageId +
                 ", query=" + query +
                 ", opcode=" + opcode +

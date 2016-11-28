@@ -1,4 +1,4 @@
-package dns.section;
+package dns.sections;
 
 import dns.resource_records.DnsResourceRecordClass;
 import dns.resource_records.DnsResourceRecordType;
@@ -7,7 +7,7 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class DnsQuestion {
+public class Query {
 
     private String[] labels;
 
@@ -15,13 +15,13 @@ public class DnsQuestion {
 
     private DnsResourceRecordClass resourceRecordClass;
 
-    public DnsQuestion(String[] labels, DnsResourceRecordType resourceRecordType, DnsResourceRecordClass resourceRecordClass) {
+    public Query(String[] labels, DnsResourceRecordType resourceRecordType, DnsResourceRecordClass resourceRecordClass) {
         this.labels = labels;
         this.resourceRecordType = resourceRecordType;
         this.resourceRecordClass = resourceRecordClass;
     }
 
-    public static DnsQuestion parseQuestion(ByteBuffer byteBuffer) {
+    public static Query parseQuestion(ByteBuffer byteBuffer) {
         byte labelSize;
 
         StringBuilder current = new StringBuilder();
@@ -45,7 +45,7 @@ public class DnsQuestion {
 
         DnsResourceRecordClass queryClass = DnsResourceRecordClass.fromCode(queryClassCode);
 
-        return new DnsQuestion(labels, resourceRecordType, queryClass);
+        return new Query(labels, resourceRecordType, queryClass);
 
     }
 
@@ -70,7 +70,7 @@ public class DnsQuestion {
 
     @Override
     public String toString() {
-        return "\nDnsQuestion{" +
+        return "\nQuery{" +
                 "labels='" + Arrays.toString(labels) + '\'' +
                 ", resourceRecordType=" + resourceRecordType +
                 ", resourceRecordClass=" + resourceRecordClass +

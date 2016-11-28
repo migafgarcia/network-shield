@@ -1,6 +1,8 @@
-package dns.resource_records;
+package dns.sections;
 
-
+import dns.resource_records.DnsResourceRecordClass;
+import dns.resource_records.DnsResourceRecordType;
+import dns.resource_records.ResourceRecordData;
 import utils.BitUtils;
 
 import java.nio.ByteBuffer;
@@ -78,6 +80,26 @@ public class ResourceRecord {
 
         return new ResourceRecord(labels, resourceRecordType, queryClass, ttl, length, resourceRecordData);
 
+    }
+
+    public void toBytes(ByteBuffer byteBuffer) {
+
+        for(String label : labels) {
+            byteBuffer.put((byte) label.length()); // TODO(migafgarcia): Beware when casting - Gandalf
+            byteBuffer.put(label.getBytes());
+        }
+
+        byteBuffer.put((byte) 0);
+
+        byteBuffer.putShort(resourceRecordType.toCode());
+
+        byteBuffer.putShort(resourceRecordClass.toCode());
+
+        byteBuffer.putInt((int) ttl);
+
+        byteBuffer.putShort((short) length);
+
+        resourceRecordData.toBits(byteBuffer);
     }
 
 

@@ -21,7 +21,10 @@ public class A implements ResourceRecordData{
 
     @Override
     public void toBits(ByteBuffer byteBuffer) {
-
+        byteBuffer.put((byte) octet1);
+        byteBuffer.put((byte) octet2);
+        byteBuffer.put((byte) octet3);
+        byteBuffer.put((byte) octet4);
     }
 
 }
