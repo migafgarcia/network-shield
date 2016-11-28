@@ -1,3 +1,4 @@
+import dns.DnsMessage;
 import dns.section.DnsHeader;
 import dns.section.DnsQuestion;
 
@@ -45,9 +46,13 @@ public class DnsServer {
 
                         chan.receive(byteBuffer);
                         byteBuffer.flip();
-                        System.out.println(DnsHeader.parseHeader(byteBuffer).toString());
 
-                        System.out.println(DnsQuestion.parseQuestion(byteBuffer).toString());
+                        DnsMessage message = DnsMessage.parseMessage(byteBuffer);
+                        System.out.println(message.toString());
+
+
+
+
 
 
 
@@ -61,6 +66,8 @@ public class DnsServer {
                 }
             }
         } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
             e.printStackTrace();
         }
     }

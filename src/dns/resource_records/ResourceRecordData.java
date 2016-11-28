@@ -3,14 +3,20 @@ package dns.resource_records;
 import java.nio.ByteBuffer;
 
 /**
- * Created by mgarcia on 27-11-2016.
+ *
  */
-public abstract class ResourceRecordData {
+public interface ResourceRecordData {
+    void toBits(ByteBuffer byteBuffer);
 
-    public ResourceRecordData(int length) {
+    static ResourceRecordData parse(ByteBuffer byteBuffer, DnsResourceRecordType type) {
+
+        switch(type) {
+            case A:
+                return new A(byteBuffer.get(), byteBuffer.get(), byteBuffer.get(), byteBuffer.get());
+            default:
+                return null;
+        }
+
 
     }
-
-    abstract void toBits(ByteBuffer byteBuffer);
-    abstract int length();
 }
