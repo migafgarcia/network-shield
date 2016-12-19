@@ -1,5 +1,6 @@
 package hosts;
 
+import java.util.Collection;
 import java.util.HashMap;
 
 public class HostsNode {
@@ -8,7 +9,11 @@ public class HostsNode {
 
     public HostsNode(String authority) {
         this.authority = authority;
-        this.children = new HashMap<>();
+    }
+
+    public void addChildren() {
+        if(children == null)
+            children = new HashMap<>();
     }
 
     /**
@@ -19,6 +24,8 @@ public class HostsNode {
      * @return
      */
     public HostsNode addChildren(String authority) {
+        if(children == null)
+            children = new HashMap<>();
 
         HostsNode node = children.get(authority);
 
@@ -28,5 +35,13 @@ public class HostsNode {
         }
 
         return node;
+    }
+
+    public HashMap<String, HostsNode> getChildren() {
+        return children;
+    }
+
+    public String getAuthority() {
+        return authority;
     }
 }

@@ -1,19 +1,22 @@
-import utils.BitUtils;
 
-import java.util.Arrays;
+import java.io.BufferedReader;
+import java.io.FileReader;
+
+import hosts.HostsTree;
 
 public class TestMain {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
-        byte test2 = 13;
+        HostsTree tree = new HostsTree();
 
-        boolean[] booleans = BitUtils.byteToBits(test2);
-        System.out.println(Arrays.toString(booleans));
-        boolean[] test = {true, true, false, true};
-        System.out.println(BitUtils.bitsToByte(test));
+        try (BufferedReader br = new BufferedReader(new FileReader("blocklist.txt"))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                tree.addUrl(line);
+            }
+        }
 
-
-
+        System.out.println(tree.toString());
     }
 }

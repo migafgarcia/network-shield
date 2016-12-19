@@ -3,7 +3,7 @@ package dns.resource_records;
 import java.nio.ByteBuffer;
 
 /**
- * Created by mgarcia on 28-11-2016.
+ * Resource record that stores a 32-bit IP address
  */
 public class A implements ResourceRecordData{
 
@@ -12,6 +12,14 @@ public class A implements ResourceRecordData{
     private short octet3;
     private short octet4;
 
+    /**
+     * Constructor
+     *
+     * @param octet1
+     * @param octet2
+     * @param octet3
+     * @param octet4
+     */
     public A(short octet1, short octet2, short octet3, short octet4) {
         this.octet1 = octet1;
         this.octet2 = octet2;
@@ -26,5 +34,7 @@ public class A implements ResourceRecordData{
         byteBuffer.put((byte) octet3);
         byteBuffer.put((byte) octet4);
     }
+
+
 
 }

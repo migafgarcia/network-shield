@@ -1,27 +1,27 @@
-package dns.sections;
+package dns.section;
 
-import dns.resource_records.DnsResourceRecordClass;
-import dns.resource_records.DnsResourceRecordType;
+import dns.resource_records.ResourceRecordClass;
+import dns.resource_records.ResourceRecordType;
 
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Query {
+public class Question {
 
     private String[] labels;
 
-    private DnsResourceRecordType resourceRecordType;
+    private ResourceRecordType resourceRecordType;
 
-    private DnsResourceRecordClass resourceRecordClass;
+    private ResourceRecordClass resourceRecordClass;
 
-    public Query(String[] labels, DnsResourceRecordType resourceRecordType, DnsResourceRecordClass resourceRecordClass) {
+    public Question(String[] labels, ResourceRecordType resourceRecordType, ResourceRecordClass resourceRecordClass) {
         this.labels = labels;
         this.resourceRecordType = resourceRecordType;
         this.resourceRecordClass = resourceRecordClass;
     }
 
-    public static Query parseQuestion(ByteBuffer byteBuffer) {
+    public static Question parseQuestion(ByteBuffer byteBuffer) {
         byte labelSize;
 
         StringBuilder current = new StringBuilder();
@@ -39,13 +39,13 @@ public class Query {
 
         short resourceRecordTypeCode = byteBuffer.getShort();
 
-        DnsResourceRecordType resourceRecordType = DnsResourceRecordType.fromCode(resourceRecordTypeCode);
+        ResourceRecordType resourceRecordType = ResourceRecordType.fromCode(resourceRecordTypeCode);
 
         short queryClassCode = byteBuffer.getShort();
 
-        DnsResourceRecordClass queryClass = DnsResourceRecordClass.fromCode(queryClassCode);
+        ResourceRecordClass queryClass = ResourceRecordClass.fromCode(queryClassCode);
 
-        return new Query(labels, resourceRecordType, queryClass);
+        return new Question(labels, resourceRecordType, queryClass);
 
     }
 
@@ -68,9 +68,25 @@ public class Query {
         // TODO(migafgarcia): implement this
     }
 
+    public String getUrl() {
+        return String.join(".", labels);
+    }
+
+    public String[] getLabels() {
+        return labels;
+    }
+
+    public ResourceRecordType getResourceRecordType() {
+        return resourceRecordType;
+    }
+
+    public ResourceRecordClass getResourceRecordClass() {
+        return resourceRecordClass;
+    }
+
     @Override
     public String toString() {
-        return "\nQuery{" +
+        return "\nQuestion{" +
                 "labels='" + Arrays.toString(labels) + '\'' +
                 ", resourceRecordType=" + resourceRecordType +
                 ", resourceRecordClass=" + resourceRecordClass +

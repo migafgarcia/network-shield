@@ -1,6 +1,6 @@
 package dns.resource_records;
 
-public enum DnsResourceRecordClass {
+public enum ResourceRecordClass {
 
     INTERNET {
         @Override
@@ -18,7 +18,7 @@ public enum DnsResourceRecordClass {
 
     public abstract short toCode();
 
-    public static DnsResourceRecordClass fromCode(int code) {
+    public static ResourceRecordClass fromCode(int code) {
         switch(code) {
             case 1:
                 return INTERNET;

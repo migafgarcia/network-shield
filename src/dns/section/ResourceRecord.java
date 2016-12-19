@@ -1,7 +1,7 @@
-package dns.sections;
+package dns.section;
 
-import dns.resource_records.DnsResourceRecordClass;
-import dns.resource_records.DnsResourceRecordType;
+import dns.resource_records.ResourceRecordClass;
+import dns.resource_records.ResourceRecordType;
 import dns.resource_records.ResourceRecordData;
 import utils.BitUtils;
 
@@ -11,13 +11,13 @@ import java.util.Arrays;
 
 public class ResourceRecord {
     private String[] labels;
-    private DnsResourceRecordType resourceRecordType;
-    private DnsResourceRecordClass resourceRecordClass;
+    private ResourceRecordType resourceRecordType;
+    private ResourceRecordClass resourceRecordClass;
     private long ttl;
     private int length;
     private ResourceRecordData resourceRecordData;
 
-    public ResourceRecord(String[] labels, DnsResourceRecordType resourceRecordType, DnsResourceRecordClass resourceRecordClass, long ttl, int length, ResourceRecordData resourceRecordData) {
+    public ResourceRecord(String[] labels, ResourceRecordType resourceRecordType, ResourceRecordClass resourceRecordClass, long ttl, int length, ResourceRecordData resourceRecordData) {
         this.labels = labels;
         this.resourceRecordType = resourceRecordType;
         this.resourceRecordClass = resourceRecordClass;
@@ -66,11 +66,11 @@ public class ResourceRecord {
 
         short resourceRecordTypeCode = byteBuffer.getShort();
 
-        DnsResourceRecordType resourceRecordType = DnsResourceRecordType.fromCode(resourceRecordTypeCode);
+        ResourceRecordType resourceRecordType = ResourceRecordType.fromCode(resourceRecordTypeCode);
 
         short queryClassCode = byteBuffer.getShort();
 
-        DnsResourceRecordClass queryClass = DnsResourceRecordClass.fromCode(queryClassCode);
+        ResourceRecordClass queryClass = ResourceRecordClass.fromCode(queryClassCode);
 
         int ttl = byteBuffer.getInt();
 

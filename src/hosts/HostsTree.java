@@ -1,6 +1,8 @@
 package hosts;
 
 import java.net.MalformedURLException;
+import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.regex.Pattern;
 
 public class HostsTree {
@@ -14,8 +16,8 @@ public class HostsTree {
                     "([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\." +
                     "([01]?\\d\\d?|2[0-4]\\d|25[0-5])$";
 
+    // TODO(migafgarcia): work on this
     private static final String URL_REGEX = "(\\w+\\.)*(\\w+)\\.?";
-
 
     public HostsTree() {
         this.root = new HostsNode(".");
@@ -23,10 +25,71 @@ public class HostsTree {
 
     public void addUrl(String host) throws MalformedURLException {
 
-        if (!validateUrl(host))
-            throw new MalformedURLException(host + " is malformed");
+        //if (!validateUrl(host))
+          //  throw new MalformedURLException(host + " is malformed");
 
         HostsNode current = this.root;
+        String[] splitHost = host.split("\\.");
+
+        for(int i = splitHost.length - 1; i >= 0; i--) {
+            current = current.addChildren(splitHost[i]);
+            if(current.getChildren() != null && current.getChildren().size() == 0)
+                break;
+
+        }
+
+        /*
+         * A shorter authority was added:
+         * fgh.com was added when asd.fgh.com
+         * In that case only fgh.com remains
+         */
+
+        if(current.getChildren() == null)
+            current.addChildren();
+        else
+            current.getChildren().clear();
+    }
+
+    public String toString() {
+        return toString(root, "\n");
+    }
+
+    private String toString(HostsNode current, String currentPath) {
+
+        if(current.getChildren().size() == 0) {
+            return currentPath;
+        }
+
+        StringBuilder stringBuilder = new StringBuilder();
+
+        Iterator<HostsNode> itr = current.getChildren().values().iterator();
+
+        while(itr.hasNext()) {
+            HostsNode i = itr.next();
+            stringBuilder.append(toString(i, i.getAuthority() + "." + currentPath));
+            //stringBuilder.append('\n');
+        }
+
+        return stringBuilder.toString();
+
+    }
+
+    public boolean isBlocked(String host) {
+
+        String[] splitHost = host.split("\\.");
+
+        HostsNode current = root;
+
+
+        for(int i = splitHost.length - 1; i >= 0; i--) {
+            current = current.getChildren().get(splitHost[i]);
+            if(current == null)
+                return false;
+            else if(current.getChildren() == null || current.getChildren().size() == 0) {
+                return true;
+            }
+        }
+        return false;
 
 
     }

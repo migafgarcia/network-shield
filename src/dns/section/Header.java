@@ -1,7 +1,7 @@
-package dns.sections;
+package dns.section;
 
-import dns.codes.DnsOpcode;
-import dns.codes.DnsResponseCode;
+import dns.codes.Opcode;
+import dns.codes.QueryResponseCode;
 import utils.BitUtils;
 
 import java.nio.ByteBuffer;
@@ -18,18 +18,18 @@ public class Header {
     private final short messageId;
 
     /**
-     * Query - Response bit. Set to 0 by the questioner (query) and to 1 in the response (answer).
+     * Question - Response bit. Set to 0 by the questioner (query) and to 1 in the response (answer).
      */
     private final boolean query;
 
     /**
      * Identifies the request/operation type.
      */
-    private final DnsOpcode opcode;
+    private final Opcode opcode;
 
     /**
      * Authoritative Answer. Valid in responses only. Because of aliases multiple owners may exists so the AA bit
-     * corresponds to the name which matches the query name, OR the first owner name in the answer sections.
+     * corresponds to the name which matches the query name, OR the first owner name in the answer section.
      */
     private final boolean authoritativeAnswer;
 
@@ -55,7 +55,7 @@ public class Header {
     /**
      * Identifies the response type to the query. Ignored on a request (question).
      */
-    private final DnsResponseCode responseCode;
+    private final QueryResponseCode responseCode;
 
     /**
      * Unsigned 16 bit integer specifying the number of entries in the Question Section.
@@ -95,7 +95,7 @@ public class Header {
      * @param nAuthority
      * @param nAdditional
      */
-    public Header(short messageId, boolean query, DnsOpcode opcode, boolean authoritativeAnswer, boolean truncation, boolean recursionDesired, boolean recursionAvailable, DnsResponseCode responseCode, int nQuestions, int nAnswers, int nAuthority, int nAdditional) {
+    public Header(short messageId, boolean query, Opcode opcode, boolean authoritativeAnswer, boolean truncation, boolean recursionDesired, boolean recursionAvailable, QueryResponseCode responseCode, int nQuestions, int nAnswers, int nAuthority, int nAdditional) {
         this.messageId = messageId;
         this.query = query;
         this.opcode = opcode;
@@ -138,7 +138,7 @@ public class Header {
 
         boolean query = boolBuffer[0];
 
-        DnsOpcode opcode = DnsOpcode.fromBits(Arrays.copyOfRange(boolBuffer, 1, 5));
+        Opcode opcode = Opcode.fromBits(Arrays.copyOfRange(boolBuffer, 1, 5));
 
         boolean authoritativeAnswer = boolBuffer[5];
 
@@ -151,7 +151,7 @@ public class Header {
 
         boolean recursionAvailable = boolBuffer[0];
 
-        DnsResponseCode responseCode = DnsResponseCode.fromBits(Arrays.copyOfRange(boolBuffer, 4, 8));
+        QueryResponseCode responseCode = QueryResponseCode.fromBits(Arrays.copyOfRange(boolBuffer, 4, 8));
 
         // get next 16 bits
         int nQuestions = byteBuffer.getShort();
@@ -219,7 +219,7 @@ public class Header {
         return query;
     }
 
-    public DnsOpcode getOpcode() {
+    public Opcode getOpcode() {
         return opcode;
     }
 
@@ -239,7 +239,7 @@ public class Header {
         return recursionAvailable;
     }
 
-    public DnsResponseCode getResponseCode() {
+    public QueryResponseCode getResponseCode() {
         return responseCode;
     }
 

@@ -8,7 +8,7 @@ import java.nio.ByteBuffer;
 public interface ResourceRecordData {
     void toBits(ByteBuffer byteBuffer);
 
-    static ResourceRecordData parse(ByteBuffer byteBuffer, DnsResourceRecordType type) {
+    static ResourceRecordData parse(ByteBuffer byteBuffer, ResourceRecordType type) {
 
         switch(type) {
             case A:

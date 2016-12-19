@@ -3,7 +3,7 @@ package dns.codes;
 /**
  * Dns Opcode enum
  */
-public enum DnsOpcode {
+public enum Opcode {
 
     /**
      * Standard query
@@ -46,19 +46,19 @@ public enum DnsOpcode {
     };
 
     /**
-     * Returns the int value of this code
-     * @return int value of this code
+     * Returns the byte value of this code
+     * @return Byte value of this code
      */
     public abstract byte toCode();
 
 
     /**
-     *  Return the DnsOpcode correspondent to code
+     * Returns the correspondent opcode
      *
-     * @param bits opcode int
-     * @return correspondent opcode
+     * @param bits Opcode in bit form
+     * @return Correspondent opcode
      */
-    public static DnsOpcode fromBits(boolean[] bits) {
+    public static Opcode fromBits(boolean[] bits) {
         byte code = 0;
 
         code |= (bits[3] ? 1 : 0);
@@ -78,7 +78,13 @@ public enum DnsOpcode {
         }
     }
 
-    public static boolean[] toBits(DnsOpcode opcode) {
+    /**
+     * Converts the opcode to bit form
+     *
+     * @param opcode The opcode to convert
+     * @return The opcode in bit form
+     */
+    public static boolean[] toBits(Opcode opcode) {
         boolean[] booleans = new boolean[4];
 
         booleans[3] = ((opcode.toCode() >> 4) & 1) != 0;

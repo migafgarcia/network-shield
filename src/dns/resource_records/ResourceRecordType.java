@@ -1,6 +1,6 @@
 package dns.resource_records;
 
-public enum DnsResourceRecordType {
+public enum ResourceRecordType {
 
     A {
         @Override
@@ -46,7 +46,7 @@ public enum DnsResourceRecordType {
 
     public abstract short toCode();
 
-    public static DnsResourceRecordType fromCode(short code) {
+    public static ResourceRecordType fromCode(short code) {
         switch(code) {
             case 1:
                 return A;
