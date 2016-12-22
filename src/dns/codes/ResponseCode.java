@@ -1,6 +1,6 @@
 package dns.codes;
 
-public enum QueryResponseCode {
+public enum ResponseCode {
 
     /**
      * No error condition.
@@ -87,7 +87,7 @@ public enum QueryResponseCode {
      * @param bits Response code in bit form
      * @return Correspondent response code
      */
-    public static QueryResponseCode fromBits(boolean[] bits) {
+    public static ResponseCode fromBits(boolean[] bits) {
         byte code = 0;
 
         code |= (bits[3] ? 1 : 0);
@@ -120,7 +120,7 @@ public enum QueryResponseCode {
      * @param responseCode The response code to convert
      * @return Bit form of the response code
      */
-    public static boolean[] toBits(QueryResponseCode responseCode) {
+    public static boolean[] toBits(ResponseCode responseCode) {
         boolean[] booleans = new boolean[4];
 
         booleans[3] = ((responseCode.toCode() >> 4) & 1) != 0;

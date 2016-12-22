@@ -7,10 +7,10 @@ import java.nio.ByteBuffer;
  */
 public class A implements ResourceRecordData{
 
-    private short octet1;
-    private short octet2;
-    private short octet3;
-    private short octet4;
+    private int octet1;
+    private int octet2;
+    private int octet3;
+    private int octet4;
 
     /**
      * Constructor
@@ -20,7 +20,7 @@ public class A implements ResourceRecordData{
      * @param octet3
      * @param octet4
      */
-    public A(short octet1, short octet2, short octet3, short octet4) {
+    public A(int octet1, int octet2, int octet3, int octet4) {
         this.octet1 = octet1;
         this.octet2 = octet2;
         this.octet3 = octet3;

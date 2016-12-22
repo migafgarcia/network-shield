@@ -659,7 +659,7 @@ TXT             16 text strings
 
 3.2.3. QTYPE values
 
-QTYPE fields appear in the question part of a query.  QTYPES are a
+QTYPE fields appear in the questionSection part of a query.  QTYPES are a
 superset of TYPEs, hence all TYPEs are valid QTYPEs.  In addition, the
 following QTYPEs are defined:
 
@@ -694,7 +694,7 @@ HS              4 Hesiod [Dyer 87]
 
 3.2.5. QCLASS values
 
-QCLASS fields appear in the question section of a query.  QCLASS values
+QCLASS fields appear in the questionSection section of a query.  QCLASS values
 are a superset of CLASS values; every CLASS is a valid QCLASS.  In
 addition to CLASS values, the following QCLASSes are defined:
 
@@ -1357,9 +1357,9 @@ into 5 sections (some of which are empty in certain cases) shown below:
     +---------------------+
     |        Header       |
     +---------------------+
-    |       Question      | the question for the name server
+    |       Question      | the questionSection for the name server
     +---------------------+
-    |        Answer       | RRs answering the question
+    |        Answer       | RRs answering the questionSection
     +---------------------+
     |      Authority      | RRs pointing toward an authority
     +---------------------+
@@ -1372,15 +1372,15 @@ whether the message is a query or a response, a standard query or some
 other opcode, etc.
 
 The names of the sections after the header are derived from their use in
-standard queries.  The question section contains fields that describe a
-question to a name server.  These fields are a query type (QTYPE), a
+standard queries.  The questionSection section contains fields that describe a
+questionSection to a name server.  These fields are a query type (QTYPE), a
 query class (QCLASS), and a query domain name (QNAME).  The last three
 sections have the same format: a possibly empty list of concatenated
 resource records (RRs).  The answer section contains RRs that answer the
-question; the authority section contains RRs that point toward an
+questionSection; the authority section contains RRs that point toward an
 authoritative name server; the additional records section contains RRs
 which relate to the query, but are not strictly answers for the
-question.
+questionSection.
 
 
 
@@ -1442,7 +1442,7 @@ OPCODE          A four bit field that specifies kind of query in this
 
 AA              Authoritative Answer - this bit is valid in responses,
                 and specifies that the responding name server is an
-                authority for the domain name in question section.
+                authority for the domain name in questionSection section.
 
                 Note that the contents of the answer section may have
                 multiple owner names because of aliases.  The AA bit
@@ -1515,7 +1515,7 @@ RFC 1035        Domain Implementation and Specification    November 1987
                 6-15            Reserved for future use.
 
 QDCOUNT         an unsigned 16 bit integer specifying the number of
-                entries in the question section.
+                entries in the questionSection section.
 
 ANCOUNT         an unsigned 16 bit integer specifying the number of
                 resource records in the answer section.
@@ -1529,7 +1529,7 @@ ARCOUNT         an unsigned 16 bit integer specifying the number of
 
 4.1.2. Question section format
 
-The question section is used to carry the "question" in most queries,
+The questionSection section is used to carry the "questionSection" in most queries,
 i.e., the parameters that define what is being asked.  The section
 contains QDCOUNT (usually 1) entries, each of the following format:
 
@@ -2207,9 +2207,9 @@ might bind a domain name to a host address; the corresponding inverse
 query binds the host address to a domain name.
 
 Inverse queries take the form of a single RR in the answer section of
-the message, with an empty question section.  The owner name of the
+the message, with an empty questionSection section.  The owner name of the
 query RR and its TTL are not significant.  The response carries
-questions in the question section which identify all names possessing
+questions in the questionSection section which identify all names possessing
 the query RR WHICH THE NAME SERVER KNOWS.  Since no name server knows
 about all of the domain name space, the response can never be assumed to
 be complete.  Thus inverse queries are primarily useful for database
@@ -2229,7 +2229,7 @@ data is character.
 When a name server processes an inverse query, it either returns:
 
    1. zero, one, or multiple domain names for the specified
-      resource as QNAMEs in the question section
+      resource as QNAMEs in the questionSection section
 
 
 
@@ -2269,7 +2269,7 @@ Internet address 10.1.0.52 is shown below:
          Additional      |                 <empty>                 |
                          +-----------------------------------------+
 
-This query asks for a question whose answer is the Internet style
+This query asks for a questionSection whose answer is the Internet style
 address 10.1.0.52.  Since the owner name is not known, any domain name
 can be used as a placeholder (and is ignored).  A single octet of zero,
 signifying the root, is usually used because it minimizes the length of
@@ -2309,7 +2309,7 @@ RFC 1035        Domain Implementation and Specification    November 1987
 Note that the QTYPE in a response to an inverse query is the same as the
 TYPE field in the answer section of the inverse query.  Responses to
 inverse queries may contain multiple questions when the inverse is not
-unique.  If the question section in the response is not empty, then the
+unique.  If the questionSection section in the response is not empty, then the
 RR in the answer section is modified to correspond to be an exact copy
 of an RR at the first QNAME.
 
@@ -2542,7 +2542,7 @@ response.  This procedure should include:
 
 The next step is to match the response to a current resolver request.
 The recommended strategy is to do a preliminary matching using the ID
-field in the domain header, and then to verify that the question section
+field in the domain header, and then to verify that the questionSection section
 corresponds to the information currently desired.  This requires that
 the transmission algorithm devote several bits of the domain ID field to
 a request identifier of some sort.  This step has several fine points:

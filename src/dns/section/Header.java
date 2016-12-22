@@ -1,7 +1,7 @@
 package dns.section;
 
 import dns.codes.Opcode;
-import dns.codes.QueryResponseCode;
+import dns.codes.ResponseCode;
 import utils.BitUtils;
 
 import java.nio.ByteBuffer;
@@ -55,7 +55,7 @@ public class Header {
     /**
      * Identifies the response type to the query. Ignored on a request (question).
      */
-    private final QueryResponseCode responseCode;
+    private final ResponseCode responseCode;
 
     /**
      * Unsigned 16 bit integer specifying the number of entries in the Question Section.
@@ -95,7 +95,7 @@ public class Header {
      * @param nAuthority
      * @param nAdditional
      */
-    public Header(short messageId, boolean query, Opcode opcode, boolean authoritativeAnswer, boolean truncation, boolean recursionDesired, boolean recursionAvailable, QueryResponseCode responseCode, int nQuestions, int nAnswers, int nAuthority, int nAdditional) {
+    public Header(short messageId, boolean query, Opcode opcode, boolean authoritativeAnswer, boolean truncation, boolean recursionDesired, boolean recursionAvailable, ResponseCode responseCode, int nQuestions, int nAnswers, int nAuthority, int nAdditional) {
         this.messageId = messageId;
         this.query = query;
         this.opcode = opcode;
@@ -151,7 +151,7 @@ public class Header {
 
         boolean recursionAvailable = boolBuffer[0];
 
-        QueryResponseCode responseCode = QueryResponseCode.fromBits(Arrays.copyOfRange(boolBuffer, 4, 8));
+        ResponseCode responseCode = ResponseCode.fromBits(Arrays.copyOfRange(boolBuffer, 4, 8));
 
         // get next 16 bits
         int nQuestions = byteBuffer.getShort();
@@ -172,7 +172,6 @@ public class Header {
 
         // messageID 16 bits
         byteBuffer.putShort(messageId);
-
 
         //   1     4                1                1              1                  1             3         4
         // query, opcode, authoritative answer, truncation, recursion desired | recursion available, Z, response code
@@ -239,23 +238,23 @@ public class Header {
         return recursionAvailable;
     }
 
-    public QueryResponseCode getResponseCode() {
+    public ResponseCode getResponseCode() {
         return responseCode;
     }
 
-    public int getnQuestions() {
+    public int nQuestions() {
         return nQuestions;
     }
 
-    public int getnAnswers() {
+    public int nAnswers() {
         return nAnswers;
     }
 
-    public int getnAuthority() {
+    public int nAuthority() {
         return nAuthority;
     }
 
-    public int getnAdditional() {
+    public int nAdditional() {
         return nAdditional;
     }
 
