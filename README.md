@@ -2,8 +2,13 @@
 
 This is a simplified DNS server to filter requests according to blocklists selected by the user.
 
-When a request is received, the program consults a data structure (to define) to check if the host is blocked. If its not, the program forwards the request to the DNS server of the local network.
+## Main idea
+Local, lightweight and simplified DNS server running in background. Local machine is reconfigured to use the local DNS server as main name server, Network Shield filters incoming requests by querying a blocklist data structure and takes one of two actions:
+- If the queried address is blocked, either return localhost or NAME_ERROR
+- If the queried address is unblocked, forwards the query to either the network DNS server or one of google's servers
 
+The user gets access to a control panel where he can apply blocklists (provided by Network Shield or other users possibly), block hosts manually and view statistics on previously blocked hosts. Statistics can be disabled and blocklists can be automatically updated by Network Shield, if the user chooses so.
+Right now all the code is written in Java. 
 ## TODO list
 
  - ~~Parse Header~~
