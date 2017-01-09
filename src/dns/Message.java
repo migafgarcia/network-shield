@@ -1,20 +1,23 @@
 package dns;
 
+import dns.codes.Opcode;
+import dns.codes.ResponseCode;
 import dns.section.Header;
 import dns.section.Question;
 import dns.section.ResourceRecord;
 
 import java.nio.ByteBuffer;
 import java.util.Arrays;
+import java.util.LinkedList;
 
 public class Message {
     private Header header;
-    private Question[] questionSection;
-    private ResourceRecord[] answerSection;
-    private ResourceRecord[] authoritySection;
-    private ResourceRecord[] additionalSection;
+    private LinkedList<Question> questionSection;
+    private LinkedList<ResourceRecord> answerSection;
+    private LinkedList<ResourceRecord> authoritySection;
+    private LinkedList<ResourceRecord> additionalSection;
 
-    public Message(Header header, Question[] questionSection, ResourceRecord[] answerSection, ResourceRecord[] authoritySection, ResourceRecord[] additionalSection) {
+    public Message(Header header, LinkedList<Question> questionSection, LinkedList<ResourceRecord> answerSection, LinkedList<ResourceRecord> authoritySection, LinkedList<ResourceRecord> additionalSection) {
         this.header = header;
         this.questionSection = questionSection;
         this.answerSection = answerSection;
@@ -22,34 +25,48 @@ public class Message {
         this.additionalSection = additionalSection;
     }
 
-    public Message(Header header) {
-        this.header = header;
-        this.questionSection = new Question[header.nQuestions()];
-        this.answerSection = new ResourceRecord[header.nAnswers()];
-        this.authoritySection = new ResourceRecord[header.nAuthority()];
-        this.additionalSection = new ResourceRecord[header.nAdditional()];
+    public Message(short messageId, boolean query, Opcode opcode, boolean authoritativeAnswer, boolean truncation, boolean recursionDesired, boolean recursionAvailable, ResponseCode responseCode) {
+        this.header = new Header(
+                messageId,
+                query,
+                opcode,
+                authoritativeAnswer,
+                truncation,
+                recursionDesired,
+                recursionAvailable,
+                responseCode,
+                0,
+                0,
+                0,
+                0);
+
+        this.questionSection = new LinkedList<>();
+        this.answerSection = new LinkedList<>();
+        this.authoritySection = new LinkedList<>();
+        this.additionalSection = new LinkedList<>();
+
     }
 
     public static Message parseMessage(ByteBuffer byteBuffer) {
 
         Header header = Header.parseHeader(byteBuffer);
 
-        Question[] questions = new Question[header.nQuestions()];
-        ResourceRecord[] answers = new ResourceRecord[header.nAnswers()];
-        ResourceRecord[] authority = new ResourceRecord[header.nAuthority()];
-        ResourceRecord[] additional = new ResourceRecord[header.nAdditional()];
+        LinkedList<Question> questions = new LinkedList<>();
+        LinkedList<ResourceRecord> answers = new LinkedList<>();
+        LinkedList<ResourceRecord> authority = new LinkedList<>();
+        LinkedList<ResourceRecord> additional = new LinkedList<>();
 
         for(int i = 0; i < header.nQuestions(); i++)
-            questions[i] = Question.parseQuestion(byteBuffer);
+            questions.add(Question.fromBytes(byteBuffer));
 
         for(int i = 0; i < header.nAnswers(); i++)
-            answers[i] = ResourceRecord.parseResourceRecord(byteBuffer);
+            answers.add(ResourceRecord.fromBytes(byteBuffer));
 
         for(int i = 0; i < header.nAuthority(); i++)
-            authority[i] = ResourceRecord.parseResourceRecord(byteBuffer);
+            authority.add(ResourceRecord.fromBytes(byteBuffer));
 
         for(int i = 0; i < header.nAdditional(); i++)
-            additional[i] = ResourceRecord.parseResourceRecord(byteBuffer);
+            additional.add(ResourceRecord.fromBytes(byteBuffer));
 
         return new Message(header, questions, answers, authority, additional);
     }
@@ -58,10 +75,10 @@ public class Message {
     public String toString() {
         return "Message{" +
                 "header=" + header.toString() +
-                ", questionSection=" + Arrays.toString(questionSection) +
-                ", answerSection=" + Arrays.toString(answerSection) +
-                ", authoritySection=" + Arrays.toString(authoritySection) +
-                ", additionalSection=" + Arrays.toString(additionalSection) +
+                ", questionSection=" + Arrays.toString(questionSection.toArray()) +
+                ", answerSection=" + Arrays.toString(answerSection.toArray()) +
+                ", authoritySection=" + Arrays.toString(authoritySection.toArray()) +
+                ", additionalSection=" + Arrays.toString(additionalSection.toArray()) +
                 '}';
     }
 
@@ -70,39 +87,53 @@ public class Message {
     }
 
     public Question getQuestion(int i) {
-        return questionSection[i];
+        if(i >= 0 && i < questionSection.size())
+            return questionSection.get(i);
+        else
+            throw new IndexOutOfBoundsException("Question " + i + " doesn't exist");
     }
 
     public ResourceRecord getAnswer(int i) {
-        return answerSection[i];
+        if(i >= 0 && i < answerSection.size())
+            return answerSection.get(i);
+        else
+            throw new IndexOutOfBoundsException("Answer " + i + " doesn't exist");
     }
 
     public ResourceRecord getAuthority(int i) {
-        return authoritySection[i];
+        if(i >= 0 && i < authoritySection.size())
+            return authoritySection.get(i);
+        else
+            throw new IndexOutOfBoundsException("Authority " + i + " doesn't exist");
     }
 
     public ResourceRecord getAdditional(int i) {
-        return additionalSection[i];
+        if(i >= 0 && i < additionalSection.size())
+            return additionalSection.get(i);
+        else
+            throw new IndexOutOfBoundsException("Additional " + i + " doesn't exist");
     }
 
-    public void setQuestion(int i, Question question) {
-        if(i >= 0 && i < header.nQuestions())
-            questionSection[i] = question;
+
+
+    public void addQuestion(Question question) {
+        questionSection.add(question);
+        header.setnQuestions(questionSection.size());
     }
 
-    public void setAnswer(int i, ResourceRecord resourceRecord) {
-        if(i >= 0 && i < header.nAnswers())
-            answerSection[i] = resourceRecord;
+    public void addAnswer(ResourceRecord resourceRecord) {
+        answerSection.add(resourceRecord);
+        header.setnAnswers(answerSection.size());
     }
 
-    public void setAuthority(int i, ResourceRecord resourceRecord) {
-        if(i >= 0 && i < header.nAuthority())
-            authoritySection[i] = resourceRecord;
+    public void addAuthority(ResourceRecord resourceRecord) {
+        authoritySection.add(resourceRecord);
+        header.setnAuthority(authoritySection.size());
     }
 
-    public void setAdditional(int i, ResourceRecord resourceRecord) {
-        if(i >= 0 && i < header.nAdditional())
-            additionalSection[i] = resourceRecord;
+    public void addAdditional(ResourceRecord resourceRecord) {
+        additionalSection.add(resourceRecord);
+        header.setnAdditional(additionalSection.size());
     }
 
     public void toBytes(ByteBuffer buffer) {

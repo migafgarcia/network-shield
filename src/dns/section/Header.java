@@ -60,25 +60,25 @@ public class Header {
     /**
      * Unsigned 16 bit integer specifying the number of entries in the Question Section.
      */
-    private final int nQuestions;
+    private int nQuestions;
 
     /**
      * Unsigned 16 bit integer specifying the number of resource records in the Answer Section. May be 0 in which case
      * no answer record is present in the message.
      */
-    private final int nAnswers;
+    private int nAnswers;
 
     /**
      * Unsigned 16 bit integer specifying the number of name server resource records in the Authority Section. May be 0
      * in which case no authority record(s) is(are) present in the message.
      */
-    private final int nAuthority;
+    private int nAuthority;
 
     /**
      * Unsigned 16 bit integer specifying the number of resource records in the Additional Section. May be 0 in which
      * case no additional record(s) is(are) present in the message.
      */
-    private final int nAdditional;
+    private int nAdditional;
 
     /**
      * Default constructor
@@ -256,6 +256,22 @@ public class Header {
 
     public int nAdditional() {
         return nAdditional;
+    }
+
+    public void setnQuestions(int nQuestions) {
+        this.nQuestions = nQuestions;
+    }
+
+    public void setnAnswers(int nAnswers) {
+        this.nAnswers = nAnswers;
+    }
+
+    public void setnAuthority(int nAuthority) {
+        this.nAuthority = nAuthority;
+    }
+
+    public void setnAdditional(int nAdditional) {
+        this.nAdditional = nAdditional;
     }
 
     @Override

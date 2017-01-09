@@ -21,7 +21,7 @@ public class Question {
         this.resourceRecordClass = resourceRecordClass;
     }
 
-    public static Question parseQuestion(ByteBuffer byteBuffer) {
+    public static Question fromBytes(ByteBuffer byteBuffer) {
         byte labelSize;
 
         StringBuilder current = new StringBuilder();

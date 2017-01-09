@@ -1,11 +1,6 @@
 import dns.Message;
 import dns.codes.Opcode;
 import dns.codes.ResponseCode;
-import dns.resource_records.A;
-import dns.resource_records.ResourceRecordClass;
-import dns.resource_records.ResourceRecordType;
-import dns.section.Header;
-import dns.section.ResourceRecord;
 import hosts.HostsTree;
 
 import java.io.BufferedReader;
@@ -54,8 +49,6 @@ public class NetworkShield {
                     SelectionKey key = (SelectionKey) selectedKeys.next();
                     //selectedKeys.remove();
 
-
-
                     if (key.isReadable()) { //TODO(migafgarcia): read, parse question and store the answer
 
                         DatagramChannel chan = (DatagramChannel) key.channel();
@@ -68,44 +61,28 @@ public class NetworkShield {
 
                         System.out.println(message.getQuestion(0).getUrl());
 
-                        Header header = new Header(
+                        Message response = new Message(
                                 message.getHeader().getMessageId(),
-                                false,
+                                true,
                                 Opcode.QUERY,
                                 true,
                                 false,
                                 false,
-                                false,
-                                ResponseCode.NO_ERROR,
-                                0,
-                                1,
-                                0,
-                                0);
-
-                        Message response = new Message(header);
-
-                        // TODO(migafgarcia): preallocate this resource record
-                        response.setAnswer(0, new ResourceRecord(
-                                message.getQuestion(0).getLabels(),
-                                ResourceRecordType.A,
-                                ResourceRecordClass.INTERNET,
-                                500,
-                                32,
-                                new A(127, 0, 0, 1)
-                        ));
+                                true,
+                                ResponseCode.NAME_ERROR);
 
                         response.toBytes(responseBuffer);
+                        responseBuffer.flip();
+
                         key.interestOps(SelectionKey.OP_WRITE);
-
-
-
-
 
                     } else if (key.isWritable()) { //TODO(migafgarcia): check if we can write and if the answer has been computed and send it
                         //write(key);
                         DatagramChannel chan = (DatagramChannel) key.channel();
                         if(address != null)
                             chan.send(responseBuffer, address);
+
+                        responseBuffer.clear();
                         key.interestOps(SelectionKey.OP_READ);
 
                     }

@@ -38,7 +38,7 @@ public class ResourceRecord {
                 '}';
     }
 
-    public static ResourceRecord parseResourceRecord(ByteBuffer byteBuffer) {
+    public static ResourceRecord fromBytes(ByteBuffer byteBuffer) {
         // either the top bits are 11 (compression) or the label format
 
         byte buf = byteBuffer.get();
