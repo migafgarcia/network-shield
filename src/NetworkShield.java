@@ -10,16 +10,23 @@ import java.net.InetSocketAddress;
 import java.net.SocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.channels.*;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 
 public class NetworkShield {
 
     private static final int SERVER_PORT = 8080;
     private static final int MAX_PACKET_SIZE = 512;
 
+    private final SocketAddress GOOGLE_DNS_SERVER = new InetSocketAddress("8.8.8.8", 53);
+
     public static void main(String[] args) {
 
         try {
+
+            // Read blocklist and create HostsTree object
             HostsTree tree = new HostsTree();
 
             try (BufferedReader br = new BufferedReader(new FileReader("blocklist.txt"))) {
@@ -35,54 +42,96 @@ public class NetworkShield {
 
             channel.bind(new InetSocketAddress(SERVER_PORT));
             channel.configureBlocking(false);
-            channel.register(selector, SelectionKey.OP_READ);
+
+            SelectionKey datagramChannelKey = channel.register(selector, SelectionKey.OP_READ);
 
             System.out.println("Listening on port " + SERVER_PORT);
-            ByteBuffer responseBuffer = ByteBuffer.allocate(MAX_PACKET_SIZE);
+
+            ByteBuffer incomingBuffer = ByteBuffer.allocate(MAX_PACKET_SIZE);
+            //ByteBuffer outgoingBuffer = ByteBuffer.allocate(MAX_PACKET_SIZE);
             SocketAddress address = null;
+
+            LinkedHashMap<SocketAddress, HashSet<ByteBuffer>> outgoingMessageQueue;
+
+
+
+
+
             while (true) {
+
                 selector.select();
 
                 Iterator selectedKeys = selector.selectedKeys().iterator();
 
                 while (selectedKeys.hasNext()) {
+                    // This is
                     SelectionKey key = (SelectionKey) selectedKeys.next();
-                    //selectedKeys.remove();
 
-                    if (key.isReadable()) { //TODO(migafgarcia): read, parse question and store the answer
+                    /*
+                     * 1 - A new request was received (key must equal datagramChannelKey)
+                     * 2 - A response from google's dns server was received
+                     */
+                    if (key.isReadable()) {
 
-                        DatagramChannel chan = (DatagramChannel) key.channel();
-                        ByteBuffer byteBuffer = ByteBuffer.allocate(MAX_PACKET_SIZE);
+                        DatagramChannel currentChannel = (DatagramChannel) key.channel();
 
-                        address = chan.receive(byteBuffer);
-                        byteBuffer.flip();
+                        incomingBuffer.clear();
 
-                        Message message = Message.parseMessage(byteBuffer);
+                        // 1 - A new request was received (key must equal datagramChannelKey)
+                        if(key.equals(datagramChannelKey)) {
+                            System.out.println("NEW REQUEST");
 
-                        System.out.println(message.getQuestion(0).getUrl());
+                            SocketAddress sender = currentChannel.receive(incomingBuffer);
+                            incomingBuffer.flip();
+                            Message message = Message.parseMessage(incomingBuffer);
 
-                        Message response = new Message(
-                                message.getHeader().getMessageId(),
-                                true,
-                                Opcode.QUERY,
-                                true,
-                                false,
-                                false,
-                                true,
-                                ResponseCode.NAME_ERROR);
+                            if(tree.isBlocked(message.getQuestion(0).getUrl())) {
+                                Message response = new Message(
+                                        message.getHeader().getMessageId(),
+                                        true,
+                                        Opcode.QUERY,
+                                        true,
+                                        false,
+                                        false,
+                                        true,
+                                        ResponseCode.NAME_ERROR);
+                            }
+                            else {
 
-                        response.toBytes(responseBuffer);
-                        responseBuffer.flip();
+                            }
+
+                        }
+                        else {
+
+                        }
+
+
+
+
+
+
+
+
+
+
+                        //response.toBytes(responseBuffer);
+                        outgoingBuffer.flip();
+
+                        DatagramChannel datagramChannel = DatagramChannel.open();
+
+                        datagramChannel.configureBlocking(false);
+                        datagramChannel.register(selector, SelectionKey.OP_WRITE);
 
                         key.interestOps(SelectionKey.OP_WRITE);
 
                     } else if (key.isWritable()) { //TODO(migafgarcia): check if we can write and if the answer has been computed and send it
                         //write(key);
+
                         DatagramChannel chan = (DatagramChannel) key.channel();
                         if(address != null)
-                            chan.send(responseBuffer, address);
+                            chan.send(outgoingBuffer, address);
 
-                        responseBuffer.clear();
+                        outgoingBuffer.clear();
                         key.interestOps(SelectionKey.OP_READ);
 
                     }
