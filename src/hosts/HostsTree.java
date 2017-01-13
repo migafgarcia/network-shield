@@ -8,6 +8,7 @@ import java.util.regex.Pattern;
 public class HostsTree {
 
     private HostsNode root;
+    private int size;
 
     // IP regex from http://www.mkyong.com/regular-expressions/how-to-validate-ip-address-with-regular-expression/
     private static final String IP_REGEX =
@@ -21,6 +22,7 @@ public class HostsTree {
 
     public HostsTree() {
         this.root = new HostsNode(".");
+        this.size = 0;
     }
 
     public void addUrl(String host) throws MalformedURLException {
@@ -48,6 +50,8 @@ public class HostsTree {
             current.addChildren();
         else
             current.getChildren().clear();
+
+        size++;
     }
 
     public String toString() {
@@ -92,6 +96,10 @@ public class HostsTree {
         return false;
 
 
+    }
+
+    public int getSize() {
+        return size;
     }
 
     private static boolean validateUrl(String host) {
