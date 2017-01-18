@@ -21,7 +21,7 @@ public class NetworkShield {
     private static final int SERVER_PORT = 8080;
     private static final int MAX_PACKET_SIZE = 512;
 
-    private static final SocketAddress DNS_SERVER = new InetSocketAddress("8.8.8.8", 53);
+    private static final SocketAddress DNS_SERVER = new InetSocketAddress("192.168.1.1", 53);
 
     public static void main(String[] args) {
 
@@ -67,6 +67,9 @@ public class NetworkShield {
 
 
             while (true) {
+
+                System.out.println("recursiveRequestsQueue: " + recursiveRequestsQueue.size());
+                System.out.println("responseQueue: " + responseQueue.size());
 
                 selector.select();
 
@@ -135,6 +138,8 @@ public class NetworkShield {
 
                             }
 
+                            key.interestOps(SelectionKey.OP_WRITE);
+
                         }
                         // 2 - A response from google's dns server was received
                         else {
@@ -147,11 +152,17 @@ public class NetworkShield {
 
                             WriteMessage m = recursiveRequestsQueue.remove(key);
 
-                            responseQueue.add(new WriteMessage(key, m.getAddress(), responseBuffer));
+                            m.setBuffer(responseBuffer);
+
+                            responseQueue.add(m);
+
+                            key.cancel();
+
+                            datagramChannelKey.interestOps(SelectionKey.OP_WRITE);
 
                         }
 
-                        key.interestOps(SelectionKey.OP_WRITE);
+
 
 
                     } else if (key.isWritable()) { //TODO(migafgarcia): check if we can write and if the answer has been computed and send it
@@ -169,8 +180,14 @@ public class NetworkShield {
                             Iterator<WriteMessage> itr = recursiveRequestsQueue.values().iterator();
 
                             while(itr.hasNext()) {
+
                                 WriteMessage m = itr.next();
-                                currentChannel.send(m.getBuffer(), DNS_SERVER);
+                                if(!m.isSent()) {
+                                    currentChannel.send(m.getBuffer(), DNS_SERVER);
+                                    System.out.println("Recursive request sent");
+                                }
+
+                                m.setSent(true);
                             }
 
                         }

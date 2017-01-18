@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Network Shield.iml" filepath="$PROJECT_DIR$/Network Shield.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Network Shield.iml" filepath="$PROJECT_DIR$/.idea/modules/Network Shield.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Network_Shield_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Network_Shield_main.iml" group="Network Shield" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Network_Shield_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Network_Shield_test.iml" group="Network Shield" />
     </modules>
   </component>
 </project>
