@@ -6,12 +6,14 @@
  - ~~Generate header message~~
  - ~~Generate questionSection section message~~
  - ~~Create data structure (probably a tree) to store and query blacklisted hostnames OR use SQL database (simpler)~~
- - Generate Answer, Authority and Additional sections message
- - Add logging
- - Client management
- - Create responses or query local name server to get a response and forward it to the client
+ - Generate Answer, Authority and Additional sections message (is this really needed?)
+ - Add logging (library added, logging in progress)
+ - ~~Client management~~
+ - ~~Create responses or query local name server to get a response and forward it to the client~~
  - Make the program more robust to errors and failures
- - Add unit testing
+ - Obtain machine DNS server in first run
+ - Add unit testing (library added, logging in progress)
+ - Deployment
  - Test and profiling to make the program faster, much faster
  - Read RFC to find problems with this architecture
  - Investigate best library to make a GUI (JavaFX, Swing, a web page, etc) (this client would have to be a separate program that communicates with the main program)
