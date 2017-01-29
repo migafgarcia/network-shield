@@ -5,5 +5,7 @@ repositories {
 }
 
 dependencies {
+    compile 'org.slf4j:slf4j-simple:1.7.22'
     testCompile 'junit:junit:4.12'
+
 }
