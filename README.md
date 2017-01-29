@@ -8,4 +8,10 @@ Local, lightweight and simplified DNS server running in background. Local machin
 - If the queried address is unblocked, forwards the query to either the network DNS server or one of google's servers
 
 The user gets access to a control panel where he can apply blocklists (provided by Network Shield or other users possibly), block hosts manually and view statistics on previously blocked hosts. Statistics can be disabled and blocklists can be automatically updated by Network Shield, if the user chooses so.
-Right now all the code is written in Java.
+
+## Why Java?
+
+ - It is the language I'm most comfortable with ¯\_(ツ)_/¯
+ - I aim to get a job programming in Java in the future
+ - It offers me some robustness for free, which I like very much
+ - Big community
