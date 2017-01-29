@@ -11,7 +11,7 @@ The user gets access to a control panel where he can apply blocklists (provided 
 
 ## Why Java?
 
- - It is the language I'm most comfortable with ¯\_(ツ)_/¯
+ - It is the language I'm most comfortable with ¯\\\_(ツ)_/¯
  - I aim to get a job programming in Java in the future
  - It offers me some robustness for free, which I like very much
  - Big community
