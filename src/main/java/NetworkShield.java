@@ -21,7 +21,9 @@ public class NetworkShield {
     private static final int SERVER_PORT = 8080;
     private static final int MAX_PACKET_SIZE = 512;
 
-    private static final SocketAddress DNS_SERVER = new InetSocketAddress("192.168.1.1", 53);
+    private static final SocketAddress DNS_SERVER = new InetSocketAddress("127.0.1.1", 53);
+
+
 
     public static void main(String[] args) {
 
@@ -52,32 +54,29 @@ public class NetworkShield {
 
             Selector selector = Selector.open();
 
-            DatagramChannel channel = DatagramChannel.open();
-            channel.bind(new InetSocketAddress(SERVER_PORT));
-            channel.configureBlocking(false);
+            DatagramChannel serverChannel = DatagramChannel.open();
+            serverChannel.bind(new InetSocketAddress(SERVER_PORT));
+            serverChannel.configureBlocking(false);
 
-            SelectionKey datagramChannelKey = channel.register(selector, SelectionKey.OP_READ);
+            SelectionKey serverChannelKey = serverChannel.register(selector, SelectionKey.OP_READ);
 
             System.out.println("Listening on port " + SERVER_PORT);
 
-            ByteBuffer incomingBuffer = ByteBuffer.allocate(MAX_PACKET_SIZE);
+            ByteBuffer buffer = ByteBuffer.allocate(MAX_PACKET_SIZE);
 
-            HashMap<SelectionKey, WriteMessage> recursiveRequestsQueue = new HashMap<>();
-            Queue<WriteMessage> responseQueue = new LinkedList<>();
+            HashMap<SelectionKey,SocketAddress> recursiveRequests = new HashMap<>();
 
 
             while (true) {
-
-                System.out.println("recursiveRequestsQueue: " + recursiveRequestsQueue.size());
-                System.out.println("responseQueue: " + responseQueue.size());
 
                 selector.select();
 
                 Iterator selectedKeys = selector.selectedKeys().iterator();
 
                 while (selectedKeys.hasNext()) {
-                    // This is
                     SelectionKey key = (SelectionKey) selectedKeys.next();
+
+                    DatagramChannel currentChannel = (DatagramChannel) key.channel();
 
                     /*
                      * 1 - A new request was received (key must equal datagramChannelKey)
@@ -85,24 +84,26 @@ public class NetworkShield {
                      */
                     if (key.isReadable()) {
 
-                        DatagramChannel currentChannel = (DatagramChannel) key.channel();
-
-                        incomingBuffer.clear();
+                        buffer.clear();
 
                         // 1 - A new request was received (key must equal datagramChannelKey)
-                        if (key.equals(datagramChannelKey)) {
-                            System.out.print("NEW REQUEST");
+                        if (key.equals(serverChannelKey)) {
+                            System.out.println("NEW REQUEST");
 
-                            SocketAddress sender = currentChannel.receive(incomingBuffer);
-                            incomingBuffer.flip();
-                            Message message = Message.parseMessage(incomingBuffer);
+                            SocketAddress sender = currentChannel.receive(buffer);
+
+                            buffer.flip();
+
+                            Message message = Message.parseMessage(buffer);
+
+                            System.out.println(message.toString());
 
                             // A new request for a blocked url, the channel is set to write mode
                             if (tree.isBlocked(message.getQuestion(0).getUrl())) {
 
-                                System.out.println(" BLOCKED");
+                                System.out.println("BLOCKED");
 
-                                Message response = new Message(
+                                Message blockedResponse = new Message(
                                         message.getHeader().getMessageId(),
                                         true,
                                         Opcode.QUERY,
@@ -113,52 +114,51 @@ public class NetworkShield {
                                         ResponseCode.NAME_ERROR);
 
                                 ByteBuffer responseBuffer = ByteBuffer.allocate(MAX_PACKET_SIZE);
-                                response.toBytes(responseBuffer);
+                                blockedResponse.toBytes(responseBuffer);
                                 responseBuffer.flip();
-                                responseQueue.add(new WriteMessage(key, sender, responseBuffer));
+
+                                currentChannel.send(responseBuffer, sender);
+
                             }
                             // A request needs to be recursively resolved
                             else {
-                                System.out.println(" NOT BLOCKED");
+                                System.out.println("UNBLOCKED");
 
-                                DatagramChannel recursiveRequestChannel = DatagramChannel.open();
+                                DatagramChannel datagramChannel = DatagramChannel.open();
+                                datagramChannel.configureBlocking(false);
 
-                                recursiveRequestChannel.configureBlocking(false);
+                                datagramChannel.connect(DNS_SERVER);
 
-                                SelectionKey recursiveRequestKey = recursiveRequestChannel.register(selector, SelectionKey.OP_WRITE);
 
-                                ByteBuffer recursiveBuffer = ByteBuffer.allocate(incomingBuffer.capacity());
+                                SelectionKey recursiveKey = datagramChannel.register(selector, SelectionKey.OP_READ);
+                                buffer.flip();
+                                datagramChannel.write(buffer);
 
-                                incomingBuffer.rewind();
-                                recursiveBuffer.put(incomingBuffer);
-                                incomingBuffer.rewind();
-                                recursiveBuffer.flip();
+                                recursiveRequests.put(recursiveKey, sender);
 
-                                recursiveRequestsQueue.put(recursiveRequestKey, new WriteMessage(recursiveRequestKey, sender, recursiveBuffer));
+                                //recursiveKey.interestOps(SelectionKey.OP_READ);
 
                             }
 
-                            key.interestOps(SelectionKey.OP_WRITE);
+                            key.interestOps(SelectionKey.OP_READ);
+
+
 
                         }
                         // 2 - A response from google's dns server was received
                         else {
                             System.out.println("RECURSIVE REQUEST RECEIVED");
 
-                            ByteBuffer responseBuffer = ByteBuffer.allocate(MAX_PACKET_SIZE);
+                            DatagramChannel recursiveChannel = (DatagramChannel) key.channel();
 
-                            currentChannel.receive(responseBuffer);
-                            responseBuffer.flip();
+                            ByteBuffer byteBuffer = ByteBuffer.allocate(MAX_PACKET_SIZE);
 
-                            WriteMessage m = recursiveRequestsQueue.remove(key);
+                            SocketAddress dest = recursiveRequests.remove(key);
+                            recursiveChannel.read(byteBuffer);
+                            byteBuffer.flip();
 
-                            m.setBuffer(responseBuffer);
 
-                            responseQueue.add(m);
-
-                            key.cancel();
-
-                            datagramChannelKey.interestOps(SelectionKey.OP_WRITE);
+                            serverChannel.send(byteBuffer, dest);
 
                         }
 
@@ -166,37 +166,14 @@ public class NetworkShield {
 
 
                     } else if (key.isWritable()) { //TODO(migafgarcia): check if we can write and if the answer has been computed and send it
-                        //write(key);
 
-                        DatagramChannel currentChannel = (DatagramChannel) key.channel();
-
-                        if (key.equals(datagramChannelKey)) {
-                            while (responseQueue.size() > 0) {
-                                System.out.println("Response sent");
-                                WriteMessage m = responseQueue.remove();
-                                currentChannel.send(m.getBuffer(), m.getAddress());
-                            }
-                        } else {
-                            Iterator<WriteMessage> itr = recursiveRequestsQueue.values().iterator();
-
-                            while(itr.hasNext()) {
-
-                                WriteMessage m = itr.next();
-                                if(!m.isSent()) {
-                                    currentChannel.send(m.getBuffer(), DNS_SERVER);
-                                    System.out.println("Recursive request sent");
-                                }
-
-                                m.setSent(true);
-                            }
-
-                        }
-
+                        System.out.println("NO");
 
                         key.interestOps(SelectionKey.OP_READ);
 
                     }
 
+                    selectedKeys.remove();
 
                 }
             }
