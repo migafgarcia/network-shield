@@ -21,7 +21,7 @@ import java.util.Iterator;
 
 public class NetworkShield {
 
-    private static final int SERVER_PORT = 8080;
+    private static final int SERVER_PORT = 53;
     private static final int MAX_PACKET_SIZE = 512;
 
     private static final SocketAddress DNS_SERVER = new InetSocketAddress("8.8.8.8", 53);
@@ -138,7 +138,7 @@ public class NetworkShield {
                             }
                             // A request needs to be recursively resolved
                             else {
-                                logger.info("ID: " + message.getHeader().getMessageId() +  " - Request for " + url + ": blocked");
+                                logger.info("ID: " + message.getHeader().getMessageId() +  " - Request for " + url + ": unblocked");
 
                                 DatagramChannel datagramChannel = DatagramChannel.open();
                                 datagramChannel.configureBlocking(false);
