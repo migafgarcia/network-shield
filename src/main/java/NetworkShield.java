@@ -24,7 +24,7 @@ public class NetworkShield {
     private static final int SERVER_PORT = 8080;
     private static final int MAX_PACKET_SIZE = 512;
 
-    private static final SocketAddress DNS_SERVER = new InetSocketAddress("127.0.1.1", 53);
+    private static final SocketAddress DNS_SERVER = new InetSocketAddress("8.8.8.8", 53);
 
     private static final Logger logger = LoggerFactory.getLogger(NetworkShield.class);
 
@@ -101,7 +101,7 @@ public class NetworkShield {
 
 
                         if (key.equals(serverChannelKey)) {
-                            System.out.println("NEW REQUEST");
+
 
                             SocketAddress sender = currentChannel.receive(buffer);
 
@@ -109,12 +109,15 @@ public class NetworkShield {
 
                             Message message = Message.parseMessage(buffer);
 
-                            System.out.println(message.toString());
+
+
+                            logger.debug(message.toString());
+
+                            String url = message.getQuestion(0).getUrl();
 
                             // A new request for a blocked url, the channel is set to write mode
-                            if (blocklist.isBlocked(message.getQuestion(0).getUrl())) {
-
-                                System.out.println("BLOCKED");
+                            if (blocklist.isBlocked(url)) {
+                                logger.info("ID: " + message.getHeader().getMessageId() +  " - Request for " + url + ": blocked");
 
                                 Message blockedResponse = new Message(
                                         message.getHeader().getMessageId(),
@@ -135,7 +138,7 @@ public class NetworkShield {
                             }
                             // A request needs to be recursively resolved
                             else {
-                                System.out.println("UNBLOCKED");
+                                logger.info("ID: " + message.getHeader().getMessageId() +  " - Request for " + url + ": blocked");
 
                                 DatagramChannel datagramChannel = DatagramChannel.open();
                                 datagramChannel.configureBlocking(false);
@@ -145,6 +148,7 @@ public class NetworkShield {
 
                                 SelectionKey recursiveKey = datagramChannel.register(selector, SelectionKey.OP_READ);
                                 buffer.flip();
+                                logger.info("ID: " + message.getHeader().getMessageId() + " - Relaying request to " + DNS_SERVER.toString());
                                 datagramChannel.write(buffer);
 
                                 recursiveRequests.put(recursiveKey, sender);
@@ -160,7 +164,7 @@ public class NetworkShield {
                         }
                         // 2 - A response from google's dns server was received
                         else {
-                            System.out.println("RECURSIVE REQUEST RECEIVED");
+                            logger.info("Recursive request received");
 
                             DatagramChannel recursiveChannel = (DatagramChannel) key.channel();
 
@@ -180,7 +184,7 @@ public class NetworkShield {
 
                     } else if (key.isWritable()) { //TODO(migafgarcia): check if we can write and if the answer has been computed and send it
 
-                        System.out.println("NO");
+                        logger.warn("Socket should be in read mode");
 
                         key.interestOps(SelectionKey.OP_READ);
 

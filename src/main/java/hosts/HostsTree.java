@@ -8,6 +8,8 @@ import java.util.regex.Pattern;
 public class HostsTree {
 
     private HostsNode root;
+
+    // TODO(migafgarcia): calculated size is wrong
     private int size;
 
     // IP regex from http://www.mkyong.com/regular-expressions/how-to-validate-ip-address-with-regular-expression/
@@ -35,8 +37,11 @@ public class HostsTree {
 
         for(int i = splitHost.length - 1; i >= 0; i--) {
             current = current.addChildren(splitHost[i]);
-            if(current.getChildren() != null && current.getChildren().size() == 0)
+            if(current.getChildren() != null && current.getChildren().size() == 0) {
+                size++;
                 break;
+            }
+
 
         }
 
@@ -51,7 +56,7 @@ public class HostsTree {
         else
             current.getChildren().clear();
 
-        size++;
+
     }
 
     public String toString() {

@@ -2,15 +2,15 @@ package hosts;
 
 import java.util.HashMap;
 
-public class HostsNode {
+class HostsNode {
     private String authority;
     private HashMap<String, HostsNode> children;
 
-    public HostsNode(String authority) {
+    HostsNode(String authority) {
         this.authority = authority;
     }
 
-    public void addChildren() {
+    void addChildren() {
         if(children == null)
             children = new HashMap<>();
     }
@@ -22,25 +22,18 @@ public class HostsNode {
      * @param authority
      * @return
      */
-    public HostsNode addChildren(String authority) {
+    HostsNode addChildren(String authority) {
         if(children == null)
             children = new HashMap<>();
 
-        HostsNode node = children.get(authority);
-
-        if (node == null) {
-            node = new HostsNode(authority);
-            children.put(authority, node);
-        }
-
-        return node;
+        return children.computeIfAbsent(authority, k -> new HostsNode(authority));
     }
 
-    public HashMap<String, HostsNode> getChildren() {
+    HashMap<String, HostsNode> getChildren() {
         return children;
     }
 
-    public String getAuthority() {
+    String getAuthority() {
         return authority;
     }
 }
