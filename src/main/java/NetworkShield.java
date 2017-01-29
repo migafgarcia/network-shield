@@ -1,10 +1,14 @@
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import dns.Message;
 import dns.codes.Opcode;
 import dns.codes.ResponseCode;
 import hosts.HostsTree;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -13,8 +17,7 @@ import java.nio.ByteBuffer;
 import java.nio.channels.*;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Queue;
+
 
 public class NetworkShield {
 
@@ -23,34 +26,42 @@ public class NetworkShield {
 
     private static final SocketAddress DNS_SERVER = new InetSocketAddress("127.0.1.1", 53);
 
+    private static final Logger logger = LoggerFactory.getLogger(NetworkShield.class);
 
 
     public static void main(String[] args) {
 
+        logger.info("Starting NetworkShield");
+
         try {
 
             // Read blocklist and create HostsTree object
-            HostsTree tree = new HostsTree();
+            HostsTree blocklist = new HostsTree();
 
-            int i = 0;
+            File blocklistDirectory = new File("blocklists");
 
-            try (BufferedReader br = new BufferedReader(new FileReader("blocklists/trackers.txt"))) {
-                String line;
-                while ((line = br.readLine()) != null) {
-                    tree.addUrl(line);
-                    i++;
+            if(!blocklistDirectory.isDirectory()) {
+                logger.error("Invalid blocklist directory: " + blocklistDirectory.getAbsolutePath());
+                System.exit(0);
+            }
+
+            File[] blocklistFiles = blocklistDirectory.listFiles();
+            if(blocklistFiles == null) {
+                logger.error("Error listing blocklists directory: " + blocklistDirectory.getAbsolutePath());
+                System.exit(0);
+            }
+
+            for(File blocklistFile : blocklistFiles) {
+                logger.info("Loading file: " + blocklistFile.getAbsolutePath());
+                try (BufferedReader br = new BufferedReader(new FileReader(blocklistFile))) {
+                    String line;
+                    while ((line = br.readLine()) != null) {
+                        blocklist.addUrl(line);
+                    }
                 }
             }
 
-            try (BufferedReader br = new BufferedReader(new FileReader("blocklists/unifiedhosts_fakenews_gambling_porn_social.txt"))) {
-                String line;
-                while ((line = br.readLine()) != null) {
-                    tree.addUrl(line);
-                    i++;
-                }
-            }
-
-            System.out.println("MAIN SIZE: " + i + " TREE SIZE: " + tree.getSize());
+            logger.info("Loaded blocklist with size: " + blocklist.getSize());
 
             Selector selector = Selector.open();
 
@@ -60,7 +71,7 @@ public class NetworkShield {
 
             SelectionKey serverChannelKey = serverChannel.register(selector, SelectionKey.OP_READ);
 
-            System.out.println("Listening on port " + SERVER_PORT);
+            logger.info("Listening on port " + SERVER_PORT);
 
             ByteBuffer buffer = ByteBuffer.allocate(MAX_PACKET_SIZE);
 
@@ -87,6 +98,8 @@ public class NetworkShield {
                         buffer.clear();
 
                         // 1 - A new request was received (key must equal datagramChannelKey)
+
+
                         if (key.equals(serverChannelKey)) {
                             System.out.println("NEW REQUEST");
 
@@ -99,7 +112,7 @@ public class NetworkShield {
                             System.out.println(message.toString());
 
                             // A new request for a blocked url, the channel is set to write mode
-                            if (tree.isBlocked(message.getQuestion(0).getUrl())) {
+                            if (blocklist.isBlocked(message.getQuestion(0).getUrl())) {
 
                                 System.out.println("BLOCKED");
 
@@ -179,6 +192,8 @@ public class NetworkShield {
             }
         } catch (IOException e) {
             e.printStackTrace();
+            logger.error(e.getMessage());
         }
     }
+
 }

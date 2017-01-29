@@ -153,4 +153,20 @@ public class Message {
                 r.toBytes(buffer);
 
     }
+
+    public LinkedList<Question> getQuestionSection() {
+        return questionSection;
+    }
+
+    public LinkedList<ResourceRecord> getAnswerSection() {
+        return answerSection;
+    }
+
+    public LinkedList<ResourceRecord> getAuthoritySection() {
+        return authoritySection;
+    }
+
+    public LinkedList<ResourceRecord> getAdditionalSection() {
+        return additionalSection;
+    }
 }
