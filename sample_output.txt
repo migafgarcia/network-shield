@@ -1,0 +1,75 @@
+[main] INFO NetworkShield - Starting NetworkShield
+[main] INFO NetworkShield - Loading file: /home/mgarcia/Network Shield/blocklists/hosts3.txt
+[main] INFO NetworkShield - Loading file: /home/mgarcia/Network Shield/blocklists/unifiedhosts_fakenews_gambling_porn_social.txt
+[main] INFO NetworkShield - Loading file: /home/mgarcia/Network Shield/blocklists/hosts6.txt
+[main] INFO NetworkShield - Loading file: /home/mgarcia/Network Shield/blocklists/hosts4.txt
+[main] INFO NetworkShield - Loading file: /home/mgarcia/Network Shield/blocklists/hosts11.txt
+[main] INFO NetworkShield - Loading file: /home/mgarcia/Network Shield/blocklists/hosts5.txt
+[main] INFO NetworkShield - Loading file: /home/mgarcia/Network Shield/blocklists/trackers.txt
+[main] INFO NetworkShield - Loading file: /home/mgarcia/Network Shield/blocklists/hosts7.txt
+[main] INFO NetworkShield - Loading file: /home/mgarcia/Network Shield/blocklists/KADhosts.txt
+[main] INFO NetworkShield - Loading file: /home/mgarcia/Network Shield/blocklists/hosts9.txt
+[main] INFO NetworkShield - Loading file: /home/mgarcia/Network Shield/blocklists/hosts2.txt
+[main] INFO NetworkShield - Loading file: /home/mgarcia/Network Shield/blocklists/hosts1.txt
+[main] INFO NetworkShield - Loading file: /home/mgarcia/Network Shield/blocklists/unifiedhosts_fakenews_gambling.txt
+[main] INFO NetworkShield - Loading file: /home/mgarcia/Network Shield/blocklists/hosts8.txt
+[main] INFO NetworkShield - Loading file: /home/mgarcia/Network Shield/blocklists/hosts12.txt
+[main] INFO NetworkShield - Loading file: /home/mgarcia/Network Shield/blocklists/hosts10.txt
+[main] INFO NetworkShield - Loaded blocklist with size: 92138
+[main] INFO NetworkShield - Listening on port 53
+[main] INFO NetworkShield - ID: 15331 - Request for github.com: unblocked
+[main] INFO NetworkShield - ID: 15331 - Relaying request to /8.8.8.8:53
+[main] INFO NetworkShield - Recursive request received
+[main] INFO NetworkShield - ID: -15720 - Request for live.github.com: unblocked
+[main] INFO NetworkShield - ID: -15720 - Relaying request to /8.8.8.8:53
+[main] INFO NetworkShield - Recursive request received
+[main] INFO NetworkShield - ID: -17157 - Request for out.reddit.com: unblocked
+[main] INFO NetworkShield - ID: -17157 - Relaying request to /8.8.8.8:53
+[main] INFO NetworkShield - Recursive request received
+[main] INFO NetworkShield - ID: -25329 - Request for b.thumbs.redditmedia.com: unblocked
+[main] INFO NetworkShield - ID: -25329 - Relaying request to /8.8.8.8:53
+[main] INFO NetworkShield - Recursive request received
+[main] INFO NetworkShield - ID: 9127 - Request for github.com: unblocked
+[main] INFO NetworkShield - ID: 9127 - Relaying request to /8.8.8.8:53
+[main] INFO NetworkShield - ID: -2864 - Request for github.com: unblocked
+[main] INFO NetworkShield - ID: -2864 - Relaying request to /8.8.8.8:53
+[main] INFO NetworkShield - Recursive request received
+[main] INFO NetworkShield - Recursive request received
+[main] INFO NetworkShield - ID: 8686 - Request for i.redditmedia.com: unblocked
+[main] INFO NetworkShield - ID: 8686 - Relaying request to /8.8.8.8:53
+[main] INFO NetworkShield - Recursive request received
+[main] INFO NetworkShield - ID: 20673 - Request for api.imgur.com: unblocked
+[main] INFO NetworkShield - ID: 20673 - Relaying request to /8.8.8.8:53
+[main] INFO NetworkShield - ID: -8727 - Request for gfycat.com: unblocked
+[main] INFO NetworkShield - ID: -8727 - Relaying request to /8.8.8.8:53
+[main] INFO NetworkShield - Recursive request received
+[main] INFO NetworkShield - Recursive request received
+[main] INFO NetworkShield - ID: 28494 - Request for ssl.gstatic.com: unblocked
+[main] INFO NetworkShield - ID: 28494 - Relaying request to /8.8.8.8:53
+[main] INFO NetworkShield - Recursive request received
+[main] INFO NetworkShield - ID: -32740 - Request for www.facebook.com: blocked
+[main] INFO NetworkShield - ID: 3333 - Request for www.facebook.com: blocked
+[main] INFO NetworkShield - ID: -22528 - Request for www.facebook.com: blocked
+[main] INFO NetworkShield - ID: -22528 - Request for www.facebook.com: blocked
+[main] INFO NetworkShield - ID: 14651 - Request for www.facebook.com: blocked
+[main] INFO NetworkShield - ID: -2258 - Request for www.facebook.com.home: unblocked
+[main] INFO NetworkShield - ID: -2258 - Relaying request to /8.8.8.8:53
+[main] INFO NetworkShield - Recursive request received
+[main] INFO NetworkShield - ID: 17830 - Request for google.com: unblocked
+[main] INFO NetworkShield - ID: 17830 - Relaying request to /8.8.8.8:53
+[main] INFO NetworkShield - Recursive request received
+[main] INFO NetworkShield - ID: -24568 - Request for www.facebook.com: blocked
+[main] INFO NetworkShield - ID: -14525 - Request for www.facebook.com: blocked
+[main] INFO NetworkShield - ID: 14651 - Request for www.facebook.com: blocked
+[main] INFO NetworkShield - ID: 31481 - Request for www.facebook.com.home: unblocked
+[main] INFO NetworkShield - ID: 31481 - Relaying request to /8.8.8.8:53
+[main] INFO NetworkShield - Recursive request received
+[main] INFO NetworkShield - ID: 3717 - Request for github.com: unblocked
+[main] INFO NetworkShield - ID: 3717 - Relaying request to /8.8.8.8:53
+[main] INFO NetworkShield - ID: 31766 - Request for github.com: unblocked
+[main] INFO NetworkShield - ID: 31766 - Relaying request to /8.8.8.8:53
+[main] INFO NetworkShield - ID: -369 - Request for api.github.com: unblocked
+[main] INFO NetworkShield - ID: -369 - Relaying request to /8.8.8.8:53
+[main] INFO NetworkShield - Recursive request received
+[main] INFO NetworkShield - Recursive request received
+[main] INFO NetworkShield - Recursive request received
