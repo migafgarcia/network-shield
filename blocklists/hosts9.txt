@@ -11,10 +11,10 @@ dobre-programy.pl
 www.canuck-method.com
 external.stealthedeal.com
 goodblock.gladly.io
-help.evernote.com  ## browser add-in misbehaviour
+help.evernote.com
 mackeeperapp.zeobit.com
 montrealgazette.stats.com
-fgoogle.com # misspelling
+fgoogle.com
 hosted.stats.com
 hosted.stats.com.edgesuite.net
 howupdateworks.amazingupdates4youtoday.website
@@ -34,10 +34,10 @@ rereddit.com
 s.zkcdn.net
 specialsections.siteseer.ca
 stealthedeal.com
-tags.news.com.au  # thanks, @ValbonneConsulting
+tags.news.com.au
 torrenty-org.pl
-twitter.cm    # common misspelling
-ttwitter.com    # common misspelling and, besides, scumbags there.
+twitter.cm
+ttwitter.com
 virtual.thewhig.com
 www.dobre-programy.pl
 www.quickcash-system.com
