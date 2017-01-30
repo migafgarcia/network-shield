@@ -9,9 +9,6 @@ public class HostsTree {
 
     private HostsNode root;
 
-    // TODO(migafgarcia): calculated size is wrong
-    private int size;
-
     // IP regex from http://www.mkyong.com/regular-expressions/how-to-validate-ip-address-with-regular-expression/
     private static final String IP_REGEX =
             "^([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\." +
@@ -24,11 +21,11 @@ public class HostsTree {
 
     public HostsTree() {
         this.root = new HostsNode(".");
-        this.size = 0;
     }
 
     public void addUrl(String host) throws MalformedURLException {
 
+        // TODO(migafgarcia): improve regex and parser
         //if (!validateUrl(host))
           //  throw new MalformedURLException(host + " is malformed");
 
@@ -38,11 +35,8 @@ public class HostsTree {
         for(int i = splitHost.length - 1; i >= 0; i--) {
             current = current.addChildren(splitHost[i]);
             if(current.getChildren() != null && current.getChildren().size() == 0) {
-                size++;
                 break;
             }
-
-
         }
 
         /*
@@ -51,11 +45,11 @@ public class HostsTree {
          * In that case only fgh.com remains
          */
 
+
         if(current.getChildren() == null)
             current.addChildren();
         else
             current.getChildren().clear();
-
 
     }
 
@@ -101,10 +95,6 @@ public class HostsTree {
         return false;
 
 
-    }
-
-    public int getSize() {
-        return size;
     }
 
     private static boolean validateUrl(String host) {

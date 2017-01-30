@@ -61,7 +61,7 @@ public class NetworkShield {
                 }
             }
 
-            logger.info("Loaded blocklist with size: " + blocklist.getSize());
+            logger.info("Loaded blocklist");
 
             Selector selector = Selector.open();
 
