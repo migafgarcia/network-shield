@@ -15,6 +15,7 @@ import java.net.InetSocketAddress;
 import java.net.SocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.channels.*;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 
@@ -23,6 +24,7 @@ public class NetworkShield {
 
     private static final int SERVER_PORT = 53;
     private static final int MAX_PACKET_SIZE = 512;
+    private static final long TIMEOUT_MS = 10000;
 
     private static final SocketAddress DNS_SERVER = new InetSocketAddress("8.8.8.8", 53);
 
@@ -31,39 +33,51 @@ public class NetworkShield {
 
     public static void main(String[] args) {
 
+        logger.debug("asdasdasd");
+
+        System.out.println(Arrays.toString(new File(".").list()));
+
         logger.info("Starting NetworkShield");
 
-        try {
 
-            // Read blocklist and create HostsTree object
-            HostsTree blocklist = new HostsTree();
+        // Read blocklist and create HostsTree object
+        HostsTree blocklist = new HostsTree();
 
-            File blocklistDirectory = new File("blocklists");
+        File blocklistDirectory = new File("blocklists");
 
-            if(!blocklistDirectory.isDirectory()) {
-                logger.error("Invalid blocklist directory: " + blocklistDirectory.getAbsolutePath());
-                System.exit(0);
-            }
+        if (!blocklistDirectory.isDirectory()) {
+            logger.error("Invalid blocklist directory: " + blocklistDirectory.getAbsolutePath());
+            System.exit(0);
+        }
 
-            File[] blocklistFiles = blocklistDirectory.listFiles();
-            if(blocklistFiles == null) {
-                logger.error("Error listing blocklists directory: " + blocklistDirectory.getAbsolutePath());
-                System.exit(0);
-            }
+        File[] blocklistFiles = blocklistDirectory.listFiles();
+        if (blocklistFiles == null) {
+            logger.error("Error listing blocklists directory: " + blocklistDirectory.getAbsolutePath());
+            System.exit(0);
+        }
 
-            for(File blocklistFile : blocklistFiles) {
-                logger.info("Loading file: " + blocklistFile.getAbsolutePath());
-                try (BufferedReader br = new BufferedReader(new FileReader(blocklistFile))) {
-                    String line;
-                    while ((line = br.readLine()) != null) {
-                        blocklist.addUrl(line);
-                    }
+        for (File blocklistFile : blocklistFiles) {
+            logger.info("Loading file: " + blocklistFile.getAbsolutePath());
+            try (BufferedReader br = new BufferedReader(new FileReader(blocklistFile))) {
+                String line;
+                while ((line = br.readLine()) != null) {
+                    blocklist.addUrl(line);
                 }
+            } catch (IOException e) {
+                e.printStackTrace();
+                logger.error(e.getMessage());
             }
+        }
 
-            logger.info("Loaded blocklist");
+        long usage = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
+        logger.info("MEM: " + usage + "");
 
-            Selector selector = Selector.open();
+        logger.info("Loaded blocklist");
+
+        Selector selector;
+        try {
+            selector = Selector.open();
+
 
             DatagramChannel serverChannel = DatagramChannel.open();
             serverChannel.bind(new InetSocketAddress(SERVER_PORT));
@@ -75,12 +89,14 @@ public class NetworkShield {
 
             ByteBuffer buffer = ByteBuffer.allocate(MAX_PACKET_SIZE);
 
-            HashMap<SelectionKey,SocketAddress> recursiveRequests = new HashMap<>();
-
+            HashMap<SelectionKey, RecursiveRequest> recursiveRequests = new HashMap<>();
 
             while (true) {
 
                 selector.select();
+                usage = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
+                logger.info("MEM: " +  usage + " bytes");
+
 
                 Iterator selectedKeys = selector.selectedKeys().iterator();
 
@@ -110,14 +126,13 @@ public class NetworkShield {
                             Message message = Message.parseMessage(buffer);
 
 
-
                             logger.debug(message.toString());
 
                             String url = message.getQuestion(0).getUrl();
 
                             // A new request for a blocked url, the channel is set to write mode
                             if (blocklist.isBlocked(url)) {
-                                logger.info("ID: " + message.getHeader().getMessageId() +  " - Request for " + url + ": blocked");
+                                logger.info("ID: " + message.getHeader().getMessageId() + " - Request for " + url + ": blocked");
 
                                 Message blockedResponse = new Message(
                                         message.getHeader().getMessageId(),
@@ -138,7 +153,7 @@ public class NetworkShield {
                             }
                             // A request needs to be recursively resolved
                             else {
-                                logger.info("ID: " + message.getHeader().getMessageId() +  " - Request for " + url + ": unblocked");
+                                logger.info("ID: " + message.getHeader().getMessageId() + " - Request for " + url + ": unblocked");
 
                                 DatagramChannel datagramChannel = DatagramChannel.open();
                                 datagramChannel.configureBlocking(false);
@@ -151,7 +166,8 @@ public class NetworkShield {
                                 logger.info("ID: " + message.getHeader().getMessageId() + " - Relaying request to " + DNS_SERVER.toString());
                                 datagramChannel.write(buffer);
 
-                                recursiveRequests.put(recursiveKey, sender);
+                                recursiveRequests.put(recursiveKey,
+                                        new RecursiveRequest(message.getHeader().getMessageId(), recursiveKey, sender, System.currentTimeMillis()));
 
                                 //recursiveKey.interestOps(SelectionKey.OP_READ);
 
@@ -160,17 +176,19 @@ public class NetworkShield {
                             key.interestOps(SelectionKey.OP_READ);
 
 
-
                         }
                         // 2 - A response from google's dns server was received
                         else {
-                            logger.info("Recursive request received");
+
 
                             DatagramChannel recursiveChannel = (DatagramChannel) key.channel();
 
                             ByteBuffer byteBuffer = ByteBuffer.allocate(MAX_PACKET_SIZE);
 
-                            SocketAddress dest = recursiveRequests.remove(key);
+                            RecursiveRequest recursiveRequest = recursiveRequests.remove(key);
+                            logger.info("ID: " + recursiveRequest.getMessageId() + " - Recursive request received");
+
+                            SocketAddress dest = recursiveRequest.getSender();
                             recursiveChannel.read(byteBuffer);
                             byteBuffer.flip();
 
@@ -178,8 +196,6 @@ public class NetworkShield {
                             serverChannel.send(byteBuffer, dest);
 
                         }
-
-
 
 
                     } else if (key.isWritable()) { //TODO(migafgarcia): check if we can write and if the answer has been computed and send it
@@ -190,14 +206,25 @@ public class NetworkShield {
 
                     }
 
+
                     selectedKeys.remove();
 
                 }
+
+                // Passively remove recursive requests with more than TIMEOUT_MS ms
+                long delta = System.currentTimeMillis() - TIMEOUT_MS;
+
+                recursiveRequests.values().removeIf(recursiveRequest -> recursiveRequest.getTimestamp() < delta);
+
+                logger.info("REC: " + recursiveRequests.values().toString());
             }
+
+
         } catch (IOException e) {
             e.printStackTrace();
             logger.error(e.getMessage());
         }
+
     }
 
 }

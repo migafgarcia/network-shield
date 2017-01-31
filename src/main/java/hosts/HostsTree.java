@@ -1,8 +1,6 @@
 package hosts;
 
 import java.net.MalformedURLException;
-import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.regex.Pattern;
 
 public class HostsTree {
@@ -17,7 +15,8 @@ public class HostsTree {
                     "([01]?\\d\\d?|2[0-4]\\d|25[0-5])$";
 
     // TODO(migafgarcia): work on this
-    private static final String URL_REGEX = "(\\w+\\.)*(\\w+)\\.?";
+    //private static final String URL_REGEX = "^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\\-]*[a-zA-Z0-9])\\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\\-]*[A-Za-z0-9])$";
+    private static final String URL_REGEX = "^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\\-]*[a-zA-Z0-9])\\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\\-]*[A-Za-z0-9])$";
 
     public HostsTree() {
         this.root = new HostsNode(".");
@@ -65,10 +64,7 @@ public class HostsTree {
 
         StringBuilder stringBuilder = new StringBuilder();
 
-        Iterator<HostsNode> itr = current.getChildren().values().iterator();
-
-        while(itr.hasNext()) {
-            HostsNode i = itr.next();
+        for (HostsNode i : current.getChildren().values()) {
             stringBuilder.append(toString(i, i.getAuthority() + "." + currentPath));
             //stringBuilder.append('\n');
         }
