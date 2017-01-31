@@ -7,7 +7,9 @@
  - ~~Generate questionSection section message~~
  - ~~Create data structure (probably a tree) to store and query blacklisted hostnames OR use SQL database (simpler)~~
  - Generate Answer, Authority and Additional sections message (is this really needed?)
- - Add logging (library added, logging in progress)
+ - ~~Add logging (library added, logging in progress)~~
+ - Add options to not output queries (privacy)
+ - Clients that query blocked hosts tend to requery many times after
  - ~~Client management~~
  - ~~Create responses or query local name server to get a response and forward it to the client~~
  - Make the program more robust to errors and failures
@@ -24,3 +26,4 @@
  - Implement compression into parser
  - Fail over mechanism: Implement TCP
  - Implement packets bigger than 512 bytes into parser
+ - IPv6 support
