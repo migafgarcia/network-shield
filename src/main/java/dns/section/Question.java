@@ -3,7 +3,10 @@ package dns.section;
 import dns.resource_records.ResourceRecordClass;
 import dns.resource_records.ResourceRecordType;
 
+import java.nio.BufferOverflowException;
+import java.nio.BufferUnderflowException;
 import java.nio.ByteBuffer;
+import java.nio.ReadOnlyBufferException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -21,7 +24,7 @@ public class Question {
         this.resourceRecordClass = resourceRecordClass;
     }
 
-    public static Question fromBytes(ByteBuffer byteBuffer) {
+    public static Question fromBytes(ByteBuffer byteBuffer) throws BufferUnderflowException {
         byte labelSize;
 
         StringBuilder current = new StringBuilder();
@@ -49,7 +52,7 @@ public class Question {
 
     }
 
-    public void toBytes(ByteBuffer byteBuffer) {
+    public void toBytes(ByteBuffer byteBuffer) throws BufferOverflowException, ReadOnlyBufferException {
 
         for(String label : labels) {
             byteBuffer.put((byte) label.length()); // TODO(migafgarcia): Beware when casting - Gandalf

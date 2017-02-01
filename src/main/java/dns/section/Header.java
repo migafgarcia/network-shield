@@ -4,7 +4,10 @@ import dns.codes.Opcode;
 import dns.codes.ResponseCode;
 import utils.BitUtils;
 
+import java.nio.BufferOverflowException;
+import java.nio.BufferUnderflowException;
 import java.nio.ByteBuffer;
+import java.nio.ReadOnlyBufferException;
 import java.util.Arrays;
 
 public class Header {
@@ -129,7 +132,7 @@ public class Header {
      * @param byteBuffer
      * @return
      */
-    public static Header parseHeader(ByteBuffer byteBuffer) {
+    public static Header parseHeader(ByteBuffer byteBuffer) throws BufferUnderflowException {
         // get next 16 bits
         short messageId = byteBuffer.getShort();
 
@@ -168,7 +171,7 @@ public class Header {
         return new Header(messageId, query, opcode, authoritativeAnswer, truncation, recursionDesired, recursionAvailable, responseCode, nQuestions, nAnswers, nAuthority, nAdditional);
     }
 
-    public void toBytes(ByteBuffer byteBuffer) {
+    public void toBytes(ByteBuffer byteBuffer) throws BufferOverflowException, ReadOnlyBufferException {
 
         // messageID 16 bits
         byteBuffer.putShort(messageId);

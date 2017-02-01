@@ -6,7 +6,6 @@ import dns.Message;
 import dns.codes.Opcode;
 import dns.codes.ResponseCode;
 import hosts.HostsTree;
-import settings.Settings;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -14,9 +13,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.SocketAddress;
+import java.nio.BufferUnderflowException;
 import java.nio.ByteBuffer;
 import java.nio.channels.*;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 
@@ -34,12 +33,9 @@ public class NetworkShield {
 
     public static void main(String[] args) {
 
-
-        System.out.println(Arrays.toString(new File(".").list()));
-
         logger.info("Starting NetworkShield");
 
-
+        logger.info(System.getProperties().toString());
         // Read blocklist and create HostsTree object
         HostsTree blocklist = new HostsTree();
 
@@ -70,32 +66,37 @@ public class NetworkShield {
         }
 
         long usage = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
-        logger.info("MEM: " + usage + "");
 
         logger.info("Loaded blocklist");
 
-        Selector selector;
+        Selector selector = null;
+        DatagramChannel serverChannel = null;
+        SelectionKey serverChannelKey = null;
+        ByteBuffer buffer = ByteBuffer.allocate(MAX_PACKET_SIZE);
+        HashMap<SelectionKey, RecursiveRequest> recursiveRequests = new HashMap<>();
+
         try {
             selector = Selector.open();
 
-
-            DatagramChannel serverChannel = DatagramChannel.open();
+            serverChannel = DatagramChannel.open();
             serverChannel.bind(new InetSocketAddress(SERVER_PORT));
             serverChannel.configureBlocking(false);
 
-            SelectionKey serverChannelKey = serverChannel.register(selector, SelectionKey.OP_READ);
+            serverChannelKey = serverChannel.register(selector, SelectionKey.OP_READ);
 
             logger.info("Listening on port " + SERVER_PORT);
 
-            ByteBuffer buffer = ByteBuffer.allocate(MAX_PACKET_SIZE);
 
-            HashMap<SelectionKey, RecursiveRequest> recursiveRequests = new HashMap<>();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.exit(0);
+        }
+        while (true) {
 
-            while (true) {
-
+            try {
                 selector.select();
                 usage = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
-                logger.info("MEM: " +  usage + " bytes");
+                logger.info("MEM: " + usage / 1048576 + " MB");
 
 
                 Iterator selectedKeys = selector.selectedKeys().iterator();
@@ -217,12 +218,9 @@ public class NetworkShield {
                 recursiveRequests.values().removeIf(recursiveRequest -> recursiveRequest.getTimestamp() < delta);
 
                 logger.info("REC: " + recursiveRequests.values().toString());
+            } catch (BufferUnderflowException | IOException e) {
+                e.printStackTrace();
             }
-
-
-        } catch (IOException e) {
-            e.printStackTrace();
-            logger.error(e.getMessage());
         }
 
     }
