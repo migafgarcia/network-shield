@@ -6,6 +6,7 @@ import dns.Message;
 import dns.codes.Opcode;
 import dns.codes.ResponseCode;
 import hosts.HostsTree;
+import settings.Settings;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -33,7 +34,6 @@ public class NetworkShield {
 
     public static void main(String[] args) {
 
-        logger.debug("asdasdasd");
 
         System.out.println(Arrays.toString(new File(".").list()));
 
