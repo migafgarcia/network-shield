@@ -19,7 +19,7 @@
 
  - Add options to not output queries (privacy)
 
- - Clients that query blocked hosts tend to requery many times after
+ - Clients that query blocked hosts tend to re-query many times after
 
  - ~~Client management~~
 
@@ -30,6 +30,8 @@
  - Obtain machine DNS server in first run
 
  - Add unit testing (library added, logging in progress)
+
+ - Run application as daemon/service
 
  - Deployment
    
