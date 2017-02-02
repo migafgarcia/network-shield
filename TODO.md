@@ -33,6 +33,8 @@
 
  - Run application as daemon/service
 
+ - Implement whitelist (either have 2 lists and search whitelist first, of remove whitelisted hosts from the generated blocklist)
+
  - Deployment
    
      - DEB package
