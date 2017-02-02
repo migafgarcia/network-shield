@@ -137,7 +137,7 @@ public class Header {
         short messageId = byteBuffer.getShort();
 
         // get next 8 bits
-        boolean[] boolBuffer = BitUtils.byteToBits(byteBuffer.get());
+        boolean[] boolBuffer = BitUtils.intToBits(byteBuffer.get());
 
         boolean query = boolBuffer[0];
 
@@ -150,7 +150,7 @@ public class Header {
         boolean recursionDesired = boolBuffer[7];
 
         // get next 8 bits
-        boolBuffer = BitUtils.byteToBits(byteBuffer.get());
+        boolBuffer = BitUtils.intToBits(byteBuffer.get());
 
         boolean recursionAvailable = boolBuffer[0];
 
@@ -181,8 +181,8 @@ public class Header {
 
         boolean[] bitBuffer = new boolean[8];
 
-        boolean[] opcodeBits = BitUtils.byteToBits(opcode.toCode(), 4);
-        boolean[] responseCodeBits = BitUtils.byteToBits(responseCode.toCode(), 4);
+        boolean[] opcodeBits = BitUtils.intToBits(opcode.opcode(), 4);
+        boolean[] responseCodeBits = BitUtils.intToBits(responseCode.responseCode(), 4);
 
         bitBuffer[0] = query;
         bitBuffer[1] = opcodeBits[0];

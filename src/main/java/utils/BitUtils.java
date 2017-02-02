@@ -20,29 +20,29 @@ public class BitUtils {
     /**
      * Converts a byte to a boolean array in big endian order.
      * Example:
-     *   byteToBits(13) = [false, false, false, false, true, true, false, true].
+     *   intToBits(13) = [false, false, false, false, true, true, false, true].
      *
-     * This is equivalent of calling byteToBits(_byte, 8).
-     * @param _byte The byte to be converted
+     * This is equivalent of calling intToBits(_byte, 8).
+     * @param _int The byte to be converted
      * @return Boolean array of size 8 representing byte
      */
-    public static boolean[] byteToBits(byte _byte) {
-        return byteToBits(_byte, 8);
+    public static boolean[] intToBits(int _int) {
+        return intToBits(_int, 8);
     }
 
     /**
      * Converts a byte to a boolean array in big endian order.
      * Example:
-     *   byteToBits(13, 4) = [true, true, false, true]
-     * @param _byte The byte to be converted
+     *   intToBits(13, 4) = [true, true, false, true]
+     * @param _int The int to be converted
      * @param size The size of the resulting boolean array
      * @return Boolean array of size size representing byte
      */
-    public static boolean[] byteToBits(byte _byte, int size) {
+    public static boolean[] intToBits(int _int, int size) {
         boolean[] bits = new boolean[size];
 
         for(int i = 0; i < size; i++)
-            bits[i] = ((_byte >> (size - i - 1)) & 1) != 0;
+            bits[i] = ((_int >> (size - i - 1)) & 1) != 0;
 
         return bits;
     }

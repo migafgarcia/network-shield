@@ -43,7 +43,7 @@ public class ResourceRecord {
 
         byte buf = byteBuffer.get();
 
-        boolean[] bitBuffer = BitUtils.byteToBits(buf);
+        boolean[] bitBuffer = BitUtils.intToBits(buf);
 
         // pointer format
         if(bitBuffer[0] && bitBuffer[1]) {

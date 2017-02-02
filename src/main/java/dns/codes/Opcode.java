@@ -1,56 +1,26 @@
 package dns.codes;
 
 /**
- * Dns Opcode enum
+ *
  */
 public enum Opcode {
 
-    /**
-     * Standard query
-     */
-    QUERY {
-        @Override
-        public byte toCode() {
-            return 0;
-        }
-    },
+    QUERY (0),
+    IQUERY (1),
+    STATUS (2),
+    UNDEFINED (3),
+    NOTIFY (4),
+    UPDATE (5);
 
-    /**
-     * Inverse query
-     */
-    IQUERY {
-        @Override
-        public byte toCode() {
-            return 1;
-        }
-    },
+    private final int opcode;
 
-    /**
-     * DNS status request
-     */
-    STATUS {
-        @Override
-        public byte toCode() {
-            return 2;
-        }
-    },
+    Opcode(int opcode) {
+        this.opcode = opcode;
+    }
 
-    /**
-     * Codes not yet implemented
-     */
-    UNDEFINED {
-        @Override
-        public byte toCode() {
-            return 3;
-        }
-    };
-
-    /**
-     * Returns the byte value of this code
-     * @return Byte value of this code
-     */
-    public abstract byte toCode();
-
+    public int opcode() {
+        return opcode;
+    }
 
     /**
      * Returns the correspondent opcode
@@ -73,6 +43,10 @@ public enum Opcode {
                 return IQUERY;
             case 2:
                 return STATUS;
+            case 4:
+                return NOTIFY;
+            case 5:
+                return UPDATE;
             default:
                 return UNDEFINED;
         }
@@ -87,14 +61,13 @@ public enum Opcode {
     public static boolean[] toBits(Opcode opcode) {
         boolean[] booleans = new boolean[4];
 
-        booleans[3] = ((opcode.toCode() >> 4) & 1) != 0;
-        booleans[2] = ((opcode.toCode() >> 5) & 1) != 0;
-        booleans[1] = ((opcode.toCode() >> 6) & 1) != 0;
-        booleans[0] = ((opcode.toCode() >> 7) & 1) != 0;
+        booleans[3] = ((opcode.opcode() >> 4) & 1) != 0;
+        booleans[2] = ((opcode.opcode() >> 5) & 1) != 0;
+        booleans[1] = ((opcode.opcode() >> 6) & 1) != 0;
+        booleans[0] = ((opcode.opcode() >> 7) & 1) != 0;
 
         return booleans;
 
     }
-
 
 }

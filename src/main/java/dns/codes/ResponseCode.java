@@ -1,85 +1,55 @@
 package dns.codes;
 
+/**
+ *
+ */
 public enum ResponseCode {
+    // No error condition
+    NO_ERROR (0),
 
-    /**
-     * No error condition.
-     */
-    NO_ERROR {
-        @Override
-        public byte toCode() {
-            return 0;
-        }
-    },
+    // The name server was unable to interpret the query
+    FORMAT_ERROR (1),
 
-    /**
-     * The name server was unable to interpret the query.
-     */
-    FORMAT_ERROR {
-        @Override
-        public byte toCode() {
-            return 1;
-        }
-    },
+    // The name server was unable to process this query due to a problem with the name server
+    SERVER_FAILURE (2),
 
-    /**
-     * The name server was unable to process this query due to a problem with the name server.
-     */
-    SERVER_FAILURE {
-        @Override
-        public byte toCode() {
-            return 2;
-        }
-    },
+    // Meaningful only for responses from an authoritative name server, this code signifies that the domain name referenced in the query does not exist.
+    NAME_ERROR (3),
 
-    /**
-     * Meaningful only for responses from an authoritative name server, this code signifies that the domain name
-     * referenced in the query does not exist.
-     */
-    NAME_ERROR {
-        @Override
-        public byte toCode() {
-            return 3;
-        }
-    },
-
-    /**
-     * The name server does not support the requested kind of query.
-     */
-    NOT_IMPLEMENTED {
-        @Override
-        public byte toCode() {
-            return 4;
-        }
-    },
+    // The name server does not support the requested kind of query
+    NOT_IMPLEMENTED (4),
 
     /**
      * The name server refuses to perform the specified operation for policy reasons. For example, a name server may not
      * wish to provide the information to the particular requester, or a name server may not wish to perform a
      * particular operation (e.g., zone transfer) for particular data.
      */
-    REFUSED {
-        @Override
-        public byte toCode() {
-            return 5;
-        }
-    },
+    REFUSED (5),
+
+    // Codes not yet implemented
+    UNDEFINED (6);
 
     /**
-     * Codes not yet implemented
+     *
      */
-    UNDEFINED {
-        @Override
-        public byte toCode() {
-            return 6;
-        }
-    };
+    private final int responseCode;
 
     /**
-     * Returns the int value of this code
-     * @return int value of this code
+     *
+     * @param responseCode
      */
-    public abstract byte toCode();
+    ResponseCode(int responseCode) {
+        this.responseCode = responseCode;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public int responseCode() {
+        return responseCode;
+    }
+
 
     /**
      * Returns the correspondent response code
@@ -123,15 +93,14 @@ public enum ResponseCode {
     public static boolean[] toBits(ResponseCode responseCode) {
         boolean[] booleans = new boolean[4];
 
-        booleans[3] = ((responseCode.toCode() >> 4) & 1) != 0;
-        booleans[2] = ((responseCode.toCode() >> 5) & 1) != 0;
-        booleans[1] = ((responseCode.toCode() >> 6) & 1) != 0;
-        booleans[0] = ((responseCode.toCode() >> 7) & 1) != 0;
+        booleans[3] = ((responseCode.responseCode() >> 4) & 1) != 0;
+        booleans[2] = ((responseCode.responseCode() >> 5) & 1) != 0;
+        booleans[1] = ((responseCode.responseCode() >> 6) & 1) != 0;
+        booleans[0] = ((responseCode.responseCode() >> 7) & 1) != 0;
 
         return booleans;
 
     }
-
 
 
 }
