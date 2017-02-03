@@ -1,4 +1,7 @@
 
+import com.google.gson.Gson;
+import com.google.gson.stream.JsonReader;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -6,9 +9,9 @@ import dns.Message;
 import dns.codes.Opcode;
 import dns.codes.ResponseCode;
 import hosts.HostsTree;
+import settings.Settings;
 
-import java.io.BufferedReader;
-import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -35,45 +38,35 @@ public class NetworkShield {
 
         logger.info("Starting NetworkShield");
 
+        Gson gson = new Gson();
+
+        Settings settings;
+
+        JsonReader reader = null;
+        try {
+            reader = new JsonReader(new FileReader("ns.conf"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            logger.error(e.getMessage());
+            System.exit(0);
+        }
+        settings = gson.fromJson(reader, Settings.class);
+
+
+        HostsTree blocklist = settings.generateBlocklist();
+        
         logger.info(System.getProperties().toString());
         // Read blocklist and create HostsTree object
-        HostsTree blocklist = new HostsTree();
 
-        File blocklistDirectory = new File("blocklists");
-
-        if (!blocklistDirectory.isDirectory()) {
-            logger.error("Invalid blocklist directory: " + blocklistDirectory.getAbsolutePath());
-            System.exit(0);
-        }
-
-        File[] blocklistFiles = blocklistDirectory.listFiles();
-        if (blocklistFiles == null) {
-            logger.error("Error listing blocklists directory: " + blocklistDirectory.getAbsolutePath());
-            System.exit(0);
-        }
-
-        for (File blocklistFile : blocklistFiles) {
-            logger.info("Loading file: " + blocklistFile.getAbsolutePath());
-            try (BufferedReader br = new BufferedReader(new FileReader(blocklistFile))) {
-                String line;
-                while ((line = br.readLine()) != null) {
-                    blocklist.addUrl(line);
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-                logger.error(e.getMessage());
-            }
-        }
-
-        long usage = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
-
-        logger.info("Loaded blocklist");
 
         Selector selector = null;
         DatagramChannel serverChannel = null;
         SelectionKey serverChannelKey = null;
         ByteBuffer buffer = ByteBuffer.allocate(MAX_PACKET_SIZE);
         HashMap<SelectionKey, RecursiveRequest> recursiveRequests = new HashMap<>();
+
+        long usage;
+
 
         try {
             selector = Selector.open();

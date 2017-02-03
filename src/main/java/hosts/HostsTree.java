@@ -6,6 +6,7 @@ import java.util.regex.Pattern;
 public class HostsTree {
 
     private HostsNode root;
+    private int size;
 
     // IP regex from http://www.mkyong.com/regular-expressions/how-to-validate-ip-address-with-regular-expression/
     private static final String IP_REGEX =
@@ -20,6 +21,7 @@ public class HostsTree {
 
     public HostsTree() {
         this.root = new HostsNode(".");
+        this.size = -1;
     }
 
     public void addUrl(String host) throws MalformedURLException {
@@ -51,6 +53,26 @@ public class HostsTree {
             current.getChildren().clear();
 
     }
+
+    public int size() {
+        this.size = size(root, 0);
+        return size;
+    }
+
+    private int size(HostsNode current, int currentSize) {
+        if(current.getChildren().size() == 0) {
+            return currentSize+1;
+        }
+
+        StringBuilder stringBuilder = new StringBuilder();
+
+        for (HostsNode i : current.getChildren().values())
+            currentSize = size(i, currentSize);
+
+        return currentSize;
+    }
+
+
 
     public String toString() {
         return toString(root, "\n");
