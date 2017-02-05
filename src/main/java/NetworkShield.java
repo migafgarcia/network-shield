@@ -25,14 +25,9 @@ import java.util.Iterator;
 
 public class NetworkShield {
 
-    private static final int SERVER_PORT = 53;
     private static final int MAX_PACKET_SIZE = 512;
-    private static final long TIMEOUT_MS = 10000;
-
-    private static final SocketAddress DNS_SERVER = new InetSocketAddress("8.8.8.8", 53);
 
     private static final Logger logger = LoggerFactory.getLogger(NetworkShield.class);
-
 
     public static void main(String[] args) {
 
@@ -52,6 +47,9 @@ public class NetworkShield {
         }
         settings = gson.fromJson(reader, Settings.class);
 
+        logger.info(gson.toJson(settings));
+
+        SocketAddress recursiveDnsServer = new InetSocketAddress(settings.getRecursiveDnsServerHost(), settings.getRecursiveDnsServerPort());
 
         HostsTree blocklist = settings.generateBlocklist();
         
@@ -72,12 +70,12 @@ public class NetworkShield {
             selector = Selector.open();
 
             serverChannel = DatagramChannel.open();
-            serverChannel.bind(new InetSocketAddress(SERVER_PORT));
+            serverChannel.bind(new InetSocketAddress(settings.getServerPort()));
             serverChannel.configureBlocking(false);
 
             serverChannelKey = serverChannel.register(selector, SelectionKey.OP_READ);
 
-            logger.info("Listening on port " + SERVER_PORT);
+            logger.info("Listening on port " + settings.getServerPort());
 
 
         } catch (IOException e) {
@@ -152,12 +150,12 @@ public class NetworkShield {
                                 DatagramChannel datagramChannel = DatagramChannel.open();
                                 datagramChannel.configureBlocking(false);
 
-                                datagramChannel.connect(DNS_SERVER);
+                                datagramChannel.connect(recursiveDnsServer);
 
 
                                 SelectionKey recursiveKey = datagramChannel.register(selector, SelectionKey.OP_READ);
                                 buffer.flip();
-                                logger.info("ID: " + message.getHeader().getMessageId() + " - Relaying request to " + DNS_SERVER.toString());
+                                logger.info("ID: " + message.getHeader().getMessageId() + " - Relaying request to " + recursiveDnsServer.toString());
                                 datagramChannel.write(buffer);
 
                                 recursiveRequests.put(recursiveKey,
@@ -206,7 +204,7 @@ public class NetworkShield {
                 }
 
                 // Passively remove recursive requests with more than TIMEOUT_MS ms
-                long delta = System.currentTimeMillis() - TIMEOUT_MS;
+                long delta = System.currentTimeMillis() - settings.getRecursiveRequestTimeout();
 
                 recursiveRequests.values().removeIf(recursiveRequest -> recursiveRequest.getTimestamp() < delta);
 

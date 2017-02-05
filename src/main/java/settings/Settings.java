@@ -26,11 +26,25 @@ public class Settings {
 
     private boolean sinkhole;
 
-    @SerializedName("printSize")
+    @SerializedName("print_size")
     private boolean printSize;
 
     @SerializedName("output_file")
     private String outputFile;
+
+    @SerializedName("recursive_dns_server_host")
+    private String recursiveDnsServerHost;
+
+    @SerializedName("recursive_dns_server_port")
+    private int recursiveDnsServerPort;
+
+    @SerializedName("server_port")
+    private int serverPort = 53;
+
+    @SerializedName("recursive_request_timeout")
+    private int recursiveRequestTimeout = 10000;
+
+
 
     @SerializedName("blocklist_files")
     private String[] blocklistFiles;
@@ -38,11 +52,15 @@ public class Settings {
     @SerializedName("blocklist_urls")
     private String[] blocklistUrls;
 
-    public Settings(boolean logRequests, boolean sinkhole, boolean printSize, String outputFile, String[] blocklistFiles, String[] blocklistUrls) {
+    public Settings(boolean logRequests, boolean sinkhole, boolean printSize, String outputFile, String recursiveDnsServerHost, int recursiveDnsServerPort, int serverPort, int recursiveRequestTimeout, String[] blocklistFiles, String[] blocklistUrls) {
         this.logRequests = logRequests;
         this.sinkhole = sinkhole;
         this.printSize = printSize;
         this.outputFile = outputFile;
+        this.recursiveDnsServerHost = recursiveDnsServerHost;
+        this.recursiveDnsServerPort = recursiveDnsServerPort;
+        this.serverPort = serverPort;
+        this.recursiveRequestTimeout = recursiveRequestTimeout;
         this.blocklistFiles = blocklistFiles;
         this.blocklistUrls = blocklistUrls;
     }
@@ -61,6 +79,22 @@ public class Settings {
 
     public String outputFile() {
         return outputFile;
+    }
+
+    public String getRecursiveDnsServerHost() {
+        return recursiveDnsServerHost;
+    }
+
+    public int getRecursiveDnsServerPort() {
+        return recursiveDnsServerPort;
+    }
+
+    public int getServerPort() {
+        return serverPort;
+    }
+
+    public int getRecursiveRequestTimeout() {
+        return recursiveRequestTimeout;
     }
 
     public String[] getBlocklistFiles() {
@@ -101,7 +135,6 @@ public class Settings {
     }
 
 
-
     @Override
     public String toString() {
         return "Settings{" +
@@ -109,6 +142,10 @@ public class Settings {
                 ", sinkhole=" + sinkhole +
                 ", printSize=" + printSize +
                 ", outputFile='" + outputFile + '\'' +
+                ", recursiveDnsServerHost='" + recursiveDnsServerHost + '\'' +
+                ", recursiveDnsServerPort=" + recursiveDnsServerPort +
+                ", serverPort=" + serverPort +
+                ", recursiveRequestTimeout=" + recursiveRequestTimeout +
                 ", blocklistFiles=" + Arrays.toString(blocklistFiles) +
                 ", blocklistUrls=" + Arrays.toString(blocklistUrls) +
                 '}';
