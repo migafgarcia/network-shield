@@ -1,8 +1,8 @@
-package dns.section;
+package com.mgarcia.dns.section;
 
-import dns.codes.Opcode;
-import dns.codes.ResponseCode;
-import utils.BitUtils;
+import com.mgarcia.dns.codes.Opcode;
+import com.mgarcia.dns.codes.ResponseCode;
+import com.mgarcia.utils.BitUtils;
 
 import java.nio.BufferOverflowException;
 import java.nio.BufferUnderflowException;

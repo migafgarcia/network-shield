@@ -1,4 +1,4 @@
-package settings;
+package com.mgarcia.settings;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -11,7 +11,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Arrays;
 
-import hosts.HostsTree;
+import com.mgarcia.hosts.HostsTree;
 
 /**
  *
@@ -19,11 +19,12 @@ import hosts.HostsTree;
 public class Settings {
 
     @Expose(serialize = false, deserialize = false)
-    private static final Logger logger = LoggerFactory.getLogger(Settings.class);
+    private static final Logger logger = LoggerFactory.getLogger("Settings");
 
     @SerializedName("log_requests")
     private boolean logRequests;
 
+    @SerializedName("sinkhole")
     private boolean sinkhole;
 
     @SerializedName("print_size")
@@ -43,8 +44,6 @@ public class Settings {
 
     @SerializedName("recursive_request_timeout")
     private int recursiveRequestTimeout = 10000;
-
-
 
     @SerializedName("blocklist_files")
     private String[] blocklistFiles;

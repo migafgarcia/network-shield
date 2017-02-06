@@ -1,8 +1,9 @@
+package com.mgarcia;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 
-import hosts.HostsTree;
+import com.mgarcia.hosts.HostsTree;
 
 public class TestMain {
 

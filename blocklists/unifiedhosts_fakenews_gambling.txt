@@ -3254,7 +3254,7 @@ server1.extra-web.cz
 serveradobe.co.cc
 services.x-traceur.com
 serviceyourpaypal.com
-settings.luckyorange.net
+com.mgarcia.settings.luckyorange.net
 setup.advancedcleaner.com
 sevenstars7.com
 sexy-screen-savers.com
@@ -15940,7 +15940,7 @@ ads.lavoix.com
 ad1.logger.co.kr
 trk14.logger.co.kr
 oas.mainetoday.com
-utils.media-general.com
+com.mgarcia.utils.media-general.com
 ads.mgnetwork.com
 tracking.military.com
 ad.mirror.co.uk
@@ -27721,7 +27721,7 @@ us-topsites.com
 ut.addthis.com
 utarget.ru
 utility.baidu.com
-utils.mediageneral.com
+com.mgarcia.utils.mediageneral.com
 utk.baidu.com
 uvimage.56.com
 v0.stat.ku6.com
@@ -30201,7 +30201,7 @@ resanium.com
 retin-a.1.p2l.info
 ri.5.p2l.info
 rise-media.ru
-root.dns.bz
+root.com.mgarcia.dns.bz
 roulette-online.petrovka.info
 router.googlecom.biz
 s32.bilsay.com
@@ -30494,7 +30494,7 @@ preview.msn.com
 reports.wes.df.telemetry.microsoft.com
 schemas.microsoft.akadns.net
 secure.flashtalking.com
-settings-win.data.microsoft.com
+com.mgarcia.settings-win.data.microsoft.com
 so.2mdn.net
 statsfe2.ws.microsoft.com
 telemetry.appex.bing.net
@@ -30563,7 +30563,7 @@ oca.telemetry.microsoft.com.nsatc.net
 pre.footprintpredict.com
 redir.metaservices.microsoft.com
 services.wes.df.telemetry.microsoft.com
-settings-sandbox.data.microsoft.com
+com.mgarcia.settings-sandbox.data.microsoft.com
 sls.update.microsoft.com.akadns.net
 sqm.df.telemetry.microsoft.com
 sqm.telemetry.microsoft.com
@@ -32033,7 +32033,7 @@ urlcash.net
 usapromotravel.com
 usmsad.tom.com
 utarget.co.uk
-utils.mediageneral.net
+com.mgarcia.utils.mediageneral.net
 validclick.com
 valuead.com
 valueclickmedia.com

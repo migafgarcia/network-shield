@@ -1,4 +1,4 @@
-package utils;
+package com.mgarcia.utils;
 
 import java.nio.ByteBuffer;
 

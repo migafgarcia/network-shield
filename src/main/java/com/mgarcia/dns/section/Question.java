@@ -1,7 +1,7 @@
-package dns.section;
+package com.mgarcia.dns.section;
 
-import dns.resource_records.ResourceRecordClass;
-import dns.resource_records.ResourceRecordType;
+import com.mgarcia.dns.resource_records.ResourceRecordClass;
+import com.mgarcia.dns.resource_records.ResourceRecordType;
 
 import java.nio.BufferOverflowException;
 import java.nio.BufferUnderflowException;

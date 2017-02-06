@@ -1624,7 +1624,7 @@ server1.extra-web.cz
 serveradobe.co.cc
 services.x-traceur.com
 serviceyourpaypal.com
-settings.luckyorange.net
+com.mgarcia.settings.luckyorange.net
 setup.advancedcleaner.com
 sevenstars7.com
 sexy-screen-savers.com

@@ -9596,8 +9596,8 @@ us-topsites.com
 ut.addthis.com
 utarget.ru
 utility.baidu.com
-utils.media-general.com
-utils.mediageneral.com
+com.mgarcia.utils.media-general.com
+com.mgarcia.utils.mediageneral.com
 utk.baidu.com
 uvimage.56.com
 v0.stat.ku6.com
@@ -12269,7 +12269,7 @@ resanium.com
 retin-a.1.p2l.info
 ri.5.p2l.info
 rise-media.ru
-root.dns.bz
+root.com.mgarcia.dns.bz
 roulette-online.petrovka.info
 router.googlecom.biz
 s32.bilsay.com
@@ -12570,7 +12570,7 @@ preview.msn.com
 reports.wes.df.telemetry.microsoft.com
 schemas.microsoft.akadns.net
 secure.flashtalking.com
-settings-win.data.microsoft.com
+com.mgarcia.settings-win.data.microsoft.com
 sO.2mdn.net
 statsfe2.ws.microsoft.com
 telemetry.appex.bing.net:443

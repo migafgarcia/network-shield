@@ -73,7 +73,7 @@ tmp/
 *.swp
 *~.nib
 local.properties
-.settings/
+.com.mgarcia.settings/
 .loadpath
 .recommenders
 

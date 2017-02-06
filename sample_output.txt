@@ -1,384 +1,384 @@
-[main] INFO NetworkShield - Starting NetworkShield
-[main] INFO NetworkShield - {java.runtime.name=Java(TM) SE Runtime Environment, ...}
-[main] INFO NetworkShield - Loading file: /home/mgarcia/Network Shield/blocklists/hosts3.txt
-[main] INFO NetworkShield - Loading file: /home/mgarcia/Network Shield/blocklists/hosts6.txt
-[main] INFO NetworkShield - Loading file: /home/mgarcia/Network Shield/blocklists/hosts4.txt
-[main] INFO NetworkShield - Loading file: /home/mgarcia/Network Shield/blocklists/hosts11.txt
-[main] INFO NetworkShield - Loading file: /home/mgarcia/Network Shield/blocklists/hosts5.txt
-[main] INFO NetworkShield - Loading file: /home/mgarcia/Network Shield/blocklists/trackers.txt
-[main] INFO NetworkShield - Loading file: /home/mgarcia/Network Shield/blocklists/hosts7.txt
-[main] INFO NetworkShield - Loading file: /home/mgarcia/Network Shield/blocklists/KADhosts.txt
-[main] INFO NetworkShield - Loading file: /home/mgarcia/Network Shield/blocklists/hosts9.txt
-[main] INFO NetworkShield - Loading file: /home/mgarcia/Network Shield/blocklists/hosts2.txt
-[main] INFO NetworkShield - Loading file: /home/mgarcia/Network Shield/blocklists/hosts1.txt
-[main] INFO NetworkShield - Loading file: /home/mgarcia/Network Shield/blocklists/unifiedhosts_fakenews_gambling.txt
-[main] INFO NetworkShield - Loading file: /home/mgarcia/Network Shield/blocklists/hosts8.txt
-[main] INFO NetworkShield - Loading file: /home/mgarcia/Network Shield/blocklists/hosts12.txt
-[main] INFO NetworkShield - Loading file: /home/mgarcia/Network Shield/blocklists/hosts10.txt
-[main] INFO NetworkShield - Loaded blocklist
-[main] INFO NetworkShield - Listening on port 53
-[main] INFO NetworkShield - MEM: 9 MB
-[main] INFO NetworkShield - ID: -19306 - Request for mtalk.google.com: unblocked
-[main] INFO NetworkShield - ID: -19306 - Relaying request to /8.8.8.8:53
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=-19306, key=sun.nio.ch.SelectionKeyImpl@1f17ae12, sender=/127.0.0.1:50415, timestamp=1486050852179}]
-[main] INFO NetworkShield - MEM: 11 MB
-[main] INFO NetworkShield - ID: -19306 - Recursive request received
-[main] INFO NetworkShield - REC: []
-[main] INFO NetworkShield - MEM: 11 MB
-[main] INFO NetworkShield - ID: -21045 - Request for clients4.google.com: unblocked
-[main] INFO NetworkShield - ID: -21045 - Relaying request to /8.8.8.8:53
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=-21045, key=sun.nio.ch.SelectionKeyImpl@254989ff, sender=/127.0.0.1:1550, timestamp=1486050852284}]
-[main] INFO NetworkShield - MEM: 11 MB
-[main] INFO NetworkShield - ID: -21045 - Recursive request received
-[main] INFO NetworkShield - REC: []
-[main] INFO NetworkShield - MEM: 11 MB
-[main] INFO NetworkShield - ID: 14344 - Request for www.googleapis.com: unblocked
-[main] INFO NetworkShield - ID: 14344 - Relaying request to /8.8.8.8:53
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=14344, key=sun.nio.ch.SelectionKeyImpl@5d099f62, sender=/127.0.0.1:49035, timestamp=1486050852435}]
-[main] INFO NetworkShield - MEM: 11 MB
-[main] INFO NetworkShield - ID: 23532 - Request for accounts.google.com: unblocked
-[main] INFO NetworkShield - ID: 23532 - Relaying request to /8.8.8.8:53
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=14344, key=sun.nio.ch.SelectionKeyImpl@5d099f62, sender=/127.0.0.1:49035, timestamp=1486050852435}, RecursiveRequest{messageId=23532, key=sun.nio.ch.SelectionKeyImpl@37f8bb67, sender=/127.0.0.1:4573, timestamp=1486050852444}]
-[main] INFO NetworkShield - MEM: 11 MB
-[main] INFO NetworkShield - ID: 14344 - Recursive request received
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=23532, key=sun.nio.ch.SelectionKeyImpl@37f8bb67, sender=/127.0.0.1:4573, timestamp=1486050852444}]
-[main] INFO NetworkShield - MEM: 11 MB
-[main] INFO NetworkShield - ID: 23532 - Recursive request received
-[main] INFO NetworkShield - REC: []
-[main] INFO NetworkShield - MEM: 11 MB
-[main] INFO NetworkShield - ID: 13637 - Request for www.google.pt: unblocked
-[main] INFO NetworkShield - ID: 13637 - Relaying request to /8.8.8.8:53
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=13637, key=sun.nio.ch.SelectionKeyImpl@49c2faae, sender=/127.0.0.1:26875, timestamp=1486050853119}]
-[main] INFO NetworkShield - MEM: 11 MB
-[main] INFO NetworkShield - ID: 13637 - Recursive request received
-[main] INFO NetworkShield - REC: []
-[main] INFO NetworkShield - MEM: 11 MB
-[main] INFO NetworkShield - ID: -24215 - Request for ogs.google.com: unblocked
-[main] INFO NetworkShield - ID: -24215 - Relaying request to /8.8.8.8:53
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=-24215, key=sun.nio.ch.SelectionKeyImpl@20ad9418, sender=/127.0.0.1:17972, timestamp=1486050853748}]
-[main] INFO NetworkShield - MEM: 11 MB
-[main] INFO NetworkShield - ID: -24215 - Recursive request received
-[main] INFO NetworkShield - REC: []
-[main] INFO NetworkShield - MEM: 11 MB
-[main] INFO NetworkShield - ID: -5508 - Request for clients5.google.com: unblocked
-[main] INFO NetworkShield - ID: -5508 - Relaying request to /8.8.8.8:53
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=-5508, key=sun.nio.ch.SelectionKeyImpl@31cefde0, sender=/127.0.0.1:14712, timestamp=1486050853934}]
-[main] INFO NetworkShield - MEM: 11 MB
-[main] INFO NetworkShield - ID: -5508 - Recursive request received
-[main] INFO NetworkShield - REC: []
-[main] INFO NetworkShield - MEM: 11 MB
-[main] INFO NetworkShield - ID: -30670 - Request for www.facebook.com: unblocked
-[main] INFO NetworkShield - ID: -30670 - Relaying request to /8.8.8.8:53
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=-30670, key=sun.nio.ch.SelectionKeyImpl@439f5b3d, sender=/127.0.0.1:59073, timestamp=1486050854646}]
-[main] INFO NetworkShield - MEM: 11 MB
-[main] INFO NetworkShield - ID: -30670 - Recursive request received
-[main] INFO NetworkShield - REC: []
-[main] INFO NetworkShield - MEM: 11 MB
-[main] INFO NetworkShield - ID: -645 - Request for clients2.google.com: unblocked
-[main] INFO NetworkShield - ID: -645 - Relaying request to /8.8.8.8:53
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=-645, key=sun.nio.ch.SelectionKeyImpl@1d56ce6a, sender=/127.0.0.1:46569, timestamp=1486050855195}]
-[main] INFO NetworkShield - MEM: 11 MB
-[main] INFO NetworkShield - ID: -645 - Recursive request received
-[main] INFO NetworkShield - REC: []
-[main] INFO NetworkShield - MEM: 11 MB
-[main] INFO NetworkShield - ID: -2091 - Request for video.flis1-1.fna.fbcdn.net: unblocked
-[main] INFO NetworkShield - ID: -2091 - Relaying request to /8.8.8.8:53
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=-2091, key=sun.nio.ch.SelectionKeyImpl@5197848c, sender=/127.0.0.1:31193, timestamp=1486050855870}]
-[main] INFO NetworkShield - MEM: 11 MB
-[main] INFO NetworkShield - ID: -2091 - Recursive request received
-[main] INFO NetworkShield - REC: []
-[main] INFO NetworkShield - MEM: 11 MB
-[main] INFO NetworkShield - ID: 12140 - Request for 2-edge-chat.facebook.com: unblocked
-[main] INFO NetworkShield - ID: 12140 - Relaying request to /8.8.8.8:53
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=12140, key=sun.nio.ch.SelectionKeyImpl@17f052a3, sender=/127.0.0.1:18277, timestamp=1486050857018}]
-[main] INFO NetworkShield - MEM: 11 MB
-[main] INFO NetworkShield - ID: 12140 - Recursive request received
-[main] INFO NetworkShield - REC: []
-[main] INFO NetworkShield - MEM: 11 MB
-[main] INFO NetworkShield - ID: 23868 - Request for www.google.com: unblocked
-[main] INFO NetworkShield - ID: 23868 - Relaying request to /8.8.8.8:53
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=23868, key=sun.nio.ch.SelectionKeyImpl@2e0fa5d3, sender=/127.0.0.1:41280, timestamp=1486050857077}]
-[main] INFO NetworkShield - MEM: 11 MB
-[main] INFO NetworkShield - ID: 23868 - Recursive request received
-[main] INFO NetworkShield - REC: []
-[main] INFO NetworkShield - MEM: 11 MB
-[main] INFO NetworkShield - ID: 24590 - Request for safebrowsing.google.com: unblocked
-[main] INFO NetworkShield - ID: 24590 - Relaying request to /8.8.8.8:53
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=24590, key=sun.nio.ch.SelectionKeyImpl@5010be6, sender=/127.0.0.1:49904, timestamp=1486050857158}]
-[main] INFO NetworkShield - MEM: 11 MB
-[main] INFO NetworkShield - ID: 24590 - Recursive request received
-[main] INFO NetworkShield - REC: []
-[main] INFO NetworkShield - MEM: 11 MB
-[main] INFO NetworkShield - ID: 9282 - Request for safebrowsing.google.com: unblocked
-[main] INFO NetworkShield - ID: 9282 - Relaying request to /8.8.8.8:53
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=9282, key=sun.nio.ch.SelectionKeyImpl@685f4c2e, sender=/127.0.0.1:23148, timestamp=1486050857408}]
-[main] INFO NetworkShield - MEM: 11 MB
-[main] INFO NetworkShield - ID: 9282 - Recursive request received
-[main] INFO NetworkShield - REC: []
-[main] INFO NetworkShield - MEM: 11 MB
-[main] INFO NetworkShield - ID: -4000 - Request for egmmwzaixmtfn: unblocked
-[main] INFO NetworkShield - ID: -4000 - Relaying request to /8.8.8.8:53
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=-4000, key=sun.nio.ch.SelectionKeyImpl@7daf6ecc, sender=/127.0.0.1:2322, timestamp=1486050859207}]
-[main] INFO NetworkShield - MEM: 11 MB
-[main] INFO NetworkShield - ID: -3680 - Request for unbnubuccgn: unblocked
-[main] INFO NetworkShield - ID: -3680 - Relaying request to /8.8.8.8:53
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=-4000, key=sun.nio.ch.SelectionKeyImpl@7daf6ecc, sender=/127.0.0.1:2322, timestamp=1486050859207}, RecursiveRequest{messageId=-3680, key=sun.nio.ch.SelectionKeyImpl@2e5d6d97, sender=/127.0.0.1:43787, timestamp=1486050859209}]
-[main] INFO NetworkShield - MEM: 11 MB
-[main] INFO NetworkShield - ID: -30353 - Request for dnoovww: unblocked
-[main] INFO NetworkShield - ID: -30353 - Relaying request to /8.8.8.8:53
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=-4000, key=sun.nio.ch.SelectionKeyImpl@7daf6ecc, sender=/127.0.0.1:2322, timestamp=1486050859207}, RecursiveRequest{messageId=-3680, key=sun.nio.ch.SelectionKeyImpl@2e5d6d97, sender=/127.0.0.1:43787, timestamp=1486050859209}, RecursiveRequest{messageId=-30353, key=sun.nio.ch.SelectionKeyImpl@238e0d81, sender=/127.0.0.1:32021, timestamp=1486050859210}]
-[main] INFO NetworkShield - MEM: 11 MB
-[main] INFO NetworkShield - ID: 29619 - Request for egmmwzaixmtfn: unblocked
-[main] INFO NetworkShield - ID: 29619 - Relaying request to /8.8.8.8:53
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=29619, key=sun.nio.ch.SelectionKeyImpl@31221be2, sender=/127.0.0.1:12149, timestamp=1486050860218}, RecursiveRequest{messageId=-4000, key=sun.nio.ch.SelectionKeyImpl@7daf6ecc, sender=/127.0.0.1:2322, timestamp=1486050859207}, RecursiveRequest{messageId=-3680, key=sun.nio.ch.SelectionKeyImpl@2e5d6d97, sender=/127.0.0.1:43787, timestamp=1486050859209}, RecursiveRequest{messageId=-30353, key=sun.nio.ch.SelectionKeyImpl@238e0d81, sender=/127.0.0.1:32021, timestamp=1486050859210}]
-[main] INFO NetworkShield - MEM: 11 MB
-[main] INFO NetworkShield - ID: -20136 - Request for unbnubuccgn: unblocked
-[main] INFO NetworkShield - ID: -20136 - Relaying request to /8.8.8.8:53
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=29619, key=sun.nio.ch.SelectionKeyImpl@31221be2, sender=/127.0.0.1:12149, timestamp=1486050860218}, RecursiveRequest{messageId=-4000, key=sun.nio.ch.SelectionKeyImpl@7daf6ecc, sender=/127.0.0.1:2322, timestamp=1486050859207}, RecursiveRequest{messageId=-20136, key=sun.nio.ch.SelectionKeyImpl@377dca04, sender=/127.0.0.1:63368, timestamp=1486050860219}, RecursiveRequest{messageId=-3680, key=sun.nio.ch.SelectionKeyImpl@2e5d6d97, sender=/127.0.0.1:43787, timestamp=1486050859209}, RecursiveRequest{messageId=-30353, key=sun.nio.ch.SelectionKeyImpl@238e0d81, sender=/127.0.0.1:32021, timestamp=1486050859210}]
-[main] INFO NetworkShield - MEM: 11 MB
-[main] INFO NetworkShield - ID: 12580 - Request for dnoovww: unblocked
-[main] INFO NetworkShield - ID: 12580 - Relaying request to /8.8.8.8:53
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=29619, key=sun.nio.ch.SelectionKeyImpl@31221be2, sender=/127.0.0.1:12149, timestamp=1486050860218}, RecursiveRequest{messageId=12580, key=sun.nio.ch.SelectionKeyImpl@728938a9, sender=/127.0.0.1:19778, timestamp=1486050860219}, RecursiveRequest{messageId=-4000, key=sun.nio.ch.SelectionKeyImpl@7daf6ecc, sender=/127.0.0.1:2322, timestamp=1486050859207}, RecursiveRequest{messageId=-20136, key=sun.nio.ch.SelectionKeyImpl@377dca04, sender=/127.0.0.1:63368, timestamp=1486050860219}, RecursiveRequest{messageId=-3680, key=sun.nio.ch.SelectionKeyImpl@2e5d6d97, sender=/127.0.0.1:43787, timestamp=1486050859209}, RecursiveRequest{messageId=-30353, key=sun.nio.ch.SelectionKeyImpl@238e0d81, sender=/127.0.0.1:32021, timestamp=1486050859210}]
-[main] INFO NetworkShield - MEM: 11 MB
-[main] INFO NetworkShield - ID: -20136 - Recursive request received
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=29619, key=sun.nio.ch.SelectionKeyImpl@31221be2, sender=/127.0.0.1:12149, timestamp=1486050860218}, RecursiveRequest{messageId=12580, key=sun.nio.ch.SelectionKeyImpl@728938a9, sender=/127.0.0.1:19778, timestamp=1486050860219}, RecursiveRequest{messageId=-4000, key=sun.nio.ch.SelectionKeyImpl@7daf6ecc, sender=/127.0.0.1:2322, timestamp=1486050859207}, RecursiveRequest{messageId=-3680, key=sun.nio.ch.SelectionKeyImpl@2e5d6d97, sender=/127.0.0.1:43787, timestamp=1486050859209}, RecursiveRequest{messageId=-30353, key=sun.nio.ch.SelectionKeyImpl@238e0d81, sender=/127.0.0.1:32021, timestamp=1486050859210}]
-[main] INFO NetworkShield - MEM: 11 MB
-[main] INFO NetworkShield - ID: 12580 - Recursive request received
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=29619, key=sun.nio.ch.SelectionKeyImpl@31221be2, sender=/127.0.0.1:12149, timestamp=1486050860218}, RecursiveRequest{messageId=-4000, key=sun.nio.ch.SelectionKeyImpl@7daf6ecc, sender=/127.0.0.1:2322, timestamp=1486050859207}, RecursiveRequest{messageId=-3680, key=sun.nio.ch.SelectionKeyImpl@2e5d6d97, sender=/127.0.0.1:43787, timestamp=1486050859209}, RecursiveRequest{messageId=-30353, key=sun.nio.ch.SelectionKeyImpl@238e0d81, sender=/127.0.0.1:32021, timestamp=1486050859210}]
-[main] INFO NetworkShield - MEM: 11 MB
-[main] INFO NetworkShield - ID: 29619 - Recursive request received
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=-4000, key=sun.nio.ch.SelectionKeyImpl@7daf6ecc, sender=/127.0.0.1:2322, timestamp=1486050859207}, RecursiveRequest{messageId=-3680, key=sun.nio.ch.SelectionKeyImpl@2e5d6d97, sender=/127.0.0.1:43787, timestamp=1486050859209}, RecursiveRequest{messageId=-30353, key=sun.nio.ch.SelectionKeyImpl@238e0d81, sender=/127.0.0.1:32021, timestamp=1486050859210}]
-[main] INFO NetworkShield - MEM: 11 MB
-[main] INFO NetworkShield - ID: 1133 - Request for egmmwzaixmtfn: unblocked
-[main] INFO NetworkShield - ID: 1133 - Relaying request to /8.8.8.8:53
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=-4000, key=sun.nio.ch.SelectionKeyImpl@7daf6ecc, sender=/127.0.0.1:2322, timestamp=1486050859207}, RecursiveRequest{messageId=1133, key=sun.nio.ch.SelectionKeyImpl@21b8d17c, sender=/127.0.0.1:55162, timestamp=1486050860266}, RecursiveRequest{messageId=-3680, key=sun.nio.ch.SelectionKeyImpl@2e5d6d97, sender=/127.0.0.1:43787, timestamp=1486050859209}, RecursiveRequest{messageId=-30353, key=sun.nio.ch.SelectionKeyImpl@238e0d81, sender=/127.0.0.1:32021, timestamp=1486050859210}]
-[main] INFO NetworkShield - MEM: 11 MB
-[main] INFO NetworkShield - ID: -28378 - Request for unbnubuccgn: unblocked
-[main] INFO NetworkShield - ID: -28378 - Relaying request to /8.8.8.8:53
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=-4000, key=sun.nio.ch.SelectionKeyImpl@7daf6ecc, sender=/127.0.0.1:2322, timestamp=1486050859207}, RecursiveRequest{messageId=1133, key=sun.nio.ch.SelectionKeyImpl@21b8d17c, sender=/127.0.0.1:55162, timestamp=1486050860266}, RecursiveRequest{messageId=-28378, key=sun.nio.ch.SelectionKeyImpl@6433a2, sender=/127.0.0.1:59640, timestamp=1486050860267}, RecursiveRequest{messageId=-3680, key=sun.nio.ch.SelectionKeyImpl@2e5d6d97, sender=/127.0.0.1:43787, timestamp=1486050859209}, RecursiveRequest{messageId=-30353, key=sun.nio.ch.SelectionKeyImpl@238e0d81, sender=/127.0.0.1:32021, timestamp=1486050859210}]
-[main] INFO NetworkShield - MEM: 11 MB
-[main] INFO NetworkShield - ID: -32408 - Request for dnoovww: unblocked
-[main] INFO NetworkShield - ID: -32408 - Relaying request to /8.8.8.8:53
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=-32408, key=sun.nio.ch.SelectionKeyImpl@5910e440, sender=/127.0.0.1:51315, timestamp=1486050860268}, RecursiveRequest{messageId=-4000, key=sun.nio.ch.SelectionKeyImpl@7daf6ecc, sender=/127.0.0.1:2322, timestamp=1486050859207}, RecursiveRequest{messageId=1133, key=sun.nio.ch.SelectionKeyImpl@21b8d17c, sender=/127.0.0.1:55162, timestamp=1486050860266}, RecursiveRequest{messageId=-28378, key=sun.nio.ch.SelectionKeyImpl@6433a2, sender=/127.0.0.1:59640, timestamp=1486050860267}, RecursiveRequest{messageId=-3680, key=sun.nio.ch.SelectionKeyImpl@2e5d6d97, sender=/127.0.0.1:43787, timestamp=1486050859209}, RecursiveRequest{messageId=-30353, key=sun.nio.ch.SelectionKeyImpl@238e0d81, sender=/127.0.0.1:32021, timestamp=1486050859210}]
-[main] INFO NetworkShield - MEM: 11 MB
-[main] INFO NetworkShield - ID: 1133 - Recursive request received
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=-32408, key=sun.nio.ch.SelectionKeyImpl@5910e440, sender=/127.0.0.1:51315, timestamp=1486050860268}, RecursiveRequest{messageId=-4000, key=sun.nio.ch.SelectionKeyImpl@7daf6ecc, sender=/127.0.0.1:2322, timestamp=1486050859207}, RecursiveRequest{messageId=-28378, key=sun.nio.ch.SelectionKeyImpl@6433a2, sender=/127.0.0.1:59640, timestamp=1486050860267}, RecursiveRequest{messageId=-3680, key=sun.nio.ch.SelectionKeyImpl@2e5d6d97, sender=/127.0.0.1:43787, timestamp=1486050859209}, RecursiveRequest{messageId=-30353, key=sun.nio.ch.SelectionKeyImpl@238e0d81, sender=/127.0.0.1:32021, timestamp=1486050859210}]
-[main] INFO NetworkShield - MEM: 11 MB
-[main] INFO NetworkShield - ID: -32408 - Recursive request received
-[main] INFO NetworkShield - ID: -28378 - Recursive request received
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=-4000, key=sun.nio.ch.SelectionKeyImpl@7daf6ecc, sender=/127.0.0.1:2322, timestamp=1486050859207}, RecursiveRequest{messageId=-3680, key=sun.nio.ch.SelectionKeyImpl@2e5d6d97, sender=/127.0.0.1:43787, timestamp=1486050859209}, RecursiveRequest{messageId=-30353, key=sun.nio.ch.SelectionKeyImpl@238e0d81, sender=/127.0.0.1:32021, timestamp=1486050859210}]
-[main] INFO NetworkShield - MEM: 11 MB
-[main] INFO NetworkShield - ID: 16182 - Request for ssl.gstatic.com: unblocked
-[main] INFO NetworkShield - ID: 16182 - Relaying request to /8.8.8.8:53
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=-4000, key=sun.nio.ch.SelectionKeyImpl@7daf6ecc, sender=/127.0.0.1:2322, timestamp=1486050859207}, RecursiveRequest{messageId=-3680, key=sun.nio.ch.SelectionKeyImpl@2e5d6d97, sender=/127.0.0.1:43787, timestamp=1486050859209}, RecursiveRequest{messageId=16182, key=sun.nio.ch.SelectionKeyImpl@6267c3bb, sender=/127.0.0.1:33541, timestamp=1486050862109}, RecursiveRequest{messageId=-30353, key=sun.nio.ch.SelectionKeyImpl@238e0d81, sender=/127.0.0.1:32021, timestamp=1486050859210}]
-[main] INFO NetworkShield - MEM: 11 MB
-[main] INFO NetworkShield - ID: 16182 - Recursive request received
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=-4000, key=sun.nio.ch.SelectionKeyImpl@7daf6ecc, sender=/127.0.0.1:2322, timestamp=1486050859207}, RecursiveRequest{messageId=-3680, key=sun.nio.ch.SelectionKeyImpl@2e5d6d97, sender=/127.0.0.1:43787, timestamp=1486050859209}, RecursiveRequest{messageId=-30353, key=sun.nio.ch.SelectionKeyImpl@238e0d81, sender=/127.0.0.1:32021, timestamp=1486050859210}]
-[main] INFO NetworkShield - MEM: 11 MB
-[main] INFO NetworkShield - ID: -17986 - Request for scontent.flis1-1.fna.fbcdn.net: unblocked
-[main] INFO NetworkShield - ID: -17986 - Relaying request to /8.8.8.8:53
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=-4000, key=sun.nio.ch.SelectionKeyImpl@7daf6ecc, sender=/127.0.0.1:2322, timestamp=1486050859207}, RecursiveRequest{messageId=-17986, key=sun.nio.ch.SelectionKeyImpl@533ddba, sender=/127.0.0.1:48749, timestamp=1486050862998}, RecursiveRequest{messageId=-3680, key=sun.nio.ch.SelectionKeyImpl@2e5d6d97, sender=/127.0.0.1:43787, timestamp=1486050859209}, RecursiveRequest{messageId=-30353, key=sun.nio.ch.SelectionKeyImpl@238e0d81, sender=/127.0.0.1:32021, timestamp=1486050859210}]
-[main] INFO NetworkShield - MEM: 11 MB
-[main] INFO NetworkShield - ID: -17986 - Recursive request received
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=-4000, key=sun.nio.ch.SelectionKeyImpl@7daf6ecc, sender=/127.0.0.1:2322, timestamp=1486050859207}, RecursiveRequest{messageId=-3680, key=sun.nio.ch.SelectionKeyImpl@2e5d6d97, sender=/127.0.0.1:43787, timestamp=1486050859209}, RecursiveRequest{messageId=-30353, key=sun.nio.ch.SelectionKeyImpl@238e0d81, sender=/127.0.0.1:32021, timestamp=1486050859210}]
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: 7301 - Request for github.com: unblocked
-[main] INFO NetworkShield - ID: 7301 - Relaying request to /8.8.8.8:53
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=7301, key=sun.nio.ch.SelectionKeyImpl@246b179d, sender=/127.0.0.1:43666, timestamp=1486050882398}]
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: 18108 - Request for github.com: unblocked
-[main] INFO NetworkShield - ID: 18108 - Relaying request to /8.8.8.8:53
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=18108, key=sun.nio.ch.SelectionKeyImpl@7a07c5b4, sender=/127.0.0.1:43666, timestamp=1486050882399}, RecursiveRequest{messageId=7301, key=sun.nio.ch.SelectionKeyImpl@246b179d, sender=/127.0.0.1:43666, timestamp=1486050882398}]
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: 18108 - Recursive request received
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=7301, key=sun.nio.ch.SelectionKeyImpl@246b179d, sender=/127.0.0.1:43666, timestamp=1486050882398}]
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: 7301 - Recursive request received
-[main] INFO NetworkShield - REC: []
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: 379 - Request for github.com: unblocked
-[main] INFO NetworkShield - ID: 379 - Relaying request to /8.8.8.8:53
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=379, key=sun.nio.ch.SelectionKeyImpl@26a1ab54, sender=/127.0.0.1:14517, timestamp=1486050928359}]
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: 379 - Recursive request received
-[main] INFO NetworkShield - REC: []
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: 9610 - Request for avatars1.githubusercontent.com: unblocked
-[main] INFO NetworkShield - ID: 9610 - Relaying request to /8.8.8.8:53
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=9610, key=sun.nio.ch.SelectionKeyImpl@3d646c37, sender=/127.0.0.1:28224, timestamp=1486050929062}]
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: -30413 - Request for avatars2.githubusercontent.com: unblocked
-[main] INFO NetworkShield - ID: -30413 - Relaying request to /8.8.8.8:53
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=9610, key=sun.nio.ch.SelectionKeyImpl@3d646c37, sender=/127.0.0.1:28224, timestamp=1486050929062}, RecursiveRequest{messageId=-30413, key=sun.nio.ch.SelectionKeyImpl@41cf53f9, sender=/127.0.0.1:37665, timestamp=1486050929063}]
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: -9922 - Request for avatars3.githubusercontent.com: unblocked
-[main] INFO NetworkShield - ID: -9922 - Relaying request to /8.8.8.8:53
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=-9922, key=sun.nio.ch.SelectionKeyImpl@5a10411, sender=/127.0.0.1:41899, timestamp=1486050929064}, RecursiveRequest{messageId=9610, key=sun.nio.ch.SelectionKeyImpl@3d646c37, sender=/127.0.0.1:28224, timestamp=1486050929062}, RecursiveRequest{messageId=-30413, key=sun.nio.ch.SelectionKeyImpl@41cf53f9, sender=/127.0.0.1:37665, timestamp=1486050929063}]
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: -30413 - Recursive request received
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=-9922, key=sun.nio.ch.SelectionKeyImpl@5a10411, sender=/127.0.0.1:41899, timestamp=1486050929064}, RecursiveRequest{messageId=9610, key=sun.nio.ch.SelectionKeyImpl@3d646c37, sender=/127.0.0.1:28224, timestamp=1486050929062}]
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: -9922 - Recursive request received
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=9610, key=sun.nio.ch.SelectionKeyImpl@3d646c37, sender=/127.0.0.1:28224, timestamp=1486050929062}]
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: 9610 - Recursive request received
-[main] INFO NetworkShield - REC: []
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: 4717 - Request for live.github.com: unblocked
-[main] INFO NetworkShield - ID: 4717 - Relaying request to /8.8.8.8:53
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=4717, key=sun.nio.ch.SelectionKeyImpl@2ef1e4fa, sender=/127.0.0.1:58516, timestamp=1486050929916}]
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: 4717 - Recursive request received
-[main] INFO NetworkShield - REC: []
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: -26858 - Request for www.youtube.com: unblocked
-[main] INFO NetworkShield - ID: -26858 - Relaying request to /8.8.8.8:53
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=-26858, key=sun.nio.ch.SelectionKeyImpl@306a30c7, sender=/127.0.0.1:41161, timestamp=1486050938812}]
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: -26858 - Recursive request received
-[main] INFO NetworkShield - REC: []
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: 18739 - Request for yt3.ggpht.com: unblocked
-[main] INFO NetworkShield - ID: 18739 - Relaying request to /8.8.8.8:53
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=18739, key=sun.nio.ch.SelectionKeyImpl@b81eda8, sender=/127.0.0.1:51893, timestamp=1486050940019}]
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: 24576 - Request for i.ytimg.com: unblocked
-[main] INFO NetworkShield - ID: 24576 - Relaying request to /8.8.8.8:53
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=24576, key=sun.nio.ch.SelectionKeyImpl@68de145, sender=/127.0.0.1:11323, timestamp=1486050940020}, RecursiveRequest{messageId=18739, key=sun.nio.ch.SelectionKeyImpl@b81eda8, sender=/127.0.0.1:51893, timestamp=1486050940019}]
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: 18739 - Recursive request received
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=24576, key=sun.nio.ch.SelectionKeyImpl@68de145, sender=/127.0.0.1:11323, timestamp=1486050940020}]
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: 24576 - Recursive request received
-[main] INFO NetworkShield - REC: []
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: -11932 - Request for github.com: unblocked
-[main] INFO NetworkShield - ID: -11932 - Relaying request to /8.8.8.8:53
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=-11932, key=sun.nio.ch.SelectionKeyImpl@27fa135a, sender=/127.0.0.1:44679, timestamp=1486050942393}]
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: 2770 - Request for github.com: unblocked
-[main] INFO NetworkShield - ID: 2770 - Relaying request to /8.8.8.8:53
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=-11932, key=sun.nio.ch.SelectionKeyImpl@27fa135a, sender=/127.0.0.1:44679, timestamp=1486050942393}, RecursiveRequest{messageId=2770, key=sun.nio.ch.SelectionKeyImpl@46f7f36a, sender=/127.0.0.1:44679, timestamp=1486050942393}]
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: 26508 - Request for api.github.com: unblocked
-[main] INFO NetworkShield - ID: 26508 - Relaying request to /8.8.8.8:53
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=-11932, key=sun.nio.ch.SelectionKeyImpl@27fa135a, sender=/127.0.0.1:44679, timestamp=1486050942393}, RecursiveRequest{messageId=2770, key=sun.nio.ch.SelectionKeyImpl@46f7f36a, sender=/127.0.0.1:44679, timestamp=1486050942393}, RecursiveRequest{messageId=26508, key=sun.nio.ch.SelectionKeyImpl@421faab1, sender=/127.0.0.1:59363, timestamp=1486050942394}]
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: -11932 - Recursive request received
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=2770, key=sun.nio.ch.SelectionKeyImpl@46f7f36a, sender=/127.0.0.1:44679, timestamp=1486050942393}, RecursiveRequest{messageId=26508, key=sun.nio.ch.SelectionKeyImpl@421faab1, sender=/127.0.0.1:59363, timestamp=1486050942394}]
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: 26508 - Recursive request received
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=2770, key=sun.nio.ch.SelectionKeyImpl@46f7f36a, sender=/127.0.0.1:44679, timestamp=1486050942393}]
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: 2770 - Recursive request received
-[main] INFO NetworkShield - REC: []
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: -11324 - Request for www.reddit.com: unblocked
-[main] INFO NetworkShield - ID: -11324 - Relaying request to /8.8.8.8:53
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=-11324, key=sun.nio.ch.SelectionKeyImpl@2b71fc7e, sender=/127.0.0.1:27797, timestamp=1486050947865}]
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: -11324 - Recursive request received
-[main] INFO NetworkShield - REC: []
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: 22956 - Request for out.reddit.com: unblocked
-[main] INFO NetworkShield - ID: 22956 - Relaying request to /8.8.8.8:53
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=22956, key=sun.nio.ch.SelectionKeyImpl@5ce65a89, sender=/127.0.0.1:18751, timestamp=1486050949716}]
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: 22956 - Recursive request received
-[main] INFO NetworkShield - REC: []
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: 2070 - Request for b.thumbs.redditmedia.com: unblocked
-[main] INFO NetworkShield - ID: 2070 - Relaying request to /8.8.8.8:53
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=2070, key=sun.nio.ch.SelectionKeyImpl@25f38edc, sender=/127.0.0.1:54962, timestamp=1486050949876}]
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: 2070 - Recursive request received
-[main] INFO NetworkShield - REC: []
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: 11976 - Request for api.imgur.com: unblocked
-[main] INFO NetworkShield - ID: 11976 - Relaying request to /8.8.8.8:53
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=11976, key=sun.nio.ch.SelectionKeyImpl@1a86f2f1, sender=/127.0.0.1:44494, timestamp=1486050950499}]
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: 11976 - Recursive request received
-[main] INFO NetworkShield - REC: []
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: 27072 - Request for gfycat.com: unblocked
-[main] INFO NetworkShield - ID: 27072 - Relaying request to /8.8.8.8:53
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=27072, key=sun.nio.ch.SelectionKeyImpl@3eb07fd3, sender=/127.0.0.1:23191, timestamp=1486050950867}]
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: 27072 - Recursive request received
-[main] INFO NetworkShield - REC: []
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: 12229 - Request for 1-edge-chat.facebook.com: unblocked
-[main] INFO NetworkShield - ID: 12229 - Relaying request to /8.8.8.8:53
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=12229, key=sun.nio.ch.SelectionKeyImpl@506c589e, sender=/127.0.0.1:25444, timestamp=1486050957829}]
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: 12229 - Recursive request received
-[main] INFO NetworkShield - REC: []
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: -21789 - Request for pixel.facebook.com: blocked
-[main] INFO NetworkShield - REC: []
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: -22882 - Request for pixel.facebook.com: blocked
-[main] INFO NetworkShield - REC: []
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: -17114 - Request for pixel.facebook.com: blocked
-[main] INFO NetworkShield - REC: []
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: -17114 - Request for pixel.facebook.com: blocked
-[main] INFO NetworkShield - REC: []
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: -6324 - Request for pixel.facebook.com: blocked
-[main] INFO NetworkShield - REC: []
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: 24531 - Request for pixel.facebook.com: blocked
-[main] INFO NetworkShield - REC: []
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: -6324 - Request for pixel.facebook.com: blocked
-[main] INFO NetworkShield - REC: []
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: 24531 - Request for pixel.facebook.com: blocked
-[main] INFO NetworkShield - REC: []
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: -24756 - Request for pixel.facebook.com: blocked
-[main] INFO NetworkShield - REC: []
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: 15134 - Request for pixel.facebook.com: blocked
-[main] INFO NetworkShield - REC: []
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: -24756 - Request for pixel.facebook.com: blocked
-[main] INFO NetworkShield - REC: []
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: -2165 - Request for pixel.facebook.com: blocked
-[main] INFO NetworkShield - REC: []
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: 5314 - Request for pixel.facebook.com: blocked
-[main] INFO NetworkShield - REC: []
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: 15134 - Request for pixel.facebook.com: blocked
-[main] INFO NetworkShield - REC: []
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: 20104 - Request for pixel.facebook.com: blocked
-[main] INFO NetworkShield - REC: []
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: -535 - Request for pixel.facebook.com: blocked
-[main] INFO NetworkShield - REC: []
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: 15186 - Request for github.com: unblocked
-[main] INFO NetworkShield - ID: 15186 - Relaying request to /8.8.8.8:53
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=15186, key=sun.nio.ch.SelectionKeyImpl@69d0a921, sender=/127.0.0.1:60037, timestamp=1486051002372}]
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: -16136 - Request for github.com: unblocked
-[main] INFO NetworkShield - ID: -16136 - Relaying request to /8.8.8.8:53
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=15186, key=sun.nio.ch.SelectionKeyImpl@69d0a921, sender=/127.0.0.1:60037, timestamp=1486051002372}, RecursiveRequest{messageId=-16136, key=sun.nio.ch.SelectionKeyImpl@446cdf90, sender=/127.0.0.1:60037, timestamp=1486051002373}]
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: -16136 - Recursive request received
-[main] INFO NetworkShield - REC: [RecursiveRequest{messageId=15186, key=sun.nio.ch.SelectionKeyImpl@69d0a921, sender=/127.0.0.1:60037, timestamp=1486051002372}]
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: 15186 - Recursive request received
-[main] INFO NetworkShield - REC: []
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: 20104 - Request for pixel.facebook.com: blocked
-[main] INFO NetworkShield - REC: []
-[main] INFO NetworkShield - MEM: 12 MB
-[main] INFO NetworkShield - ID: 11736 - Request for pixel.facebook.com: blocked
-[main] INFO NetworkShield - REC: []
+[main] INFO com.mgarcia.NetworkShield - Starting com.mgarcia.NetworkShield
+[main] INFO com.mgarcia.NetworkShield - {java.runtime.name=Java(TM) SE Runtime Environment, ...}
+[main] INFO com.mgarcia.NetworkShield - Loading file: /home/mgarcia/Network Shield/blocklists/hosts3.txt
+[main] INFO com.mgarcia.NetworkShield - Loading file: /home/mgarcia/Network Shield/blocklists/hosts6.txt
+[main] INFO com.mgarcia.NetworkShield - Loading file: /home/mgarcia/Network Shield/blocklists/hosts4.txt
+[main] INFO com.mgarcia.NetworkShield - Loading file: /home/mgarcia/Network Shield/blocklists/hosts11.txt
+[main] INFO com.mgarcia.NetworkShield - Loading file: /home/mgarcia/Network Shield/blocklists/hosts5.txt
+[main] INFO com.mgarcia.NetworkShield - Loading file: /home/mgarcia/Network Shield/blocklists/trackers.txt
+[main] INFO com.mgarcia.NetworkShield - Loading file: /home/mgarcia/Network Shield/blocklists/hosts7.txt
+[main] INFO com.mgarcia.NetworkShield - Loading file: /home/mgarcia/Network Shield/blocklists/KADhosts.txt
+[main] INFO com.mgarcia.NetworkShield - Loading file: /home/mgarcia/Network Shield/blocklists/hosts9.txt
+[main] INFO com.mgarcia.NetworkShield - Loading file: /home/mgarcia/Network Shield/blocklists/hosts2.txt
+[main] INFO com.mgarcia.NetworkShield - Loading file: /home/mgarcia/Network Shield/blocklists/hosts1.txt
+[main] INFO com.mgarcia.NetworkShield - Loading file: /home/mgarcia/Network Shield/blocklists/unifiedhosts_fakenews_gambling.txt
+[main] INFO com.mgarcia.NetworkShield - Loading file: /home/mgarcia/Network Shield/blocklists/hosts8.txt
+[main] INFO com.mgarcia.NetworkShield - Loading file: /home/mgarcia/Network Shield/blocklists/hosts12.txt
+[main] INFO com.mgarcia.NetworkShield - Loading file: /home/mgarcia/Network Shield/blocklists/hosts10.txt
+[main] INFO com.mgarcia.NetworkShield - Loaded blocklist
+[main] INFO com.mgarcia.NetworkShield - Listening on port 53
+[main] INFO com.mgarcia.NetworkShield - MEM: 9 MB
+[main] INFO com.mgarcia.NetworkShield - ID: -19306 - Request for mtalk.google.com: unblocked
+[main] INFO com.mgarcia.NetworkShield - ID: -19306 - Relaying request to /8.8.8.8:53
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=-19306, key=sun.nio.ch.SelectionKeyImpl@1f17ae12, sender=/127.0.0.1:50415, timestamp=1486050852179}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 11 MB
+[main] INFO com.mgarcia.NetworkShield - ID: -19306 - Recursive request received
+[main] INFO com.mgarcia.NetworkShield - REC: []
+[main] INFO com.mgarcia.NetworkShield - MEM: 11 MB
+[main] INFO com.mgarcia.NetworkShield - ID: -21045 - Request for clients4.google.com: unblocked
+[main] INFO com.mgarcia.NetworkShield - ID: -21045 - Relaying request to /8.8.8.8:53
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=-21045, key=sun.nio.ch.SelectionKeyImpl@254989ff, sender=/127.0.0.1:1550, timestamp=1486050852284}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 11 MB
+[main] INFO com.mgarcia.NetworkShield - ID: -21045 - Recursive request received
+[main] INFO com.mgarcia.NetworkShield - REC: []
+[main] INFO com.mgarcia.NetworkShield - MEM: 11 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 14344 - Request for www.googleapis.com: unblocked
+[main] INFO com.mgarcia.NetworkShield - ID: 14344 - Relaying request to /8.8.8.8:53
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=14344, key=sun.nio.ch.SelectionKeyImpl@5d099f62, sender=/127.0.0.1:49035, timestamp=1486050852435}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 11 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 23532 - Request for accounts.google.com: unblocked
+[main] INFO com.mgarcia.NetworkShield - ID: 23532 - Relaying request to /8.8.8.8:53
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=14344, key=sun.nio.ch.SelectionKeyImpl@5d099f62, sender=/127.0.0.1:49035, timestamp=1486050852435}, com.mgarcia.RecursiveRequest{messageId=23532, key=sun.nio.ch.SelectionKeyImpl@37f8bb67, sender=/127.0.0.1:4573, timestamp=1486050852444}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 11 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 14344 - Recursive request received
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=23532, key=sun.nio.ch.SelectionKeyImpl@37f8bb67, sender=/127.0.0.1:4573, timestamp=1486050852444}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 11 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 23532 - Recursive request received
+[main] INFO com.mgarcia.NetworkShield - REC: []
+[main] INFO com.mgarcia.NetworkShield - MEM: 11 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 13637 - Request for www.google.pt: unblocked
+[main] INFO com.mgarcia.NetworkShield - ID: 13637 - Relaying request to /8.8.8.8:53
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=13637, key=sun.nio.ch.SelectionKeyImpl@49c2faae, sender=/127.0.0.1:26875, timestamp=1486050853119}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 11 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 13637 - Recursive request received
+[main] INFO com.mgarcia.NetworkShield - REC: []
+[main] INFO com.mgarcia.NetworkShield - MEM: 11 MB
+[main] INFO com.mgarcia.NetworkShield - ID: -24215 - Request for ogs.google.com: unblocked
+[main] INFO com.mgarcia.NetworkShield - ID: -24215 - Relaying request to /8.8.8.8:53
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=-24215, key=sun.nio.ch.SelectionKeyImpl@20ad9418, sender=/127.0.0.1:17972, timestamp=1486050853748}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 11 MB
+[main] INFO com.mgarcia.NetworkShield - ID: -24215 - Recursive request received
+[main] INFO com.mgarcia.NetworkShield - REC: []
+[main] INFO com.mgarcia.NetworkShield - MEM: 11 MB
+[main] INFO com.mgarcia.NetworkShield - ID: -5508 - Request for clients5.google.com: unblocked
+[main] INFO com.mgarcia.NetworkShield - ID: -5508 - Relaying request to /8.8.8.8:53
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=-5508, key=sun.nio.ch.SelectionKeyImpl@31cefde0, sender=/127.0.0.1:14712, timestamp=1486050853934}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 11 MB
+[main] INFO com.mgarcia.NetworkShield - ID: -5508 - Recursive request received
+[main] INFO com.mgarcia.NetworkShield - REC: []
+[main] INFO com.mgarcia.NetworkShield - MEM: 11 MB
+[main] INFO com.mgarcia.NetworkShield - ID: -30670 - Request for www.facebook.com: unblocked
+[main] INFO com.mgarcia.NetworkShield - ID: -30670 - Relaying request to /8.8.8.8:53
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=-30670, key=sun.nio.ch.SelectionKeyImpl@439f5b3d, sender=/127.0.0.1:59073, timestamp=1486050854646}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 11 MB
+[main] INFO com.mgarcia.NetworkShield - ID: -30670 - Recursive request received
+[main] INFO com.mgarcia.NetworkShield - REC: []
+[main] INFO com.mgarcia.NetworkShield - MEM: 11 MB
+[main] INFO com.mgarcia.NetworkShield - ID: -645 - Request for clients2.google.com: unblocked
+[main] INFO com.mgarcia.NetworkShield - ID: -645 - Relaying request to /8.8.8.8:53
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=-645, key=sun.nio.ch.SelectionKeyImpl@1d56ce6a, sender=/127.0.0.1:46569, timestamp=1486050855195}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 11 MB
+[main] INFO com.mgarcia.NetworkShield - ID: -645 - Recursive request received
+[main] INFO com.mgarcia.NetworkShield - REC: []
+[main] INFO com.mgarcia.NetworkShield - MEM: 11 MB
+[main] INFO com.mgarcia.NetworkShield - ID: -2091 - Request for video.flis1-1.fna.fbcdn.net: unblocked
+[main] INFO com.mgarcia.NetworkShield - ID: -2091 - Relaying request to /8.8.8.8:53
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=-2091, key=sun.nio.ch.SelectionKeyImpl@5197848c, sender=/127.0.0.1:31193, timestamp=1486050855870}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 11 MB
+[main] INFO com.mgarcia.NetworkShield - ID: -2091 - Recursive request received
+[main] INFO com.mgarcia.NetworkShield - REC: []
+[main] INFO com.mgarcia.NetworkShield - MEM: 11 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 12140 - Request for 2-edge-chat.facebook.com: unblocked
+[main] INFO com.mgarcia.NetworkShield - ID: 12140 - Relaying request to /8.8.8.8:53
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=12140, key=sun.nio.ch.SelectionKeyImpl@17f052a3, sender=/127.0.0.1:18277, timestamp=1486050857018}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 11 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 12140 - Recursive request received
+[main] INFO com.mgarcia.NetworkShield - REC: []
+[main] INFO com.mgarcia.NetworkShield - MEM: 11 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 23868 - Request for www.google.com: unblocked
+[main] INFO com.mgarcia.NetworkShield - ID: 23868 - Relaying request to /8.8.8.8:53
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=23868, key=sun.nio.ch.SelectionKeyImpl@2e0fa5d3, sender=/127.0.0.1:41280, timestamp=1486050857077}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 11 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 23868 - Recursive request received
+[main] INFO com.mgarcia.NetworkShield - REC: []
+[main] INFO com.mgarcia.NetworkShield - MEM: 11 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 24590 - Request for safebrowsing.google.com: unblocked
+[main] INFO com.mgarcia.NetworkShield - ID: 24590 - Relaying request to /8.8.8.8:53
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=24590, key=sun.nio.ch.SelectionKeyImpl@5010be6, sender=/127.0.0.1:49904, timestamp=1486050857158}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 11 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 24590 - Recursive request received
+[main] INFO com.mgarcia.NetworkShield - REC: []
+[main] INFO com.mgarcia.NetworkShield - MEM: 11 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 9282 - Request for safebrowsing.google.com: unblocked
+[main] INFO com.mgarcia.NetworkShield - ID: 9282 - Relaying request to /8.8.8.8:53
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=9282, key=sun.nio.ch.SelectionKeyImpl@685f4c2e, sender=/127.0.0.1:23148, timestamp=1486050857408}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 11 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 9282 - Recursive request received
+[main] INFO com.mgarcia.NetworkShield - REC: []
+[main] INFO com.mgarcia.NetworkShield - MEM: 11 MB
+[main] INFO com.mgarcia.NetworkShield - ID: -4000 - Request for egmmwzaixmtfn: unblocked
+[main] INFO com.mgarcia.NetworkShield - ID: -4000 - Relaying request to /8.8.8.8:53
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=-4000, key=sun.nio.ch.SelectionKeyImpl@7daf6ecc, sender=/127.0.0.1:2322, timestamp=1486050859207}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 11 MB
+[main] INFO com.mgarcia.NetworkShield - ID: -3680 - Request for unbnubuccgn: unblocked
+[main] INFO com.mgarcia.NetworkShield - ID: -3680 - Relaying request to /8.8.8.8:53
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=-4000, key=sun.nio.ch.SelectionKeyImpl@7daf6ecc, sender=/127.0.0.1:2322, timestamp=1486050859207}, com.mgarcia.RecursiveRequest{messageId=-3680, key=sun.nio.ch.SelectionKeyImpl@2e5d6d97, sender=/127.0.0.1:43787, timestamp=1486050859209}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 11 MB
+[main] INFO com.mgarcia.NetworkShield - ID: -30353 - Request for dnoovww: unblocked
+[main] INFO com.mgarcia.NetworkShield - ID: -30353 - Relaying request to /8.8.8.8:53
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=-4000, key=sun.nio.ch.SelectionKeyImpl@7daf6ecc, sender=/127.0.0.1:2322, timestamp=1486050859207}, com.mgarcia.RecursiveRequest{messageId=-3680, key=sun.nio.ch.SelectionKeyImpl@2e5d6d97, sender=/127.0.0.1:43787, timestamp=1486050859209}, com.mgarcia.RecursiveRequest{messageId=-30353, key=sun.nio.ch.SelectionKeyImpl@238e0d81, sender=/127.0.0.1:32021, timestamp=1486050859210}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 11 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 29619 - Request for egmmwzaixmtfn: unblocked
+[main] INFO com.mgarcia.NetworkShield - ID: 29619 - Relaying request to /8.8.8.8:53
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=29619, key=sun.nio.ch.SelectionKeyImpl@31221be2, sender=/127.0.0.1:12149, timestamp=1486050860218}, com.mgarcia.RecursiveRequest{messageId=-4000, key=sun.nio.ch.SelectionKeyImpl@7daf6ecc, sender=/127.0.0.1:2322, timestamp=1486050859207}, com.mgarcia.RecursiveRequest{messageId=-3680, key=sun.nio.ch.SelectionKeyImpl@2e5d6d97, sender=/127.0.0.1:43787, timestamp=1486050859209}, com.mgarcia.RecursiveRequest{messageId=-30353, key=sun.nio.ch.SelectionKeyImpl@238e0d81, sender=/127.0.0.1:32021, timestamp=1486050859210}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 11 MB
+[main] INFO com.mgarcia.NetworkShield - ID: -20136 - Request for unbnubuccgn: unblocked
+[main] INFO com.mgarcia.NetworkShield - ID: -20136 - Relaying request to /8.8.8.8:53
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=29619, key=sun.nio.ch.SelectionKeyImpl@31221be2, sender=/127.0.0.1:12149, timestamp=1486050860218}, com.mgarcia.RecursiveRequest{messageId=-4000, key=sun.nio.ch.SelectionKeyImpl@7daf6ecc, sender=/127.0.0.1:2322, timestamp=1486050859207}, com.mgarcia.RecursiveRequest{messageId=-20136, key=sun.nio.ch.SelectionKeyImpl@377dca04, sender=/127.0.0.1:63368, timestamp=1486050860219}, com.mgarcia.RecursiveRequest{messageId=-3680, key=sun.nio.ch.SelectionKeyImpl@2e5d6d97, sender=/127.0.0.1:43787, timestamp=1486050859209}, com.mgarcia.RecursiveRequest{messageId=-30353, key=sun.nio.ch.SelectionKeyImpl@238e0d81, sender=/127.0.0.1:32021, timestamp=1486050859210}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 11 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 12580 - Request for dnoovww: unblocked
+[main] INFO com.mgarcia.NetworkShield - ID: 12580 - Relaying request to /8.8.8.8:53
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=29619, key=sun.nio.ch.SelectionKeyImpl@31221be2, sender=/127.0.0.1:12149, timestamp=1486050860218}, com.mgarcia.RecursiveRequest{messageId=12580, key=sun.nio.ch.SelectionKeyImpl@728938a9, sender=/127.0.0.1:19778, timestamp=1486050860219}, com.mgarcia.RecursiveRequest{messageId=-4000, key=sun.nio.ch.SelectionKeyImpl@7daf6ecc, sender=/127.0.0.1:2322, timestamp=1486050859207}, com.mgarcia.RecursiveRequest{messageId=-20136, key=sun.nio.ch.SelectionKeyImpl@377dca04, sender=/127.0.0.1:63368, timestamp=1486050860219}, com.mgarcia.RecursiveRequest{messageId=-3680, key=sun.nio.ch.SelectionKeyImpl@2e5d6d97, sender=/127.0.0.1:43787, timestamp=1486050859209}, com.mgarcia.RecursiveRequest{messageId=-30353, key=sun.nio.ch.SelectionKeyImpl@238e0d81, sender=/127.0.0.1:32021, timestamp=1486050859210}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 11 MB
+[main] INFO com.mgarcia.NetworkShield - ID: -20136 - Recursive request received
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=29619, key=sun.nio.ch.SelectionKeyImpl@31221be2, sender=/127.0.0.1:12149, timestamp=1486050860218}, com.mgarcia.RecursiveRequest{messageId=12580, key=sun.nio.ch.SelectionKeyImpl@728938a9, sender=/127.0.0.1:19778, timestamp=1486050860219}, com.mgarcia.RecursiveRequest{messageId=-4000, key=sun.nio.ch.SelectionKeyImpl@7daf6ecc, sender=/127.0.0.1:2322, timestamp=1486050859207}, com.mgarcia.RecursiveRequest{messageId=-3680, key=sun.nio.ch.SelectionKeyImpl@2e5d6d97, sender=/127.0.0.1:43787, timestamp=1486050859209}, com.mgarcia.RecursiveRequest{messageId=-30353, key=sun.nio.ch.SelectionKeyImpl@238e0d81, sender=/127.0.0.1:32021, timestamp=1486050859210}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 11 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 12580 - Recursive request received
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=29619, key=sun.nio.ch.SelectionKeyImpl@31221be2, sender=/127.0.0.1:12149, timestamp=1486050860218}, com.mgarcia.RecursiveRequest{messageId=-4000, key=sun.nio.ch.SelectionKeyImpl@7daf6ecc, sender=/127.0.0.1:2322, timestamp=1486050859207}, com.mgarcia.RecursiveRequest{messageId=-3680, key=sun.nio.ch.SelectionKeyImpl@2e5d6d97, sender=/127.0.0.1:43787, timestamp=1486050859209}, com.mgarcia.RecursiveRequest{messageId=-30353, key=sun.nio.ch.SelectionKeyImpl@238e0d81, sender=/127.0.0.1:32021, timestamp=1486050859210}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 11 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 29619 - Recursive request received
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=-4000, key=sun.nio.ch.SelectionKeyImpl@7daf6ecc, sender=/127.0.0.1:2322, timestamp=1486050859207}, com.mgarcia.RecursiveRequest{messageId=-3680, key=sun.nio.ch.SelectionKeyImpl@2e5d6d97, sender=/127.0.0.1:43787, timestamp=1486050859209}, com.mgarcia.RecursiveRequest{messageId=-30353, key=sun.nio.ch.SelectionKeyImpl@238e0d81, sender=/127.0.0.1:32021, timestamp=1486050859210}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 11 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 1133 - Request for egmmwzaixmtfn: unblocked
+[main] INFO com.mgarcia.NetworkShield - ID: 1133 - Relaying request to /8.8.8.8:53
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=-4000, key=sun.nio.ch.SelectionKeyImpl@7daf6ecc, sender=/127.0.0.1:2322, timestamp=1486050859207}, com.mgarcia.RecursiveRequest{messageId=1133, key=sun.nio.ch.SelectionKeyImpl@21b8d17c, sender=/127.0.0.1:55162, timestamp=1486050860266}, com.mgarcia.RecursiveRequest{messageId=-3680, key=sun.nio.ch.SelectionKeyImpl@2e5d6d97, sender=/127.0.0.1:43787, timestamp=1486050859209}, com.mgarcia.RecursiveRequest{messageId=-30353, key=sun.nio.ch.SelectionKeyImpl@238e0d81, sender=/127.0.0.1:32021, timestamp=1486050859210}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 11 MB
+[main] INFO com.mgarcia.NetworkShield - ID: -28378 - Request for unbnubuccgn: unblocked
+[main] INFO com.mgarcia.NetworkShield - ID: -28378 - Relaying request to /8.8.8.8:53
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=-4000, key=sun.nio.ch.SelectionKeyImpl@7daf6ecc, sender=/127.0.0.1:2322, timestamp=1486050859207}, com.mgarcia.RecursiveRequest{messageId=1133, key=sun.nio.ch.SelectionKeyImpl@21b8d17c, sender=/127.0.0.1:55162, timestamp=1486050860266}, com.mgarcia.RecursiveRequest{messageId=-28378, key=sun.nio.ch.SelectionKeyImpl@6433a2, sender=/127.0.0.1:59640, timestamp=1486050860267}, com.mgarcia.RecursiveRequest{messageId=-3680, key=sun.nio.ch.SelectionKeyImpl@2e5d6d97, sender=/127.0.0.1:43787, timestamp=1486050859209}, com.mgarcia.RecursiveRequest{messageId=-30353, key=sun.nio.ch.SelectionKeyImpl@238e0d81, sender=/127.0.0.1:32021, timestamp=1486050859210}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 11 MB
+[main] INFO com.mgarcia.NetworkShield - ID: -32408 - Request for dnoovww: unblocked
+[main] INFO com.mgarcia.NetworkShield - ID: -32408 - Relaying request to /8.8.8.8:53
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=-32408, key=sun.nio.ch.SelectionKeyImpl@5910e440, sender=/127.0.0.1:51315, timestamp=1486050860268}, com.mgarcia.RecursiveRequest{messageId=-4000, key=sun.nio.ch.SelectionKeyImpl@7daf6ecc, sender=/127.0.0.1:2322, timestamp=1486050859207}, com.mgarcia.RecursiveRequest{messageId=1133, key=sun.nio.ch.SelectionKeyImpl@21b8d17c, sender=/127.0.0.1:55162, timestamp=1486050860266}, com.mgarcia.RecursiveRequest{messageId=-28378, key=sun.nio.ch.SelectionKeyImpl@6433a2, sender=/127.0.0.1:59640, timestamp=1486050860267}, com.mgarcia.RecursiveRequest{messageId=-3680, key=sun.nio.ch.SelectionKeyImpl@2e5d6d97, sender=/127.0.0.1:43787, timestamp=1486050859209}, com.mgarcia.RecursiveRequest{messageId=-30353, key=sun.nio.ch.SelectionKeyImpl@238e0d81, sender=/127.0.0.1:32021, timestamp=1486050859210}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 11 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 1133 - Recursive request received
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=-32408, key=sun.nio.ch.SelectionKeyImpl@5910e440, sender=/127.0.0.1:51315, timestamp=1486050860268}, com.mgarcia.RecursiveRequest{messageId=-4000, key=sun.nio.ch.SelectionKeyImpl@7daf6ecc, sender=/127.0.0.1:2322, timestamp=1486050859207}, com.mgarcia.RecursiveRequest{messageId=-28378, key=sun.nio.ch.SelectionKeyImpl@6433a2, sender=/127.0.0.1:59640, timestamp=1486050860267}, com.mgarcia.RecursiveRequest{messageId=-3680, key=sun.nio.ch.SelectionKeyImpl@2e5d6d97, sender=/127.0.0.1:43787, timestamp=1486050859209}, com.mgarcia.RecursiveRequest{messageId=-30353, key=sun.nio.ch.SelectionKeyImpl@238e0d81, sender=/127.0.0.1:32021, timestamp=1486050859210}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 11 MB
+[main] INFO com.mgarcia.NetworkShield - ID: -32408 - Recursive request received
+[main] INFO com.mgarcia.NetworkShield - ID: -28378 - Recursive request received
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=-4000, key=sun.nio.ch.SelectionKeyImpl@7daf6ecc, sender=/127.0.0.1:2322, timestamp=1486050859207}, com.mgarcia.RecursiveRequest{messageId=-3680, key=sun.nio.ch.SelectionKeyImpl@2e5d6d97, sender=/127.0.0.1:43787, timestamp=1486050859209}, com.mgarcia.RecursiveRequest{messageId=-30353, key=sun.nio.ch.SelectionKeyImpl@238e0d81, sender=/127.0.0.1:32021, timestamp=1486050859210}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 11 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 16182 - Request for ssl.gstatic.com: unblocked
+[main] INFO com.mgarcia.NetworkShield - ID: 16182 - Relaying request to /8.8.8.8:53
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=-4000, key=sun.nio.ch.SelectionKeyImpl@7daf6ecc, sender=/127.0.0.1:2322, timestamp=1486050859207}, com.mgarcia.RecursiveRequest{messageId=-3680, key=sun.nio.ch.SelectionKeyImpl@2e5d6d97, sender=/127.0.0.1:43787, timestamp=1486050859209}, com.mgarcia.RecursiveRequest{messageId=16182, key=sun.nio.ch.SelectionKeyImpl@6267c3bb, sender=/127.0.0.1:33541, timestamp=1486050862109}, com.mgarcia.RecursiveRequest{messageId=-30353, key=sun.nio.ch.SelectionKeyImpl@238e0d81, sender=/127.0.0.1:32021, timestamp=1486050859210}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 11 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 16182 - Recursive request received
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=-4000, key=sun.nio.ch.SelectionKeyImpl@7daf6ecc, sender=/127.0.0.1:2322, timestamp=1486050859207}, com.mgarcia.RecursiveRequest{messageId=-3680, key=sun.nio.ch.SelectionKeyImpl@2e5d6d97, sender=/127.0.0.1:43787, timestamp=1486050859209}, com.mgarcia.RecursiveRequest{messageId=-30353, key=sun.nio.ch.SelectionKeyImpl@238e0d81, sender=/127.0.0.1:32021, timestamp=1486050859210}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 11 MB
+[main] INFO com.mgarcia.NetworkShield - ID: -17986 - Request for scontent.flis1-1.fna.fbcdn.net: unblocked
+[main] INFO com.mgarcia.NetworkShield - ID: -17986 - Relaying request to /8.8.8.8:53
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=-4000, key=sun.nio.ch.SelectionKeyImpl@7daf6ecc, sender=/127.0.0.1:2322, timestamp=1486050859207}, com.mgarcia.RecursiveRequest{messageId=-17986, key=sun.nio.ch.SelectionKeyImpl@533ddba, sender=/127.0.0.1:48749, timestamp=1486050862998}, com.mgarcia.RecursiveRequest{messageId=-3680, key=sun.nio.ch.SelectionKeyImpl@2e5d6d97, sender=/127.0.0.1:43787, timestamp=1486050859209}, com.mgarcia.RecursiveRequest{messageId=-30353, key=sun.nio.ch.SelectionKeyImpl@238e0d81, sender=/127.0.0.1:32021, timestamp=1486050859210}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 11 MB
+[main] INFO com.mgarcia.NetworkShield - ID: -17986 - Recursive request received
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=-4000, key=sun.nio.ch.SelectionKeyImpl@7daf6ecc, sender=/127.0.0.1:2322, timestamp=1486050859207}, com.mgarcia.RecursiveRequest{messageId=-3680, key=sun.nio.ch.SelectionKeyImpl@2e5d6d97, sender=/127.0.0.1:43787, timestamp=1486050859209}, com.mgarcia.RecursiveRequest{messageId=-30353, key=sun.nio.ch.SelectionKeyImpl@238e0d81, sender=/127.0.0.1:32021, timestamp=1486050859210}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 7301 - Request for github.com: unblocked
+[main] INFO com.mgarcia.NetworkShield - ID: 7301 - Relaying request to /8.8.8.8:53
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=7301, key=sun.nio.ch.SelectionKeyImpl@246b179d, sender=/127.0.0.1:43666, timestamp=1486050882398}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 18108 - Request for github.com: unblocked
+[main] INFO com.mgarcia.NetworkShield - ID: 18108 - Relaying request to /8.8.8.8:53
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=18108, key=sun.nio.ch.SelectionKeyImpl@7a07c5b4, sender=/127.0.0.1:43666, timestamp=1486050882399}, com.mgarcia.RecursiveRequest{messageId=7301, key=sun.nio.ch.SelectionKeyImpl@246b179d, sender=/127.0.0.1:43666, timestamp=1486050882398}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 18108 - Recursive request received
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=7301, key=sun.nio.ch.SelectionKeyImpl@246b179d, sender=/127.0.0.1:43666, timestamp=1486050882398}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 7301 - Recursive request received
+[main] INFO com.mgarcia.NetworkShield - REC: []
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 379 - Request for github.com: unblocked
+[main] INFO com.mgarcia.NetworkShield - ID: 379 - Relaying request to /8.8.8.8:53
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=379, key=sun.nio.ch.SelectionKeyImpl@26a1ab54, sender=/127.0.0.1:14517, timestamp=1486050928359}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 379 - Recursive request received
+[main] INFO com.mgarcia.NetworkShield - REC: []
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 9610 - Request for avatars1.githubusercontent.com: unblocked
+[main] INFO com.mgarcia.NetworkShield - ID: 9610 - Relaying request to /8.8.8.8:53
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=9610, key=sun.nio.ch.SelectionKeyImpl@3d646c37, sender=/127.0.0.1:28224, timestamp=1486050929062}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: -30413 - Request for avatars2.githubusercontent.com: unblocked
+[main] INFO com.mgarcia.NetworkShield - ID: -30413 - Relaying request to /8.8.8.8:53
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=9610, key=sun.nio.ch.SelectionKeyImpl@3d646c37, sender=/127.0.0.1:28224, timestamp=1486050929062}, com.mgarcia.RecursiveRequest{messageId=-30413, key=sun.nio.ch.SelectionKeyImpl@41cf53f9, sender=/127.0.0.1:37665, timestamp=1486050929063}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: -9922 - Request for avatars3.githubusercontent.com: unblocked
+[main] INFO com.mgarcia.NetworkShield - ID: -9922 - Relaying request to /8.8.8.8:53
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=-9922, key=sun.nio.ch.SelectionKeyImpl@5a10411, sender=/127.0.0.1:41899, timestamp=1486050929064}, com.mgarcia.RecursiveRequest{messageId=9610, key=sun.nio.ch.SelectionKeyImpl@3d646c37, sender=/127.0.0.1:28224, timestamp=1486050929062}, com.mgarcia.RecursiveRequest{messageId=-30413, key=sun.nio.ch.SelectionKeyImpl@41cf53f9, sender=/127.0.0.1:37665, timestamp=1486050929063}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: -30413 - Recursive request received
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=-9922, key=sun.nio.ch.SelectionKeyImpl@5a10411, sender=/127.0.0.1:41899, timestamp=1486050929064}, com.mgarcia.RecursiveRequest{messageId=9610, key=sun.nio.ch.SelectionKeyImpl@3d646c37, sender=/127.0.0.1:28224, timestamp=1486050929062}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: -9922 - Recursive request received
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=9610, key=sun.nio.ch.SelectionKeyImpl@3d646c37, sender=/127.0.0.1:28224, timestamp=1486050929062}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 9610 - Recursive request received
+[main] INFO com.mgarcia.NetworkShield - REC: []
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 4717 - Request for live.github.com: unblocked
+[main] INFO com.mgarcia.NetworkShield - ID: 4717 - Relaying request to /8.8.8.8:53
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=4717, key=sun.nio.ch.SelectionKeyImpl@2ef1e4fa, sender=/127.0.0.1:58516, timestamp=1486050929916}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 4717 - Recursive request received
+[main] INFO com.mgarcia.NetworkShield - REC: []
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: -26858 - Request for www.youtube.com: unblocked
+[main] INFO com.mgarcia.NetworkShield - ID: -26858 - Relaying request to /8.8.8.8:53
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=-26858, key=sun.nio.ch.SelectionKeyImpl@306a30c7, sender=/127.0.0.1:41161, timestamp=1486050938812}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: -26858 - Recursive request received
+[main] INFO com.mgarcia.NetworkShield - REC: []
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 18739 - Request for yt3.ggpht.com: unblocked
+[main] INFO com.mgarcia.NetworkShield - ID: 18739 - Relaying request to /8.8.8.8:53
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=18739, key=sun.nio.ch.SelectionKeyImpl@b81eda8, sender=/127.0.0.1:51893, timestamp=1486050940019}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 24576 - Request for i.ytimg.com: unblocked
+[main] INFO com.mgarcia.NetworkShield - ID: 24576 - Relaying request to /8.8.8.8:53
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=24576, key=sun.nio.ch.SelectionKeyImpl@68de145, sender=/127.0.0.1:11323, timestamp=1486050940020}, com.mgarcia.RecursiveRequest{messageId=18739, key=sun.nio.ch.SelectionKeyImpl@b81eda8, sender=/127.0.0.1:51893, timestamp=1486050940019}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 18739 - Recursive request received
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=24576, key=sun.nio.ch.SelectionKeyImpl@68de145, sender=/127.0.0.1:11323, timestamp=1486050940020}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 24576 - Recursive request received
+[main] INFO com.mgarcia.NetworkShield - REC: []
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: -11932 - Request for github.com: unblocked
+[main] INFO com.mgarcia.NetworkShield - ID: -11932 - Relaying request to /8.8.8.8:53
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=-11932, key=sun.nio.ch.SelectionKeyImpl@27fa135a, sender=/127.0.0.1:44679, timestamp=1486050942393}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 2770 - Request for github.com: unblocked
+[main] INFO com.mgarcia.NetworkShield - ID: 2770 - Relaying request to /8.8.8.8:53
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=-11932, key=sun.nio.ch.SelectionKeyImpl@27fa135a, sender=/127.0.0.1:44679, timestamp=1486050942393}, com.mgarcia.RecursiveRequest{messageId=2770, key=sun.nio.ch.SelectionKeyImpl@46f7f36a, sender=/127.0.0.1:44679, timestamp=1486050942393}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 26508 - Request for api.github.com: unblocked
+[main] INFO com.mgarcia.NetworkShield - ID: 26508 - Relaying request to /8.8.8.8:53
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=-11932, key=sun.nio.ch.SelectionKeyImpl@27fa135a, sender=/127.0.0.1:44679, timestamp=1486050942393}, com.mgarcia.RecursiveRequest{messageId=2770, key=sun.nio.ch.SelectionKeyImpl@46f7f36a, sender=/127.0.0.1:44679, timestamp=1486050942393}, com.mgarcia.RecursiveRequest{messageId=26508, key=sun.nio.ch.SelectionKeyImpl@421faab1, sender=/127.0.0.1:59363, timestamp=1486050942394}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: -11932 - Recursive request received
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=2770, key=sun.nio.ch.SelectionKeyImpl@46f7f36a, sender=/127.0.0.1:44679, timestamp=1486050942393}, com.mgarcia.RecursiveRequest{messageId=26508, key=sun.nio.ch.SelectionKeyImpl@421faab1, sender=/127.0.0.1:59363, timestamp=1486050942394}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 26508 - Recursive request received
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=2770, key=sun.nio.ch.SelectionKeyImpl@46f7f36a, sender=/127.0.0.1:44679, timestamp=1486050942393}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 2770 - Recursive request received
+[main] INFO com.mgarcia.NetworkShield - REC: []
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: -11324 - Request for www.reddit.com: unblocked
+[main] INFO com.mgarcia.NetworkShield - ID: -11324 - Relaying request to /8.8.8.8:53
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=-11324, key=sun.nio.ch.SelectionKeyImpl@2b71fc7e, sender=/127.0.0.1:27797, timestamp=1486050947865}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: -11324 - Recursive request received
+[main] INFO com.mgarcia.NetworkShield - REC: []
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 22956 - Request for out.reddit.com: unblocked
+[main] INFO com.mgarcia.NetworkShield - ID: 22956 - Relaying request to /8.8.8.8:53
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=22956, key=sun.nio.ch.SelectionKeyImpl@5ce65a89, sender=/127.0.0.1:18751, timestamp=1486050949716}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 22956 - Recursive request received
+[main] INFO com.mgarcia.NetworkShield - REC: []
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 2070 - Request for b.thumbs.redditmedia.com: unblocked
+[main] INFO com.mgarcia.NetworkShield - ID: 2070 - Relaying request to /8.8.8.8:53
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=2070, key=sun.nio.ch.SelectionKeyImpl@25f38edc, sender=/127.0.0.1:54962, timestamp=1486050949876}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 2070 - Recursive request received
+[main] INFO com.mgarcia.NetworkShield - REC: []
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 11976 - Request for api.imgur.com: unblocked
+[main] INFO com.mgarcia.NetworkShield - ID: 11976 - Relaying request to /8.8.8.8:53
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=11976, key=sun.nio.ch.SelectionKeyImpl@1a86f2f1, sender=/127.0.0.1:44494, timestamp=1486050950499}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 11976 - Recursive request received
+[main] INFO com.mgarcia.NetworkShield - REC: []
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 27072 - Request for gfycat.com: unblocked
+[main] INFO com.mgarcia.NetworkShield - ID: 27072 - Relaying request to /8.8.8.8:53
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=27072, key=sun.nio.ch.SelectionKeyImpl@3eb07fd3, sender=/127.0.0.1:23191, timestamp=1486050950867}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 27072 - Recursive request received
+[main] INFO com.mgarcia.NetworkShield - REC: []
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 12229 - Request for 1-edge-chat.facebook.com: unblocked
+[main] INFO com.mgarcia.NetworkShield - ID: 12229 - Relaying request to /8.8.8.8:53
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=12229, key=sun.nio.ch.SelectionKeyImpl@506c589e, sender=/127.0.0.1:25444, timestamp=1486050957829}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 12229 - Recursive request received
+[main] INFO com.mgarcia.NetworkShield - REC: []
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: -21789 - Request for pixel.facebook.com: blocked
+[main] INFO com.mgarcia.NetworkShield - REC: []
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: -22882 - Request for pixel.facebook.com: blocked
+[main] INFO com.mgarcia.NetworkShield - REC: []
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: -17114 - Request for pixel.facebook.com: blocked
+[main] INFO com.mgarcia.NetworkShield - REC: []
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: -17114 - Request for pixel.facebook.com: blocked
+[main] INFO com.mgarcia.NetworkShield - REC: []
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: -6324 - Request for pixel.facebook.com: blocked
+[main] INFO com.mgarcia.NetworkShield - REC: []
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 24531 - Request for pixel.facebook.com: blocked
+[main] INFO com.mgarcia.NetworkShield - REC: []
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: -6324 - Request for pixel.facebook.com: blocked
+[main] INFO com.mgarcia.NetworkShield - REC: []
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 24531 - Request for pixel.facebook.com: blocked
+[main] INFO com.mgarcia.NetworkShield - REC: []
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: -24756 - Request for pixel.facebook.com: blocked
+[main] INFO com.mgarcia.NetworkShield - REC: []
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 15134 - Request for pixel.facebook.com: blocked
+[main] INFO com.mgarcia.NetworkShield - REC: []
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: -24756 - Request for pixel.facebook.com: blocked
+[main] INFO com.mgarcia.NetworkShield - REC: []
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: -2165 - Request for pixel.facebook.com: blocked
+[main] INFO com.mgarcia.NetworkShield - REC: []
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 5314 - Request for pixel.facebook.com: blocked
+[main] INFO com.mgarcia.NetworkShield - REC: []
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 15134 - Request for pixel.facebook.com: blocked
+[main] INFO com.mgarcia.NetworkShield - REC: []
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 20104 - Request for pixel.facebook.com: blocked
+[main] INFO com.mgarcia.NetworkShield - REC: []
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: -535 - Request for pixel.facebook.com: blocked
+[main] INFO com.mgarcia.NetworkShield - REC: []
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 15186 - Request for github.com: unblocked
+[main] INFO com.mgarcia.NetworkShield - ID: 15186 - Relaying request to /8.8.8.8:53
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=15186, key=sun.nio.ch.SelectionKeyImpl@69d0a921, sender=/127.0.0.1:60037, timestamp=1486051002372}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: -16136 - Request for github.com: unblocked
+[main] INFO com.mgarcia.NetworkShield - ID: -16136 - Relaying request to /8.8.8.8:53
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=15186, key=sun.nio.ch.SelectionKeyImpl@69d0a921, sender=/127.0.0.1:60037, timestamp=1486051002372}, com.mgarcia.RecursiveRequest{messageId=-16136, key=sun.nio.ch.SelectionKeyImpl@446cdf90, sender=/127.0.0.1:60037, timestamp=1486051002373}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: -16136 - Recursive request received
+[main] INFO com.mgarcia.NetworkShield - REC: [com.mgarcia.RecursiveRequest{messageId=15186, key=sun.nio.ch.SelectionKeyImpl@69d0a921, sender=/127.0.0.1:60037, timestamp=1486051002372}]
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 15186 - Recursive request received
+[main] INFO com.mgarcia.NetworkShield - REC: []
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 20104 - Request for pixel.facebook.com: blocked
+[main] INFO com.mgarcia.NetworkShield - REC: []
+[main] INFO com.mgarcia.NetworkShield - MEM: 12 MB
+[main] INFO com.mgarcia.NetworkShield - ID: 11736 - Request for pixel.facebook.com: blocked
+[main] INFO com.mgarcia.NetworkShield - REC: []

@@ -1,10 +1,10 @@
-package dns;
+package com.mgarcia.dns;
 
-import dns.codes.Opcode;
-import dns.codes.ResponseCode;
-import dns.section.Header;
-import dns.section.Question;
-import dns.section.ResourceRecord;
+import com.mgarcia.dns.codes.Opcode;
+import com.mgarcia.dns.codes.ResponseCode;
+import com.mgarcia.dns.section.Header;
+import com.mgarcia.dns.section.Question;
+import com.mgarcia.dns.section.ResourceRecord;
 
 import java.nio.ByteBuffer;
 import java.util.Arrays;

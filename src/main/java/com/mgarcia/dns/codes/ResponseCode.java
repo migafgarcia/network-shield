@@ -1,4 +1,4 @@
-package dns.codes;
+package com.mgarcia.dns.codes;
 
 /**
  *

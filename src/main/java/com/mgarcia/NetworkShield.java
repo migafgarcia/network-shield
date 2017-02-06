@@ -1,3 +1,4 @@
+package com.mgarcia;
 
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
@@ -5,11 +6,11 @@ import com.google.gson.stream.JsonReader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import dns.Message;
-import dns.codes.Opcode;
-import dns.codes.ResponseCode;
-import hosts.HostsTree;
-import settings.Settings;
+import com.mgarcia.dns.Message;
+import com.mgarcia.dns.codes.Opcode;
+import com.mgarcia.dns.codes.ResponseCode;
+import com.mgarcia.hosts.HostsTree;
+import com.mgarcia.settings.Settings;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -27,7 +28,7 @@ public class NetworkShield {
 
     private static final int MAX_PACKET_SIZE = 512;
 
-    private static final Logger logger = LoggerFactory.getLogger(NetworkShield.class);
+    private static final Logger logger = LoggerFactory.getLogger("NetworkShield");
 
     public static void main(String[] args) {
 
@@ -99,7 +100,7 @@ public class NetworkShield {
 
                     /*
                      * 1 - A new request was received (key must equal datagramChannelKey)
-                     * 2 - A response from google's dns server was received
+                     * 2 - A response from google's com.mgarcia.dns server was received
                      */
                     if (key.isReadable()) {
 
@@ -169,7 +170,7 @@ public class NetworkShield {
 
 
                         }
-                        // 2 - A response from google's dns server was received
+                        // 2 - A response from google's com.mgarcia.dns server was received
                         else {
 
 

@@ -1,3 +1,5 @@
+package com.mgarcia;
+
 import java.net.SocketAddress;
 import java.nio.channels.SelectionKey;
 
@@ -36,7 +38,7 @@ public class RecursiveRequest {
 
     @Override
     public String toString() {
-        return "RecursiveRequest{" +
+        return "com.mgarcia.RecursiveRequest{" +
                 "messageId=" + messageId +
                 ", key=" + key +
                 ", sender=" + sender +

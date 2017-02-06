@@ -1,4 +1,4 @@
-package dns.resource_records;
+package com.mgarcia.dns.resource_records;
 
 public enum ResourceRecordClass {
 

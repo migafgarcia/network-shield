@@ -1,9 +1,9 @@
-package dns.section;
+package com.mgarcia.dns.section;
 
-import dns.resource_records.ResourceRecordClass;
-import dns.resource_records.ResourceRecordType;
-import dns.resource_records.ResourceRecordData;
-import utils.BitUtils;
+import com.mgarcia.dns.resource_records.ResourceRecordClass;
+import com.mgarcia.dns.resource_records.ResourceRecordType;
+import com.mgarcia.dns.resource_records.ResourceRecordData;
+import com.mgarcia.utils.BitUtils;
 
 import java.nio.ByteBuffer;
 import java.util.ArrayList;

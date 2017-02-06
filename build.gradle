@@ -19,8 +19,11 @@ apply plugin: "com.github.johnrengelman.shadow"
 
 shadowJar {
     baseName = 'networkshield'
-    classifier = null
-    version = null
+    version = 0.1
+
+    dependencies {
+        exclude(dependency('junit:junit'))
+    }
 }
 
 

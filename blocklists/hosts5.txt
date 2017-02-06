@@ -4909,7 +4909,7 @@ adsbookie.com
 ads.adsbookie.com
 t.cqq5id8n.com
 cs.luckyorange.net
-settings.luckyorange.net
+com.mgarcia.settings.luckyorange.net
 upload.luckyorange.net
 ads.mylikes.com
 www.mystat.pl
@@ -7931,7 +7931,7 @@ ads.lavoix.com
 ad1.logger.co.kr
 trk14.logger.co.kr
 oas.mainetoday.com
-utils.media-general.com
+com.mgarcia.utils.media-general.com
 ads.mgnetwork.com
 tracking.military.com
 ad.mirror.co.uk

@@ -2232,7 +2232,7 @@ us.a1.yimg.com
 usapromotravel.com
 usmsad.tom.com
 utarget.co.uk
-utils.mediageneral.net
+com.mgarcia.utils.mediageneral.net
 v1.cnzz.com
 validclick.com
 valuead.com
