@@ -1,0 +1,529 @@
+
+STATUS | wrapper  | 2017/02/07 17:47:15 | --> Wrapper Started as Console
+STATUS | wrapper  | 2017/02/07 17:47:15 | Java Service Wrapper Community Edition 64-bit 3.5.30
+STATUS | wrapper  | 2017/02/07 17:47:15 |   Copyright (C) 1999-2016 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2017/02/07 17:47:15 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2017/02/07 17:47:15 | 
+WARN   | wrapper  | 2017/02/07 17:47:15 | The configured wrapper.java.command could not be found, attempting to launch anyway: java -jar
+STATUS | wrapper  | 2017/02/07 17:47:15 | Launching a JVM...
+INFO   | wrapper  | 2017/02/07 17:47:15 | Java Command Line:
+INFO   | wrapper  | 2017/02/07 17:47:15 |   Command[0] : java -jar
+INFO   | wrapper  | 2017/02/07 17:47:15 |   Command[1] : -Djava.library.path=../lib
+INFO   | wrapper  | 2017/02/07 17:47:15 |   Command[2] : -classpath
+INFO   | wrapper  | 2017/02/07 17:47:15 |   Command[3] : ../lib/wrapper.jar:../lib/classes
+INFO   | wrapper  | 2017/02/07 17:47:15 |   Command[4] : -Dwrapper.key=7411vt2yqtt7RGL1
+INFO   | wrapper  | 2017/02/07 17:47:15 |   Command[5] : -Dwrapper.port=32000
+INFO   | wrapper  | 2017/02/07 17:47:15 |   Command[6] : -Dwrapper.jvm.port.min=31000
+INFO   | wrapper  | 2017/02/07 17:47:15 |   Command[7] : -Dwrapper.jvm.port.max=31999
+INFO   | wrapper  | 2017/02/07 17:47:15 |   Command[8] : -Dwrapper.pid=23298
+INFO   | wrapper  | 2017/02/07 17:47:15 |   Command[9] : -Dwrapper.version=3.5.30
+INFO   | wrapper  | 2017/02/07 17:47:15 |   Command[10] : -Dwrapper.native_library=wrapper
+INFO   | wrapper  | 2017/02/07 17:47:15 |   Command[11] : -Dwrapper.arch=x86
+INFO   | wrapper  | 2017/02/07 17:47:15 |   Command[12] : -Dwrapper.cpu.timeout=10
+INFO   | wrapper  | 2017/02/07 17:47:15 |   Command[13] : -Dwrapper.jvmid=1
+INFO   | wrapper  | 2017/02/07 17:47:15 |   Command[14] : com.mgarcia.NetworkShield
+ERROR  | wrapper  | 2017/02/07 17:47:15 | JVM exited while loading the application.
+ERROR  | wrapper  | 2017/02/07 17:47:15 | Unable to start JVM: No such file or directory (2)
+ADVICE | wrapper  | 2017/02/07 17:47:15 | 
+ADVICE | wrapper  | 2017/02/07 17:47:15 | ------------------------------------------------------------------------
+ADVICE | wrapper  | 2017/02/07 17:47:15 | Advice:
+ADVICE | wrapper  | 2017/02/07 17:47:15 | Usually when the Wrapper fails to start the JVM process, it is because
+ADVICE | wrapper  | 2017/02/07 17:47:15 | of a problem with the value of the configured Java command.  Currently:
+ADVICE | wrapper  | 2017/02/07 17:47:15 | wrapper.java.command=java -jar
+ADVICE | wrapper  | 2017/02/07 17:47:15 | Please make sure that the PATH or any other referenced environment
+ADVICE | wrapper  | 2017/02/07 17:47:15 | variables are correctly defined for the current environment.
+ADVICE | wrapper  | 2017/02/07 17:47:15 | ------------------------------------------------------------------------
+ADVICE | wrapper  | 2017/02/07 17:47:15 | 
+WARN   | wrapper  | 2017/02/07 17:47:19 | The configured wrapper.java.command could not be found, attempting to launch anyway: java -jar
+STATUS | wrapper  | 2017/02/07 17:47:19 | Launching a JVM...
+INFO   | wrapper  | 2017/02/07 17:47:19 | Java Command Line:
+INFO   | wrapper  | 2017/02/07 17:47:19 |   Command[0] : java -jar
+INFO   | wrapper  | 2017/02/07 17:47:19 |   Command[1] : -Djava.library.path=../lib
+INFO   | wrapper  | 2017/02/07 17:47:19 |   Command[2] : -classpath
+INFO   | wrapper  | 2017/02/07 17:47:19 |   Command[3] : ../lib/wrapper.jar:../lib/classes
+INFO   | wrapper  | 2017/02/07 17:47:19 |   Command[4] : -Dwrapper.key=dGnom6AO2p32rLHz
+INFO   | wrapper  | 2017/02/07 17:47:19 |   Command[5] : -Dwrapper.port=32000
+INFO   | wrapper  | 2017/02/07 17:47:19 |   Command[6] : -Dwrapper.jvm.port.min=31000
+INFO   | wrapper  | 2017/02/07 17:47:19 |   Command[7] : -Dwrapper.jvm.port.max=31999
+INFO   | wrapper  | 2017/02/07 17:47:19 |   Command[8] : -Dwrapper.pid=23298
+INFO   | wrapper  | 2017/02/07 17:47:19 |   Command[9] : -Dwrapper.version=3.5.30
+INFO   | wrapper  | 2017/02/07 17:47:19 |   Command[10] : -Dwrapper.native_library=wrapper
+INFO   | wrapper  | 2017/02/07 17:47:19 |   Command[11] : -Dwrapper.arch=x86
+INFO   | wrapper  | 2017/02/07 17:47:19 |   Command[12] : -Dwrapper.cpu.timeout=10
+INFO   | wrapper  | 2017/02/07 17:47:19 |   Command[13] : -Dwrapper.jvmid=2
+INFO   | wrapper  | 2017/02/07 17:47:19 |   Command[14] : com.mgarcia.NetworkShield
+ERROR  | wrapper  | 2017/02/07 17:47:19 | JVM exited while loading the application.
+ERROR  | wrapper  | 2017/02/07 17:47:19 | Unable to start JVM: No such file or directory (2)
+ADVICE | wrapper  | 2017/02/07 17:47:19 | 
+ADVICE | wrapper  | 2017/02/07 17:47:19 | ------------------------------------------------------------------------
+ADVICE | wrapper  | 2017/02/07 17:47:19 | Advice:
+ADVICE | wrapper  | 2017/02/07 17:47:19 | Usually when the Wrapper fails to start the JVM process, it is because
+ADVICE | wrapper  | 2017/02/07 17:47:19 | of a problem with the value of the configured Java command.  Currently:
+ADVICE | wrapper  | 2017/02/07 17:47:19 | wrapper.java.command=java -jar
+ADVICE | wrapper  | 2017/02/07 17:47:19 | Please make sure that the PATH or any other referenced environment
+ADVICE | wrapper  | 2017/02/07 17:47:19 | variables are correctly defined for the current environment.
+ADVICE | wrapper  | 2017/02/07 17:47:19 | ------------------------------------------------------------------------
+ADVICE | wrapper  | 2017/02/07 17:47:19 | 
+WARN   | wrapper  | 2017/02/07 17:47:24 | The configured wrapper.java.command could not be found, attempting to launch anyway: java -jar
+STATUS | wrapper  | 2017/02/07 17:47:24 | Launching a JVM...
+INFO   | wrapper  | 2017/02/07 17:47:24 | Java Command Line:
+INFO   | wrapper  | 2017/02/07 17:47:24 |   Command[0] : java -jar
+INFO   | wrapper  | 2017/02/07 17:47:24 |   Command[1] : -Djava.library.path=../lib
+INFO   | wrapper  | 2017/02/07 17:47:24 |   Command[2] : -classpath
+INFO   | wrapper  | 2017/02/07 17:47:24 |   Command[3] : ../lib/wrapper.jar:../lib/classes
+INFO   | wrapper  | 2017/02/07 17:47:24 |   Command[4] : -Dwrapper.key=PJAjaDSB4kJW-sYc
+INFO   | wrapper  | 2017/02/07 17:47:24 |   Command[5] : -Dwrapper.port=32000
+INFO   | wrapper  | 2017/02/07 17:47:24 |   Command[6] : -Dwrapper.jvm.port.min=31000
+INFO   | wrapper  | 2017/02/07 17:47:24 |   Command[7] : -Dwrapper.jvm.port.max=31999
+INFO   | wrapper  | 2017/02/07 17:47:24 |   Command[8] : -Dwrapper.pid=23298
+INFO   | wrapper  | 2017/02/07 17:47:24 |   Command[9] : -Dwrapper.version=3.5.30
+INFO   | wrapper  | 2017/02/07 17:47:24 |   Command[10] : -Dwrapper.native_library=wrapper
+INFO   | wrapper  | 2017/02/07 17:47:24 |   Command[11] : -Dwrapper.arch=x86
+INFO   | wrapper  | 2017/02/07 17:47:24 |   Command[12] : -Dwrapper.cpu.timeout=10
+INFO   | wrapper  | 2017/02/07 17:47:24 |   Command[13] : -Dwrapper.jvmid=3
+INFO   | wrapper  | 2017/02/07 17:47:24 |   Command[14] : com.mgarcia.NetworkShield
+ERROR  | wrapper  | 2017/02/07 17:47:24 | JVM exited while loading the application.
+ERROR  | wrapper  | 2017/02/07 17:47:24 | Unable to start JVM: No such file or directory (2)
+ADVICE | wrapper  | 2017/02/07 17:47:24 | 
+ADVICE | wrapper  | 2017/02/07 17:47:24 | ------------------------------------------------------------------------
+ADVICE | wrapper  | 2017/02/07 17:47:24 | Advice:
+ADVICE | wrapper  | 2017/02/07 17:47:24 | Usually when the Wrapper fails to start the JVM process, it is because
+ADVICE | wrapper  | 2017/02/07 17:47:24 | of a problem with the value of the configured Java command.  Currently:
+ADVICE | wrapper  | 2017/02/07 17:47:24 | wrapper.java.command=java -jar
+ADVICE | wrapper  | 2017/02/07 17:47:24 | Please make sure that the PATH or any other referenced environment
+ADVICE | wrapper  | 2017/02/07 17:47:24 | variables are correctly defined for the current environment.
+ADVICE | wrapper  | 2017/02/07 17:47:24 | ------------------------------------------------------------------------
+ADVICE | wrapper  | 2017/02/07 17:47:24 | 
+WARN   | wrapper  | 2017/02/07 17:47:28 | The configured wrapper.java.command could not be found, attempting to launch anyway: java -jar
+STATUS | wrapper  | 2017/02/07 17:47:28 | Launching a JVM...
+INFO   | wrapper  | 2017/02/07 17:47:28 | Java Command Line:
+INFO   | wrapper  | 2017/02/07 17:47:28 |   Command[0] : java -jar
+INFO   | wrapper  | 2017/02/07 17:47:28 |   Command[1] : -Djava.library.path=../lib
+INFO   | wrapper  | 2017/02/07 17:47:28 |   Command[2] : -classpath
+INFO   | wrapper  | 2017/02/07 17:47:28 |   Command[3] : ../lib/wrapper.jar:../lib/classes
+INFO   | wrapper  | 2017/02/07 17:47:28 |   Command[4] : -Dwrapper.key=6kAtr9ftyjv_2bxS
+INFO   | wrapper  | 2017/02/07 17:47:28 |   Command[5] : -Dwrapper.port=32000
+INFO   | wrapper  | 2017/02/07 17:47:28 |   Command[6] : -Dwrapper.jvm.port.min=31000
+INFO   | wrapper  | 2017/02/07 17:47:28 |   Command[7] : -Dwrapper.jvm.port.max=31999
+INFO   | wrapper  | 2017/02/07 17:47:28 |   Command[8] : -Dwrapper.pid=23298
+INFO   | wrapper  | 2017/02/07 17:47:28 |   Command[9] : -Dwrapper.version=3.5.30
+INFO   | wrapper  | 2017/02/07 17:47:28 |   Command[10] : -Dwrapper.native_library=wrapper
+INFO   | wrapper  | 2017/02/07 17:47:28 |   Command[11] : -Dwrapper.arch=x86
+INFO   | wrapper  | 2017/02/07 17:47:28 |   Command[12] : -Dwrapper.cpu.timeout=10
+INFO   | wrapper  | 2017/02/07 17:47:28 |   Command[13] : -Dwrapper.jvmid=4
+INFO   | wrapper  | 2017/02/07 17:47:28 |   Command[14] : com.mgarcia.NetworkShield
+ERROR  | wrapper  | 2017/02/07 17:47:28 | JVM exited while loading the application.
+ERROR  | wrapper  | 2017/02/07 17:47:28 | Unable to start JVM: No such file or directory (2)
+ADVICE | wrapper  | 2017/02/07 17:47:28 | 
+ADVICE | wrapper  | 2017/02/07 17:47:28 | ------------------------------------------------------------------------
+ADVICE | wrapper  | 2017/02/07 17:47:28 | Advice:
+ADVICE | wrapper  | 2017/02/07 17:47:28 | Usually when the Wrapper fails to start the JVM process, it is because
+ADVICE | wrapper  | 2017/02/07 17:47:28 | of a problem with the value of the configured Java command.  Currently:
+ADVICE | wrapper  | 2017/02/07 17:47:28 | wrapper.java.command=java -jar
+ADVICE | wrapper  | 2017/02/07 17:47:28 | Please make sure that the PATH or any other referenced environment
+ADVICE | wrapper  | 2017/02/07 17:47:28 | variables are correctly defined for the current environment.
+ADVICE | wrapper  | 2017/02/07 17:47:28 | ------------------------------------------------------------------------
+ADVICE | wrapper  | 2017/02/07 17:47:28 | 
+WARN   | wrapper  | 2017/02/07 17:47:33 | The configured wrapper.java.command could not be found, attempting to launch anyway: java -jar
+STATUS | wrapper  | 2017/02/07 17:47:33 | Launching a JVM...
+INFO   | wrapper  | 2017/02/07 17:47:33 | Java Command Line:
+INFO   | wrapper  | 2017/02/07 17:47:33 |   Command[0] : java -jar
+INFO   | wrapper  | 2017/02/07 17:47:33 |   Command[1] : -Djava.library.path=../lib
+INFO   | wrapper  | 2017/02/07 17:47:33 |   Command[2] : -classpath
+INFO   | wrapper  | 2017/02/07 17:47:33 |   Command[3] : ../lib/wrapper.jar:../lib/classes
+INFO   | wrapper  | 2017/02/07 17:47:33 |   Command[4] : -Dwrapper.key=V6a4J1GOmnJlPFxV
+INFO   | wrapper  | 2017/02/07 17:47:33 |   Command[5] : -Dwrapper.port=32000
+INFO   | wrapper  | 2017/02/07 17:47:33 |   Command[6] : -Dwrapper.jvm.port.min=31000
+INFO   | wrapper  | 2017/02/07 17:47:33 |   Command[7] : -Dwrapper.jvm.port.max=31999
+INFO   | wrapper  | 2017/02/07 17:47:33 |   Command[8] : -Dwrapper.pid=23298
+INFO   | wrapper  | 2017/02/07 17:47:33 |   Command[9] : -Dwrapper.version=3.5.30
+INFO   | wrapper  | 2017/02/07 17:47:33 |   Command[10] : -Dwrapper.native_library=wrapper
+INFO   | wrapper  | 2017/02/07 17:47:33 |   Command[11] : -Dwrapper.arch=x86
+INFO   | wrapper  | 2017/02/07 17:47:33 |   Command[12] : -Dwrapper.cpu.timeout=10
+INFO   | wrapper  | 2017/02/07 17:47:33 |   Command[13] : -Dwrapper.jvmid=5
+INFO   | wrapper  | 2017/02/07 17:47:33 |   Command[14] : com.mgarcia.NetworkShield
+ERROR  | wrapper  | 2017/02/07 17:47:33 | JVM exited while loading the application.
+ERROR  | wrapper  | 2017/02/07 17:47:33 | Unable to start JVM: No such file or directory (2)
+ADVICE | wrapper  | 2017/02/07 17:47:33 | 
+ADVICE | wrapper  | 2017/02/07 17:47:33 | ------------------------------------------------------------------------
+ADVICE | wrapper  | 2017/02/07 17:47:33 | Advice:
+ADVICE | wrapper  | 2017/02/07 17:47:33 | Usually when the Wrapper fails to start the JVM process, it is because
+ADVICE | wrapper  | 2017/02/07 17:47:33 | of a problem with the value of the configured Java command.  Currently:
+ADVICE | wrapper  | 2017/02/07 17:47:33 | wrapper.java.command=java -jar
+ADVICE | wrapper  | 2017/02/07 17:47:33 | Please make sure that the PATH or any other referenced environment
+ADVICE | wrapper  | 2017/02/07 17:47:33 | variables are correctly defined for the current environment.
+ADVICE | wrapper  | 2017/02/07 17:47:33 | ------------------------------------------------------------------------
+ADVICE | wrapper  | 2017/02/07 17:47:33 | 
+FATAL  | wrapper  | 2017/02/07 17:47:33 | There were 5 failed launches in a row, each lasting less than 300 seconds.  Giving up.
+FATAL  | wrapper  | 2017/02/07 17:47:33 |   There may be a configuration problem: please check the logs.
+STATUS | wrapper  | 2017/02/07 17:47:33 | <-- Wrapper Stopped
+STATUS | wrapper  | 2017/02/07 17:48:36 | --> Wrapper Started as Console
+STATUS | wrapper  | 2017/02/07 17:48:36 | Java Service Wrapper Community Edition 64-bit 3.5.30
+STATUS | wrapper  | 2017/02/07 17:48:36 |   Copyright (C) 1999-2016 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2017/02/07 17:48:36 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2017/02/07 17:48:36 | 
+WARN   | wrapper  | 2017/02/07 17:48:36 | The configured wrapper.java.command could not be found, attempting to launch anyway: java -jar
+STATUS | wrapper  | 2017/02/07 17:48:36 | Launching a JVM...
+INFO   | wrapper  | 2017/02/07 17:48:36 | Java Command Line:
+INFO   | wrapper  | 2017/02/07 17:48:36 |   Command[0] : java -jar
+INFO   | wrapper  | 2017/02/07 17:48:36 |   Command[1] : -Djava.library.path=../lib
+INFO   | wrapper  | 2017/02/07 17:48:36 |   Command[2] : -classpath
+INFO   | wrapper  | 2017/02/07 17:48:36 |   Command[3] : ../lib/wrapper.jar:../lib/classes
+INFO   | wrapper  | 2017/02/07 17:48:36 |   Command[4] : -Dwrapper.key=ExyYFRiYakKKmT3M
+INFO   | wrapper  | 2017/02/07 17:48:36 |   Command[5] : -Dwrapper.port=32000
+INFO   | wrapper  | 2017/02/07 17:48:36 |   Command[6] : -Dwrapper.jvm.port.min=31000
+INFO   | wrapper  | 2017/02/07 17:48:36 |   Command[7] : -Dwrapper.jvm.port.max=31999
+INFO   | wrapper  | 2017/02/07 17:48:36 |   Command[8] : -Dwrapper.pid=23336
+INFO   | wrapper  | 2017/02/07 17:48:36 |   Command[9] : -Dwrapper.version=3.5.30
+INFO   | wrapper  | 2017/02/07 17:48:36 |   Command[10] : -Dwrapper.native_library=wrapper
+INFO   | wrapper  | 2017/02/07 17:48:36 |   Command[11] : -Dwrapper.arch=x86
+INFO   | wrapper  | 2017/02/07 17:48:36 |   Command[12] : -Dwrapper.cpu.timeout=10
+INFO   | wrapper  | 2017/02/07 17:48:36 |   Command[13] : -Dwrapper.jvmid=1
+INFO   | wrapper  | 2017/02/07 17:48:36 |   Command[14] : com.mgarcia.NetworkShield
+ERROR  | wrapper  | 2017/02/07 17:48:36 | JVM exited while loading the application.
+ERROR  | wrapper  | 2017/02/07 17:48:36 | Unable to start JVM: No such file or directory (2)
+ADVICE | wrapper  | 2017/02/07 17:48:36 | 
+ADVICE | wrapper  | 2017/02/07 17:48:36 | ------------------------------------------------------------------------
+ADVICE | wrapper  | 2017/02/07 17:48:36 | Advice:
+ADVICE | wrapper  | 2017/02/07 17:48:36 | Usually when the Wrapper fails to start the JVM process, it is because
+ADVICE | wrapper  | 2017/02/07 17:48:36 | of a problem with the value of the configured Java command.  Currently:
+ADVICE | wrapper  | 2017/02/07 17:48:36 | wrapper.java.command=java -jar
+ADVICE | wrapper  | 2017/02/07 17:48:36 | Please make sure that the PATH or any other referenced environment
+ADVICE | wrapper  | 2017/02/07 17:48:36 | variables are correctly defined for the current environment.
+ADVICE | wrapper  | 2017/02/07 17:48:36 | ------------------------------------------------------------------------
+ADVICE | wrapper  | 2017/02/07 17:48:36 | 
+WARN   | wrapper  | 2017/02/07 17:48:40 | The configured wrapper.java.command could not be found, attempting to launch anyway: java -jar
+STATUS | wrapper  | 2017/02/07 17:48:40 | INT trapped.  Shutting down.
+STATUS | wrapper  | 2017/02/07 17:48:40 | <-- Wrapper Stopped
+STATUS | wrapper  | 2017/02/07 17:48:53 | --> Wrapper Started as Console
+STATUS | wrapper  | 2017/02/07 17:48:53 | Java Service Wrapper Community Edition 64-bit 3.5.30
+STATUS | wrapper  | 2017/02/07 17:48:53 |   Copyright (C) 1999-2016 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2017/02/07 17:48:53 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2017/02/07 17:48:53 | 
+STATUS | wrapper  | 2017/02/07 17:48:53 | Launching a JVM...
+INFO   | wrapper  | 2017/02/07 17:48:53 | Java Command Line:
+INFO   | wrapper  | 2017/02/07 17:48:53 |   Command[0] : /usr/lib/jvm/java-8-oracle/jre/bin/java
+INFO   | wrapper  | 2017/02/07 17:48:53 |   Command[1] : -Djava.library.path=../lib
+INFO   | wrapper  | 2017/02/07 17:48:53 |   Command[2] : -classpath
+INFO   | wrapper  | 2017/02/07 17:48:53 |   Command[3] : ../lib/wrapper.jar:../lib/classes
+INFO   | wrapper  | 2017/02/07 17:48:53 |   Command[4] : -Dwrapper.key=eyHUx5WYmLU_aKVA
+INFO   | wrapper  | 2017/02/07 17:48:53 |   Command[5] : -Dwrapper.port=32000
+INFO   | wrapper  | 2017/02/07 17:48:53 |   Command[6] : -Dwrapper.jvm.port.min=31000
+INFO   | wrapper  | 2017/02/07 17:48:53 |   Command[7] : -Dwrapper.jvm.port.max=31999
+INFO   | wrapper  | 2017/02/07 17:48:53 |   Command[8] : -Dwrapper.pid=23347
+INFO   | wrapper  | 2017/02/07 17:48:53 |   Command[9] : -Dwrapper.version=3.5.30
+INFO   | wrapper  | 2017/02/07 17:48:53 |   Command[10] : -Dwrapper.native_library=wrapper
+INFO   | wrapper  | 2017/02/07 17:48:53 |   Command[11] : -Dwrapper.arch=x86
+INFO   | wrapper  | 2017/02/07 17:48:53 |   Command[12] : -Dwrapper.cpu.timeout=10
+INFO   | wrapper  | 2017/02/07 17:48:53 |   Command[13] : -Dwrapper.jvmid=1
+INFO   | wrapper  | 2017/02/07 17:48:53 |   Command[14] : com.mgarcia.NetworkShield
+INFO   | jvm 1    | 2017/02/07 17:48:54 | [main] INFO NetworkShield - Starting NetworkShield
+ERROR  | wrapper  | 2017/02/07 17:48:54 | JVM exited while loading the application.
+INFO   | jvm 1    | 2017/02/07 17:48:54 | java.io.FileNotFoundException: ns.conf (No such file or directory)
+INFO   | jvm 1    | 2017/02/07 17:48:54 | 	at java.io.FileInputStream.open0(Native Method)
+INFO   | jvm 1    | 2017/02/07 17:48:54 | 	at java.io.FileInputStream.open(FileInputStream.java:195)
+INFO   | jvm 1    | 2017/02/07 17:48:54 | 	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+INFO   | jvm 1    | 2017/02/07 17:48:54 | 	at java.io.FileInputStream.<init>(FileInputStream.java:93)
+INFO   | jvm 1    | 2017/02/07 17:48:54 | 	at java.io.FileReader.<init>(FileReader.java:58)
+INFO   | jvm 1    | 2017/02/07 17:48:54 | 	at com.mgarcia.NetworkShield.main(NetworkShield.java:43)
+INFO   | jvm 1    | 2017/02/07 17:48:54 | [main] ERROR NetworkShield - ns.conf (No such file or directory)
+STATUS | wrapper  | 2017/02/07 17:48:58 | INT trapped.  Shutting down.
+STATUS | wrapper  | 2017/02/07 17:48:58 | <-- Wrapper Stopped
+STATUS | wrapper  | 2017/02/07 17:49:34 | --> Wrapper Started as Console
+STATUS | wrapper  | 2017/02/07 17:49:34 | Java Service Wrapper Community Edition 64-bit 3.5.30
+STATUS | wrapper  | 2017/02/07 17:49:34 |   Copyright (C) 1999-2016 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2017/02/07 17:49:34 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2017/02/07 17:49:34 | 
+STATUS | wrapper  | 2017/02/07 17:49:35 | Launching a JVM...
+INFO   | wrapper  | 2017/02/07 17:49:35 | Java Command Line:
+INFO   | wrapper  | 2017/02/07 17:49:35 |   Command[0] : /usr/lib/jvm/java-8-oracle/jre/bin/java
+INFO   | wrapper  | 2017/02/07 17:49:35 |   Command[1] : -Djava.library.path=../lib
+INFO   | wrapper  | 2017/02/07 17:49:35 |   Command[2] : -classpath
+INFO   | wrapper  | 2017/02/07 17:49:35 |   Command[3] : ../lib/wrapper.jar:../lib/classes
+INFO   | wrapper  | 2017/02/07 17:49:35 |   Command[4] : -Dwrapper.key=iVplMnBSHPOhxq3o
+INFO   | wrapper  | 2017/02/07 17:49:35 |   Command[5] : -Dwrapper.port=32000
+INFO   | wrapper  | 2017/02/07 17:49:35 |   Command[6] : -Dwrapper.jvm.port.min=31000
+INFO   | wrapper  | 2017/02/07 17:49:35 |   Command[7] : -Dwrapper.jvm.port.max=31999
+INFO   | wrapper  | 2017/02/07 17:49:35 |   Command[8] : -Dwrapper.pid=23383
+INFO   | wrapper  | 2017/02/07 17:49:35 |   Command[9] : -Dwrapper.version=3.5.30
+INFO   | wrapper  | 2017/02/07 17:49:35 |   Command[10] : -Dwrapper.native_library=wrapper
+INFO   | wrapper  | 2017/02/07 17:49:35 |   Command[11] : -Dwrapper.arch=x86
+INFO   | wrapper  | 2017/02/07 17:49:35 |   Command[12] : -Dwrapper.cpu.timeout=10
+INFO   | wrapper  | 2017/02/07 17:49:35 |   Command[13] : -Dwrapper.jvmid=1
+INFO   | wrapper  | 2017/02/07 17:49:35 |   Command[14] : com.mgarcia.NetworkShield
+ERROR  | wrapper  | 2017/02/07 17:49:35 | JVM exited while loading the application.
+INFO   | jvm 1    | 2017/02/07 17:49:35 | [main] INFO NetworkShield - Starting NetworkShield
+INFO   | jvm 1    | 2017/02/07 17:49:35 | java.io.FileNotFoundException: ns.conf (No such file or directory)
+INFO   | jvm 1    | 2017/02/07 17:49:35 | 	at java.io.FileInputStream.open0(Native Method)
+INFO   | jvm 1    | 2017/02/07 17:49:35 | 	at java.io.FileInputStream.open(FileInputStream.java:195)
+INFO   | jvm 1    | 2017/02/07 17:49:35 | 	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+INFO   | jvm 1    | 2017/02/07 17:49:35 | 	at java.io.FileInputStream.<init>(FileInputStream.java:93)
+INFO   | jvm 1    | 2017/02/07 17:49:35 | 	at java.io.FileReader.<init>(FileReader.java:58)
+INFO   | jvm 1    | 2017/02/07 17:49:35 | 	at com.mgarcia.NetworkShield.main(NetworkShield.java:43)
+INFO   | jvm 1    | 2017/02/07 17:49:35 | [main] ERROR NetworkShield - ns.conf (No such file or directory)
+STATUS | wrapper  | 2017/02/07 17:49:39 | Launching a JVM...
+INFO   | wrapper  | 2017/02/07 17:49:39 | Java Command Line:
+INFO   | wrapper  | 2017/02/07 17:49:39 |   Command[0] : /usr/lib/jvm/java-8-oracle/jre/bin/java
+INFO   | wrapper  | 2017/02/07 17:49:39 |   Command[1] : -Djava.library.path=../lib
+INFO   | wrapper  | 2017/02/07 17:49:39 |   Command[2] : -classpath
+INFO   | wrapper  | 2017/02/07 17:49:39 |   Command[3] : ../lib/wrapper.jar:../lib/classes
+INFO   | wrapper  | 2017/02/07 17:49:39 |   Command[4] : -Dwrapper.key=EaX2-JuLc-qXpbZH
+INFO   | wrapper  | 2017/02/07 17:49:39 |   Command[5] : -Dwrapper.port=32000
+INFO   | wrapper  | 2017/02/07 17:49:39 |   Command[6] : -Dwrapper.jvm.port.min=31000
+INFO   | wrapper  | 2017/02/07 17:49:39 |   Command[7] : -Dwrapper.jvm.port.max=31999
+INFO   | wrapper  | 2017/02/07 17:49:39 |   Command[8] : -Dwrapper.pid=23383
+INFO   | wrapper  | 2017/02/07 17:49:39 |   Command[9] : -Dwrapper.version=3.5.30
+INFO   | wrapper  | 2017/02/07 17:49:39 |   Command[10] : -Dwrapper.native_library=wrapper
+INFO   | wrapper  | 2017/02/07 17:49:39 |   Command[11] : -Dwrapper.arch=x86
+INFO   | wrapper  | 2017/02/07 17:49:39 |   Command[12] : -Dwrapper.cpu.timeout=10
+INFO   | wrapper  | 2017/02/07 17:49:39 |   Command[13] : -Dwrapper.jvmid=2
+INFO   | wrapper  | 2017/02/07 17:49:39 |   Command[14] : com.mgarcia.NetworkShield
+INFO   | jvm 2    | 2017/02/07 17:49:39 | [main] INFO NetworkShield - Starting NetworkShield
+INFO   | jvm 2    | 2017/02/07 17:49:39 | java.io.FileNotFoundException: ns.conf (No such file or directory)
+INFO   | jvm 2    | 2017/02/07 17:49:39 | 	at java.io.FileInputStream.open0(Native Method)
+INFO   | jvm 2    | 2017/02/07 17:49:39 | 	at java.io.FileInputStream.open(FileInputStream.java:195)
+INFO   | jvm 2    | 2017/02/07 17:49:39 | 	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+INFO   | jvm 2    | 2017/02/07 17:49:39 | 	at java.io.FileInputStream.<init>(FileInputStream.java:93)
+INFO   | jvm 2    | 2017/02/07 17:49:39 | 	at java.io.FileReader.<init>(FileReader.java:58)
+INFO   | jvm 2    | 2017/02/07 17:49:39 | 	at com.mgarcia.NetworkShield.main(NetworkShield.java:43)
+INFO   | jvm 2    | 2017/02/07 17:49:39 | [main] ERROR NetworkShield - ns.conf (No such file or directory)
+ERROR  | wrapper  | 2017/02/07 17:49:39 | JVM exited while loading the application.
+STATUS | wrapper  | 2017/02/07 17:49:44 | INT trapped.  Shutting down.
+STATUS | wrapper  | 2017/02/07 17:49:44 | <-- Wrapper Stopped
+STATUS | wrapper  | 2017/02/07 17:50:16 | --> Wrapper Started as Console
+STATUS | wrapper  | 2017/02/07 17:50:16 | Java Service Wrapper Community Edition 64-bit 3.5.30
+STATUS | wrapper  | 2017/02/07 17:50:16 |   Copyright (C) 1999-2016 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2017/02/07 17:50:16 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2017/02/07 17:50:16 | 
+STATUS | wrapper  | 2017/02/07 17:50:16 | Launching a JVM...
+INFO   | wrapper  | 2017/02/07 17:50:16 | Java Command Line:
+INFO   | wrapper  | 2017/02/07 17:50:16 |   Command[0] : /usr/lib/jvm/java-8-oracle/jre/bin/java
+INFO   | wrapper  | 2017/02/07 17:50:16 |   Command[1] : -Djava.library.path=../lib
+INFO   | wrapper  | 2017/02/07 17:50:16 |   Command[2] : -classpath
+INFO   | wrapper  | 2017/02/07 17:50:16 |   Command[3] : ../lib/wrapper.jar:../lib/classes
+INFO   | wrapper  | 2017/02/07 17:50:16 |   Command[4] : -Dwrapper.key=uRjZ3XUYJOHWu2eK
+INFO   | wrapper  | 2017/02/07 17:50:16 |   Command[5] : -Dwrapper.port=32000
+INFO   | wrapper  | 2017/02/07 17:50:16 |   Command[6] : -Dwrapper.jvm.port.min=31000
+INFO   | wrapper  | 2017/02/07 17:50:16 |   Command[7] : -Dwrapper.jvm.port.max=31999
+INFO   | wrapper  | 2017/02/07 17:50:16 |   Command[8] : -Dwrapper.pid=23426
+INFO   | wrapper  | 2017/02/07 17:50:16 |   Command[9] : -Dwrapper.version=3.5.30
+INFO   | wrapper  | 2017/02/07 17:50:16 |   Command[10] : -Dwrapper.native_library=wrapper
+INFO   | wrapper  | 2017/02/07 17:50:16 |   Command[11] : -Dwrapper.arch=x86
+INFO   | wrapper  | 2017/02/07 17:50:16 |   Command[12] : -Dwrapper.cpu.timeout=10
+INFO   | wrapper  | 2017/02/07 17:50:16 |   Command[13] : -Dwrapper.jvmid=1
+INFO   | wrapper  | 2017/02/07 17:50:16 |   Command[14] : com.mgarcia.NetworkShield
+INFO   | jvm 1    | 2017/02/07 17:50:16 | [main] INFO NetworkShield - Starting NetworkShield
+ERROR  | wrapper  | 2017/02/07 17:50:16 | JVM exited while loading the application.
+INFO   | jvm 1    | 2017/02/07 17:50:16 | java.io.FileNotFoundException: ns.conf (No such file or directory)
+INFO   | jvm 1    | 2017/02/07 17:50:16 | 	at java.io.FileInputStream.open0(Native Method)
+INFO   | jvm 1    | 2017/02/07 17:50:16 | 	at java.io.FileInputStream.open(FileInputStream.java:195)
+INFO   | jvm 1    | 2017/02/07 17:50:16 | 	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+INFO   | jvm 1    | 2017/02/07 17:50:16 | 	at java.io.FileInputStream.<init>(FileInputStream.java:93)
+INFO   | jvm 1    | 2017/02/07 17:50:16 | 	at java.io.FileReader.<init>(FileReader.java:58)
+INFO   | jvm 1    | 2017/02/07 17:50:16 | 	at com.mgarcia.NetworkShield.main(NetworkShield.java:43)
+INFO   | jvm 1    | 2017/02/07 17:50:16 | [main] ERROR NetworkShield - ns.conf (No such file or directory)
+STATUS | wrapper  | 2017/02/07 17:50:17 | INT trapped.  Shutting down.
+STATUS | wrapper  | 2017/02/07 17:50:17 | <-- Wrapper Stopped
+STATUS | wrapper  | 2017/02/07 17:50:24 | --> Wrapper Started as Console
+STATUS | wrapper  | 2017/02/07 17:50:24 | Java Service Wrapper Community Edition 64-bit 3.5.30
+STATUS | wrapper  | 2017/02/07 17:50:24 |   Copyright (C) 1999-2016 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2017/02/07 17:50:24 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2017/02/07 17:50:24 | 
+STATUS | wrapper  | 2017/02/07 17:50:24 | Launching a JVM...
+INFO   | wrapper  | 2017/02/07 17:50:24 | Java Command Line:
+INFO   | wrapper  | 2017/02/07 17:50:24 |   Command[0] : /usr/lib/jvm/java-8-oracle/jre/bin/java
+INFO   | wrapper  | 2017/02/07 17:50:24 |   Command[1] : -Djava.library.path=../lib
+INFO   | wrapper  | 2017/02/07 17:50:24 |   Command[2] : -classpath
+INFO   | wrapper  | 2017/02/07 17:50:24 |   Command[3] : ../lib/wrapper.jar:../lib/classes
+INFO   | wrapper  | 2017/02/07 17:50:24 |   Command[4] : -Dwrapper.key=m8K1xINj9ZfJcsFV
+INFO   | wrapper  | 2017/02/07 17:50:24 |   Command[5] : -Dwrapper.port=32000
+INFO   | wrapper  | 2017/02/07 17:50:24 |   Command[6] : -Dwrapper.jvm.port.min=31000
+INFO   | wrapper  | 2017/02/07 17:50:24 |   Command[7] : -Dwrapper.jvm.port.max=31999
+INFO   | wrapper  | 2017/02/07 17:50:24 |   Command[8] : -Dwrapper.pid=23446
+INFO   | wrapper  | 2017/02/07 17:50:24 |   Command[9] : -Dwrapper.version=3.5.30
+INFO   | wrapper  | 2017/02/07 17:50:24 |   Command[10] : -Dwrapper.native_library=wrapper
+INFO   | wrapper  | 2017/02/07 17:50:24 |   Command[11] : -Dwrapper.arch=x86
+INFO   | wrapper  | 2017/02/07 17:50:24 |   Command[12] : -Dwrapper.cpu.timeout=10
+INFO   | wrapper  | 2017/02/07 17:50:24 |   Command[13] : -Dwrapper.jvmid=1
+INFO   | wrapper  | 2017/02/07 17:50:24 |   Command[14] : com.mgarcia.NetworkShield
+INFO   | jvm 1    | 2017/02/07 17:50:24 | [main] INFO NetworkShield - Starting NetworkShield
+ERROR  | wrapper  | 2017/02/07 17:50:24 | JVM exited while loading the application.
+INFO   | jvm 1    | 2017/02/07 17:50:24 | java.io.FileNotFoundException: ns.conf (No such file or directory)
+INFO   | jvm 1    | 2017/02/07 17:50:24 | 	at java.io.FileInputStream.open0(Native Method)
+INFO   | jvm 1    | 2017/02/07 17:50:24 | 	at java.io.FileInputStream.open(FileInputStream.java:195)
+INFO   | jvm 1    | 2017/02/07 17:50:24 | 	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+INFO   | jvm 1    | 2017/02/07 17:50:24 | 	at java.io.FileInputStream.<init>(FileInputStream.java:93)
+INFO   | jvm 1    | 2017/02/07 17:50:24 | 	at java.io.FileReader.<init>(FileReader.java:58)
+INFO   | jvm 1    | 2017/02/07 17:50:24 | 	at com.mgarcia.NetworkShield.main(NetworkShield.java:43)
+INFO   | jvm 1    | 2017/02/07 17:50:24 | [main] ERROR NetworkShield - ns.conf (No such file or directory)
+STATUS | wrapper  | 2017/02/07 17:50:26 | INT trapped.  Shutting down.
+STATUS | wrapper  | 2017/02/07 17:50:26 | <-- Wrapper Stopped
+STATUS | wrapper  | 2017/02/07 17:50:50 | --> Wrapper Started as Console
+STATUS | wrapper  | 2017/02/07 17:50:50 | Java Service Wrapper Community Edition 64-bit 3.5.30
+STATUS | wrapper  | 2017/02/07 17:50:50 |   Copyright (C) 1999-2016 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2017/02/07 17:50:50 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2017/02/07 17:50:50 | 
+STATUS | wrapper  | 2017/02/07 17:50:51 | Launching a JVM...
+INFO   | wrapper  | 2017/02/07 17:50:51 | Java Command Line:
+INFO   | wrapper  | 2017/02/07 17:50:51 |   Command[0] : /usr/lib/jvm/java-8-oracle/jre/bin/java
+INFO   | wrapper  | 2017/02/07 17:50:51 |   Command[1] : -Djava.library.path=../lib
+INFO   | wrapper  | 2017/02/07 17:50:51 |   Command[2] : -classpath
+INFO   | wrapper  | 2017/02/07 17:50:51 |   Command[3] : ../lib/wrapper.jar:../lib/classes/ns.conf
+INFO   | wrapper  | 2017/02/07 17:50:51 |   Command[4] : -Dwrapper.key=Go6SQra_Ca-XEjXm
+INFO   | wrapper  | 2017/02/07 17:50:51 |   Command[5] : -Dwrapper.port=32000
+INFO   | wrapper  | 2017/02/07 17:50:51 |   Command[6] : -Dwrapper.jvm.port.min=31000
+INFO   | wrapper  | 2017/02/07 17:50:51 |   Command[7] : -Dwrapper.jvm.port.max=31999
+INFO   | wrapper  | 2017/02/07 17:50:51 |   Command[8] : -Dwrapper.pid=23507
+INFO   | wrapper  | 2017/02/07 17:50:51 |   Command[9] : -Dwrapper.version=3.5.30
+INFO   | wrapper  | 2017/02/07 17:50:51 |   Command[10] : -Dwrapper.native_library=wrapper
+INFO   | wrapper  | 2017/02/07 17:50:51 |   Command[11] : -Dwrapper.arch=x86
+INFO   | wrapper  | 2017/02/07 17:50:51 |   Command[12] : -Dwrapper.cpu.timeout=10
+INFO   | wrapper  | 2017/02/07 17:50:51 |   Command[13] : -Dwrapper.jvmid=1
+INFO   | wrapper  | 2017/02/07 17:50:51 |   Command[14] : com.mgarcia.NetworkShield
+ERROR  | wrapper  | 2017/02/07 17:50:51 | JVM exited while loading the application.
+INFO   | jvm 1    | 2017/02/07 17:50:51 | Error: Could not find or load main class com.mgarcia.NetworkShield
+STATUS | wrapper  | 2017/02/07 17:50:55 | INT trapped.  Shutting down.
+STATUS | wrapper  | 2017/02/07 17:50:55 | <-- Wrapper Stopped
+STATUS | wrapper  | 2017/02/07 17:51:07 | --> Wrapper Started as Console
+STATUS | wrapper  | 2017/02/07 17:51:07 | Java Service Wrapper Community Edition 64-bit 3.5.30
+STATUS | wrapper  | 2017/02/07 17:51:07 |   Copyright (C) 1999-2016 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2017/02/07 17:51:07 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2017/02/07 17:51:07 | 
+STATUS | wrapper  | 2017/02/07 17:51:07 | Launching a JVM...
+INFO   | wrapper  | 2017/02/07 17:51:07 | Java Command Line:
+INFO   | wrapper  | 2017/02/07 17:51:07 |   Command[0] : /usr/lib/jvm/java-8-oracle/jre/bin/java
+INFO   | wrapper  | 2017/02/07 17:51:07 |   Command[1] : -Djava.library.path=../lib
+INFO   | wrapper  | 2017/02/07 17:51:07 |   Command[2] : -classpath
+INFO   | wrapper  | 2017/02/07 17:51:07 |   Command[3] : ../lib/wrapper.jar:../lib/classes/ns.conf:../lib/classes
+INFO   | wrapper  | 2017/02/07 17:51:07 |   Command[4] : -Dwrapper.key=LpfhHHiui59arGhF
+INFO   | wrapper  | 2017/02/07 17:51:07 |   Command[5] : -Dwrapper.port=32000
+INFO   | wrapper  | 2017/02/07 17:51:07 |   Command[6] : -Dwrapper.jvm.port.min=31000
+INFO   | wrapper  | 2017/02/07 17:51:07 |   Command[7] : -Dwrapper.jvm.port.max=31999
+INFO   | wrapper  | 2017/02/07 17:51:07 |   Command[8] : -Dwrapper.pid=23532
+INFO   | wrapper  | 2017/02/07 17:51:07 |   Command[9] : -Dwrapper.version=3.5.30
+INFO   | wrapper  | 2017/02/07 17:51:07 |   Command[10] : -Dwrapper.native_library=wrapper
+INFO   | wrapper  | 2017/02/07 17:51:07 |   Command[11] : -Dwrapper.arch=x86
+INFO   | wrapper  | 2017/02/07 17:51:07 |   Command[12] : -Dwrapper.cpu.timeout=10
+INFO   | wrapper  | 2017/02/07 17:51:07 |   Command[13] : -Dwrapper.jvmid=1
+INFO   | wrapper  | 2017/02/07 17:51:07 |   Command[14] : com.mgarcia.NetworkShield
+INFO   | jvm 1    | 2017/02/07 17:51:08 | [main] INFO NetworkShield - Starting NetworkShield
+ERROR  | wrapper  | 2017/02/07 17:51:08 | JVM exited while loading the application.
+INFO   | jvm 1    | 2017/02/07 17:51:08 | java.io.FileNotFoundException: ns.conf (No such file or directory)
+INFO   | jvm 1    | 2017/02/07 17:51:08 | 	at java.io.FileInputStream.open0(Native Method)
+INFO   | jvm 1    | 2017/02/07 17:51:08 | 	at java.io.FileInputStream.open(FileInputStream.java:195)
+INFO   | jvm 1    | 2017/02/07 17:51:08 | 	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+INFO   | jvm 1    | 2017/02/07 17:51:08 | 	at java.io.FileInputStream.<init>(FileInputStream.java:93)
+INFO   | jvm 1    | 2017/02/07 17:51:08 | 	at java.io.FileReader.<init>(FileReader.java:58)
+INFO   | jvm 1    | 2017/02/07 17:51:08 | 	at com.mgarcia.NetworkShield.main(NetworkShield.java:43)
+INFO   | jvm 1    | 2017/02/07 17:51:08 | [main] ERROR NetworkShield - ns.conf (No such file or directory)
+STATUS | wrapper  | 2017/02/07 17:51:12 | Launching a JVM...
+INFO   | wrapper  | 2017/02/07 17:51:12 | Java Command Line:
+INFO   | wrapper  | 2017/02/07 17:51:12 |   Command[0] : /usr/lib/jvm/java-8-oracle/jre/bin/java
+INFO   | wrapper  | 2017/02/07 17:51:12 |   Command[1] : -Djava.library.path=../lib
+INFO   | wrapper  | 2017/02/07 17:51:12 |   Command[2] : -classpath
+INFO   | wrapper  | 2017/02/07 17:51:12 |   Command[3] : ../lib/wrapper.jar:../lib/classes/ns.conf:../lib/classes
+INFO   | wrapper  | 2017/02/07 17:51:12 |   Command[4] : -Dwrapper.key=QZcqEHDnjBcpVx7E
+INFO   | wrapper  | 2017/02/07 17:51:12 |   Command[5] : -Dwrapper.port=32000
+INFO   | wrapper  | 2017/02/07 17:51:12 |   Command[6] : -Dwrapper.jvm.port.min=31000
+INFO   | wrapper  | 2017/02/07 17:51:12 |   Command[7] : -Dwrapper.jvm.port.max=31999
+INFO   | wrapper  | 2017/02/07 17:51:12 |   Command[8] : -Dwrapper.pid=23532
+INFO   | wrapper  | 2017/02/07 17:51:12 |   Command[9] : -Dwrapper.version=3.5.30
+INFO   | wrapper  | 2017/02/07 17:51:12 |   Command[10] : -Dwrapper.native_library=wrapper
+INFO   | wrapper  | 2017/02/07 17:51:12 |   Command[11] : -Dwrapper.arch=x86
+INFO   | wrapper  | 2017/02/07 17:51:12 |   Command[12] : -Dwrapper.cpu.timeout=10
+INFO   | wrapper  | 2017/02/07 17:51:12 |   Command[13] : -Dwrapper.jvmid=2
+INFO   | wrapper  | 2017/02/07 17:51:12 |   Command[14] : com.mgarcia.NetworkShield
+ERROR  | wrapper  | 2017/02/07 17:51:12 | JVM exited while loading the application.
+INFO   | jvm 2    | 2017/02/07 17:51:12 | [main] INFO NetworkShield - Starting NetworkShield
+INFO   | jvm 2    | 2017/02/07 17:51:12 | java.io.FileNotFoundException: ns.conf (No such file or directory)
+INFO   | jvm 2    | 2017/02/07 17:51:12 | 	at java.io.FileInputStream.open0(Native Method)
+INFO   | jvm 2    | 2017/02/07 17:51:12 | 	at java.io.FileInputStream.open(FileInputStream.java:195)
+INFO   | jvm 2    | 2017/02/07 17:51:12 | 	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+INFO   | jvm 2    | 2017/02/07 17:51:12 | 	at java.io.FileInputStream.<init>(FileInputStream.java:93)
+INFO   | jvm 2    | 2017/02/07 17:51:12 | 	at java.io.FileReader.<init>(FileReader.java:58)
+INFO   | jvm 2    | 2017/02/07 17:51:12 | 	at com.mgarcia.NetworkShield.main(NetworkShield.java:43)
+INFO   | jvm 2    | 2017/02/07 17:51:12 | [main] ERROR NetworkShield - ns.conf (No such file or directory)
+STATUS | wrapper  | 2017/02/07 17:51:16 | INT trapped.  Shutting down.
+STATUS | wrapper  | 2017/02/07 17:51:16 | <-- Wrapper Stopped
+STATUS | wrapper  | 2017/02/07 17:57:36 | --> Wrapper Started as Console
+STATUS | wrapper  | 2017/02/07 17:57:36 | Java Service Wrapper Community Edition 64-bit 3.5.30
+STATUS | wrapper  | 2017/02/07 17:57:36 |   Copyright (C) 1999-2016 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2017/02/07 17:57:36 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2017/02/07 17:57:36 | 
+STATUS | wrapper  | 2017/02/07 17:57:37 | Launching a JVM...
+INFO   | wrapper  | 2017/02/07 17:57:37 | Java Command Line:
+INFO   | wrapper  | 2017/02/07 17:57:37 |   Command[0] : /usr/lib/jvm/java-8-oracle/jre/bin/java
+INFO   | wrapper  | 2017/02/07 17:57:37 |   Command[1] : -Djava.library.path=../lib
+INFO   | wrapper  | 2017/02/07 17:57:37 |   Command[2] : -classpath
+INFO   | wrapper  | 2017/02/07 17:57:37 |   Command[3] : ../lib/wrapper.jar:../lib/classes/ns.conf:../lib/classes
+INFO   | wrapper  | 2017/02/07 17:57:37 |   Command[4] : -Dwrapper.key=1-NEZPC3XDSkZnxr
+INFO   | wrapper  | 2017/02/07 17:57:37 |   Command[5] : -Dwrapper.port=32000
+INFO   | wrapper  | 2017/02/07 17:57:37 |   Command[6] : -Dwrapper.jvm.port.min=31000
+INFO   | wrapper  | 2017/02/07 17:57:37 |   Command[7] : -Dwrapper.jvm.port.max=31999
+INFO   | wrapper  | 2017/02/07 17:57:37 |   Command[8] : -Dwrapper.pid=23982
+INFO   | wrapper  | 2017/02/07 17:57:37 |   Command[9] : -Dwrapper.version=3.5.30
+INFO   | wrapper  | 2017/02/07 17:57:37 |   Command[10] : -Dwrapper.native_library=wrapper
+INFO   | wrapper  | 2017/02/07 17:57:37 |   Command[11] : -Dwrapper.arch=x86
+INFO   | wrapper  | 2017/02/07 17:57:37 |   Command[12] : -Dwrapper.cpu.timeout=10
+INFO   | wrapper  | 2017/02/07 17:57:37 |   Command[13] : -Dwrapper.jvmid=1
+INFO   | wrapper  | 2017/02/07 17:57:37 |   Command[14] : com.mgarcia.NetworkShield
+INFO   | jvm 1    | 2017/02/07 17:57:37 | /home/mgarcia/Network Shield/release/bin
+INFO   | jvm 1    | 2017/02/07 17:57:37 | [main] INFO NetworkShield - Starting NetworkShield
+ERROR  | wrapper  | 2017/02/07 17:57:37 | JVM exited while loading the application.
+INFO   | jvm 1    | 2017/02/07 17:57:37 | java.io.FileNotFoundException: ns.conf (No such file or directory)
+INFO   | jvm 1    | 2017/02/07 17:57:37 | 	at java.io.FileInputStream.open0(Native Method)
+INFO   | jvm 1    | 2017/02/07 17:57:37 | 	at java.io.FileInputStream.open(FileInputStream.java:195)
+INFO   | jvm 1    | 2017/02/07 17:57:37 | 	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+INFO   | jvm 1    | 2017/02/07 17:57:37 | 	at java.io.FileInputStream.<init>(FileInputStream.java:93)
+INFO   | jvm 1    | 2017/02/07 17:57:37 | 	at java.io.FileReader.<init>(FileReader.java:58)
+INFO   | jvm 1    | 2017/02/07 17:57:37 | 	at com.mgarcia.NetworkShield.main(NetworkShield.java:52)
+INFO   | jvm 1    | 2017/02/07 17:57:37 | [main] ERROR NetworkShield - ns.conf (No such file or directory)
+STATUS | wrapper  | 2017/02/07 17:57:41 | INT trapped.  Shutting down.
+STATUS | wrapper  | 2017/02/07 17:57:41 | <-- Wrapper Stopped
+STATUS | wrapper  | 2017/02/07 17:57:50 | --> Wrapper Started as Console
+STATUS | wrapper  | 2017/02/07 17:57:50 | Java Service Wrapper Community Edition 64-bit 3.5.30
+STATUS | wrapper  | 2017/02/07 17:57:50 |   Copyright (C) 1999-2016 Tanuki Software, Ltd. All Rights Reserved.
+STATUS | wrapper  | 2017/02/07 17:57:50 |     http://wrapper.tanukisoftware.com
+STATUS | wrapper  | 2017/02/07 17:57:50 | 
+STATUS | wrapper  | 2017/02/07 17:57:50 | Launching a JVM...
+INFO   | wrapper  | 2017/02/07 17:57:50 | Java Command Line:
+INFO   | wrapper  | 2017/02/07 17:57:50 |   Command[0] : /usr/lib/jvm/java-8-oracle/jre/bin/java
+INFO   | wrapper  | 2017/02/07 17:57:50 |   Command[1] : -Djava.library.path=../lib
+INFO   | wrapper  | 2017/02/07 17:57:50 |   Command[2] : -classpath
+INFO   | wrapper  | 2017/02/07 17:57:50 |   Command[3] : ../lib/wrapper.jar:../lib/classes/ns.conf:../lib/classes
+INFO   | wrapper  | 2017/02/07 17:57:50 |   Command[4] : -Dwrapper.key=bnJiCHOUWKuXH3qq
+INFO   | wrapper  | 2017/02/07 17:57:50 |   Command[5] : -Dwrapper.port=32000
+INFO   | wrapper  | 2017/02/07 17:57:50 |   Command[6] : -Dwrapper.jvm.port.min=31000
+INFO   | wrapper  | 2017/02/07 17:57:50 |   Command[7] : -Dwrapper.jvm.port.max=31999
+INFO   | wrapper  | 2017/02/07 17:57:50 |   Command[8] : -Dwrapper.pid=24006
+INFO   | wrapper  | 2017/02/07 17:57:50 |   Command[9] : -Dwrapper.version=3.5.30
+INFO   | wrapper  | 2017/02/07 17:57:50 |   Command[10] : -Dwrapper.native_library=wrapper
+INFO   | wrapper  | 2017/02/07 17:57:50 |   Command[11] : -Dwrapper.arch=x86
+INFO   | wrapper  | 2017/02/07 17:57:50 |   Command[12] : -Dwrapper.cpu.timeout=10
+INFO   | wrapper  | 2017/02/07 17:57:50 |   Command[13] : -Dwrapper.jvmid=1
+INFO   | wrapper  | 2017/02/07 17:57:50 |   Command[14] : com.mgarcia.NetworkShield
+INFO   | jvm 1    | 2017/02/07 17:57:51 | /home/mgarcia/Network Shield/release/bin
+INFO   | jvm 1    | 2017/02/07 17:57:51 | [main] INFO NetworkShield - Starting NetworkShield
+INFO   | jvm 1    | 2017/02/07 17:57:51 | [main] INFO NetworkShield - {"log_requests":true,"sinkhole":false,"print_size":true,"output_file":"/home/mgarcia/Desktop/output.txt","recursive_dns_server_host":"8.8.8.8","recursive_dns_server_port":53,"server_port":8080,"recursive_request_timeout":10000,"blocklist_files":["/home/mgarcia/Network Shield/blocklists/hosts3.txt","/home/mgarcia/Network Shield/blocklists/hosts6.txt","/home/mgarcia/Network Shield/blocklists/hosts4.txt","/home/mgarcia/Network Shield/blocklists/hosts11.txt","/home/mgarcia/Network Shield/blocklists/hosts5.txt","/home/mgarcia/Network Shield/blocklists/trackers.txt","/home/mgarcia/Network Shield/blocklists/hosts7.txt","/home/mgarcia/Network Shield/blocklists/KADhosts.txt","/home/mgarcia/Network Shield/blocklists/hosts9.txt","/home/mgarcia/Network Shield/blocklists/hosts2.txt","/home/mgarcia/Network Shield/blocklists/hosts1.txt","/home/mgarcia/Network Shield/blocklists/unifiedhosts_fakenews_gambling.txt","/home/mgarcia/Network Shield/blocklists/hosts8.txt","/home/mgarcia/Network Shield/blocklists/hosts12.txt","/home/mgarcia/Network Shield/blocklists/hosts10.txt"],"blocklist_urls":[]}
+INFO   | jvm 1    | 2017/02/07 17:57:51 | [main] INFO Settings - Loading file: /home/mgarcia/Network Shield/blocklists/hosts3.txt
+INFO   | jvm 1    | 2017/02/07 17:57:51 | [main] INFO Settings - Loading file: /home/mgarcia/Network Shield/blocklists/hosts6.txt
+INFO   | jvm 1    | 2017/02/07 17:57:51 | [main] INFO Settings - Loading file: /home/mgarcia/Network Shield/blocklists/hosts4.txt
+INFO   | jvm 1    | 2017/02/07 17:57:51 | [main] INFO Settings - Loading file: /home/mgarcia/Network Shield/blocklists/hosts11.txt
+INFO   | jvm 1    | 2017/02/07 17:57:51 | [main] INFO Settings - Loading file: /home/mgarcia/Network Shield/blocklists/hosts5.txt
+INFO   | jvm 1    | 2017/02/07 17:57:51 | [main] INFO Settings - Loading file: /home/mgarcia/Network Shield/blocklists/trackers.txt
+INFO   | jvm 1    | 2017/02/07 17:57:51 | [main] INFO Settings - Loading file: /home/mgarcia/Network Shield/blocklists/hosts7.txt
+INFO   | jvm 1    | 2017/02/07 17:57:51 | [main] INFO Settings - Loading file: /home/mgarcia/Network Shield/blocklists/KADhosts.txt
+INFO   | jvm 1    | 2017/02/07 17:57:51 | [main] INFO Settings - Loading file: /home/mgarcia/Network Shield/blocklists/hosts9.txt
+INFO   | jvm 1    | 2017/02/07 17:57:51 | [main] INFO Settings - Loading file: /home/mgarcia/Network Shield/blocklists/hosts2.txt
+INFO   | jvm 1    | 2017/02/07 17:57:51 | [main] INFO Settings - Loading file: /home/mgarcia/Network Shield/blocklists/hosts1.txt
+INFO   | jvm 1    | 2017/02/07 17:57:51 | [main] INFO Settings - Loading file: /home/mgarcia/Network Shield/blocklists/unifiedhosts_fakenews_gambling.txt
+INFO   | jvm 1    | 2017/02/07 17:57:51 | [main] INFO Settings - Loading file: /home/mgarcia/Network Shield/blocklists/hosts8.txt
+INFO   | jvm 1    | 2017/02/07 17:57:51 | [main] INFO Settings - Loading file: /home/mgarcia/Network Shield/blocklists/hosts12.txt
+INFO   | jvm 1    | 2017/02/07 17:57:51 | [main] INFO Settings - Loading file: /home/mgarcia/Network Shield/blocklists/hosts10.txt
+INFO   | jvm 1    | 2017/02/07 17:57:51 | [main] INFO Settings - Loaded blocklist. SIZE: 32416
+INFO   | jvm 1    | 2017/02/07 17:57:51 | [main] INFO NetworkShield - {java.runtime.name=Java(TM) SE Runtime Environment, sun.boot.library.path=/usr/lib/jvm/java-8-oracle/jre/lib/amd64, java.vm.version=25.121-b13, user.country.format=PT, java.vm.vendor=Oracle Corporation, java.vendor.url=http://java.oracle.com/, path.separator=:, java.vm.name=Java HotSpot(TM) 64-Bit Server VM, file.encoding.pkg=sun.io, user.country=US, sun.java.launcher=SUN_STANDARD, sun.os.patch.level=unknown, wrapper.key=bnJiCHOUWKuXH3qq, java.vm.specification.name=Java Virtual Machine Specification, user.dir=/home/mgarcia/Network Shield/release/bin, wrapper.version=3.5.30, java.runtime.version=1.8.0_121-b13, wrapper.arch=x86, java.awt.graphicsenv=sun.awt.X11GraphicsEnvironment, java.endorsed.dirs=/usr/lib/jvm/java-8-oracle/jre/lib/endorsed, os.arch=amd64, java.io.tmpdir=/tmp, line.separator=
+INFO   | jvm 1    | 2017/02/07 17:57:51 | , java.vm.specification.vendor=Oracle Corporation, wrapper.cpu.timeout=10, os.name=Linux, sun.jnu.encoding=UTF-8, java.library.path=../lib, wrapper.jvm.port.max=31999, java.specification.name=Java Platform API Specification, java.class.version=52.0, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, wrapper.pid=24006, os.version=4.4.0-62-generic, user.home=/home/mgarcia, wrapper.jvmid=1, user.timezone=, java.awt.printerjob=sun.print.PSPrinterJob, file.encoding=UTF-8, java.specification.version=1.8, java.class.path=../lib/wrapper.jar:../lib/classes/ns.conf:../lib/classes, user.name=mgarcia, wrapper.port=32000, java.vm.specification.version=1.8, sun.java.command=com.mgarcia.NetworkShield, java.home=/usr/lib/jvm/java-8-oracle/jre, sun.arch.data.model=64, user.language=en, java.specification.vendor=Oracle Corporation, user.language.format=pt, awt.toolkit=sun.awt.X11.XToolkit, java.vm.info=mixed mode, java.version=1.8.0_121, java.ext.dirs=/usr/lib/jvm/java-8-oracle/jre/lib/ext:/usr/java/packages/lib/ext, sun.boot.class.path=/usr/lib/jvm/java-8-oracle/jre/lib/resources.jar:/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar:/usr/lib/jvm/java-8-oracle/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jsse.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jce.jar:/usr/lib/jvm/java-8-oracle/jre/lib/charsets.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jfr.jar:/usr/lib/jvm/java-8-oracle/jre/classes, java.vendor=Oracle Corporation, file.separator=/, java.vendor.url.bug=http://bugreport.sun.com/bugreport/, sun.io.unicode.encoding=UnicodeLittle, sun.cpu.endian=little, wrapper.native_library=wrapper, wrapper.jvm.port.min=31000, sun.cpu.isalist=}
+INFO   | jvm 1    | 2017/02/07 17:57:51 | [main] INFO NetworkShield - Listening on port 8080
+STATUS | wrapper  | 2017/02/07 17:58:03 | INT trapped.  Shutting down.
+WARN   | wrapper  | 2017/02/07 17:58:03 | JVM exited unexpectedly while stopping the application.
+STATUS | wrapper  | 2017/02/07 17:58:03 | <-- Wrapper Stopped
