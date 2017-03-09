@@ -19,7 +19,7 @@
 
  - Add options to not output queries (privacy)
 
- - Clients that query blocked com.mgarcia.hosts tend to re-query many times after
+ - Clients that query blocked hosts tend to re-query many times after
 
  - ~~Client management~~
 
@@ -33,7 +33,7 @@
 
  - Run application as daemon/service
 
- - Implement whitelist (either have 2 lists and search whitelist first, of remove whitelisted com.mgarcia.hosts from the generated blocklist)
+ - Implement whitelist (either have 2 lists and search whitelist first, of remove whitelisted hosts from the generated blocklist)
 
  - Comments in DNS package
 
@@ -53,7 +53,7 @@
 
  - Investigate best library to make a GUI (JavaFX, Swing, a web page, etc) (this client would have to be a separate program that communicates with the main program)
 
- - Store blocked com.mgarcia.hosts for local statistics
+ - Store blocked hosts for local statistics
 
 # DNS details
 
